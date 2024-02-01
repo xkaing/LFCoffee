@@ -48,6 +48,7 @@ const CoffeeCalendar = () => {
       <Calendar cellRender={cellRender} onChange={onChange} />
       {selectedDate && (
         <DayDetail
+          data={coffeeData}
           date={selectedDate}
           visible={isModalVisible}
           onClose={() => setIsModalVisible(false)}
