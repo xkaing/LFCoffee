@@ -1,8 +1,8 @@
 import React from "react";
-import { Tag } from "antd";
+import { Tag, Statistic } from "antd";
 import { AndroidFilled, AppleFilled, ChromeFilled } from "@ant-design/icons";
 
-const TagRender = ({ payer }) => {
+const TagRender = ({ payer, expend }) => {
   let TagName = null;
   let TagColor = null;
   const lowerPayer = payer.toLowerCase();
@@ -23,6 +23,7 @@ const TagRender = ({ payer }) => {
       <Tag icon={TagName} color={TagColor}>
         {payer}
       </Tag>
+      { expend &&  <Statistic title="支出 (CNY)" value={expend} precision={2} />}
     </>
   );
 };
