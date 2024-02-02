@@ -12,7 +12,11 @@ const IconFont = createFromIconfontCN({
 
 const DayDetail = ({ data, date, visible, onClose }) => {
   const itemData = data.find((item) => item.date === date.format("YYYY-MM-DD"));
-  const profitNum = itemData.income - itemData.expend;
+  let profitNum = 0
+  if (itemData && itemData.income && itemData.expend) {
+    profitNum = itemData.income - itemData.expend;
+  }
+  
   return (
     <>
       <Modal
@@ -46,6 +50,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                   precision={2}
                 />
               )}
+              {itemData.income && (
               <Statistic
                 title="Profit (CNY)"
                 value={profitNum}
@@ -58,6 +63,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                 }
                 precision={2}
               />
+              )}
             </Space>
 
             <List
