@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Calendar } from "antd";
 import axios from "axios";
-import TagRender from "./TagRender";
+import DayRender from "./DayRender";
 import DayDetail from "./DayDetail";
 
 const defaultData = [{ date: "2024-02-01", payer: "fe" }];
@@ -26,6 +26,7 @@ const CoffeeCalendar = () => {
 
   // 日历点击事件
   const onChange = useCallback((value) => {
+    console.log("选中的日期", value.format("YYYY-MM-DD"));
     setSelectedDate(value); // 设置选中的日期
     setIsModalVisible(true); // 显示模态框
   }, []);
@@ -35,7 +36,7 @@ const CoffeeCalendar = () => {
     const calendarData = coffeeData.find(
       (item) => item.date === value.format("YYYY-MM-DD")
     );
-    return calendarData ? <TagRender {...calendarData} /> : null;
+    return calendarData ? <DayRender {...calendarData} /> : null;
   };
 
   const cellRender = (current, info) => {
