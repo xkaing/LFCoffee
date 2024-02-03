@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Avatar, List, Tag, Space, Statistic } from "antd";
 import TagName from "./TagName";
-import { MoneyCollectTwoTone } from "@ant-design/icons";
+import { MoneyCollectOutlined } from "@ant-design/icons";
 import { createFromIconfontCN } from "@ant-design/icons";
 const IconFont = createFromIconfontCN({
   scriptUrl: [
@@ -88,7 +88,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                         )}
                         <span>&nbsp;&nbsp;{item.name}&nbsp;&nbsp;</span>
                         <Tag
-                          icon={<MoneyCollectTwoTone />}
+                          icon={<MoneyCollectOutlined />}
                           color="default"
                           bordered={false}
                         >
