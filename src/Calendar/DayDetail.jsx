@@ -55,11 +55,9 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                 title="Profit (CNY)"
                 value={profitNum}
                 valueStyle={
-                  profitNum > 0
+                  profitNum >= 0
                     ? { color: "#3f8600" }
-                    : profitNum < 0
-                    ? { color: "#cf1322" }
-                    : { color: "#000000" }
+                    : { color: "#cf1322" }
                 }
                 precision={2}
               />
