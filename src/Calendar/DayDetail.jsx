@@ -1,14 +1,16 @@
 import React from "react";
-import { Modal, Avatar, List, Tag, Space, Statistic } from "antd";
+import { Modal, Avatar, List, Tag, Space, Statistic,Typography } from "antd";
 import TagName from "./TagName";
 import { MoneyCollectOutlined } from "@ant-design/icons";
 import { createFromIconfontCN } from "@ant-design/icons";
 const IconFont = createFromIconfontCN({
   scriptUrl: [
-    "//at.alicdn.com/t/c/font_4431122_7shzfw4dvg3.js",
-    //icon-coffee-cold, icon-Coffee
+    "//at.alicdn.com/t/c/font_4431122_rut41t8545r.js",
+    //icon-Send-Money icon-coffee-cold1 icon-coffee-cup icon-coffee-cold icon-Coffee
   ],
 });
+const { Text } = Typography;
+import DetailListDesc from "./DayDetail/DetailListDesc";
 
 const DayDetail = ({ data, date, visible, onClose }) => {
   const itemData = data.find((item) => item.date === date.format("YYYY-MM-DD"));
@@ -78,22 +80,47 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                     }
                     title={<TagName payer={item.drinker}></TagName>}
                     description={
-                      <>
+                      <Space size={"small"}>
+                        {/* 2.温度 */}
                         {item.temperature === 1 ? (
                           <IconFont type="icon-Coffee" />
                         ) : (
                           <IconFont type="icon-coffee-cold" />
                         )}
-                        <span>&nbsp;&nbsp;{item.name}&nbsp;&nbsp;</span>
-                        <Tag
-                          icon={<MoneyCollectOutlined />}
-                          color="default"
-                          bordered={false}
-                        >
+                        {/* 3.名称 */}
+                        <Text>{item.name}</Text>
+                        {/* 4.价格 */}
+                        <Text type="danger">
+                          <Text
+                            type="danger"
+                            style={{
+                              fontSize: "0.8em",
+                            }}
+                          >
+                            ¥
+                          </Text>
                           {item.price}
-                        </Tag>
-                      </>
+                        </Text>
+                        {/* 5.原价 */}
+                        {item.original_price && (
+                          <Text
+                            delete
+                            style={{
+                              fontSize: "0.8em",
+                              // color: "rgba(0, 0, 0, 0.55)",
+                            }}
+                          >
+                            ¥{item.original_price}
+                          </Text>
+                        )}
+                      </Space>
                     }
+                    // description={ <DetailListDesc 
+                    //   temp={item.temperature}
+                    //   name={item.name}
+                    //   price={item.price}
+                    //   originalPrice={item.original_price}
+                    // /> }
                   />
                 </List.Item>
               )}
