@@ -1,7 +1,6 @@
 import React from "react";
-import { Modal, Avatar, List, Tag, Space, Statistic,Typography } from "antd";
+import { Modal, Avatar, List, Tag, Space, Statistic, Typography } from "antd";
 import TagName from "./TagName";
-import { MoneyCollectOutlined } from "@ant-design/icons";
 import { createFromIconfontCN } from "@ant-design/icons";
 const IconFont = createFromIconfontCN({
   scriptUrl: [
@@ -14,11 +13,11 @@ import DetailListDesc from "./DayDetail/DetailListDesc";
 
 const DayDetail = ({ data, date, visible, onClose }) => {
   const itemData = data.find((item) => item.date === date.format("YYYY-MM-DD"));
-  let profitNum = 0
+  let profitNum = 0;
   if (itemData && itemData.income && itemData.expend) {
     profitNum = itemData.income - itemData.expend;
   }
-  
+
   return (
     <>
       <Modal
@@ -53,16 +52,14 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                 />
               )}
               {itemData.income && (
-              <Statistic
-                title="Profit (CNY)"
-                value={profitNum}
-                valueStyle={
-                  profitNum >= 0
-                    ? { color: "#3f8600" }
-                    : { color: "#cf1322" }
-                }
-                precision={2}
-              />
+                <Statistic
+                  title="Profit (CNY)"
+                  value={profitNum}
+                  valueStyle={
+                    profitNum >= 0 ? { color: "#3f8600" } : { color: "#cf1322" }
+                  }
+                  precision={2}
+                />
               )}
             </Space>
 
@@ -115,7 +112,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                         )}
                       </Space>
                     }
-                    // description={ <DetailListDesc 
+                    // description={ <DetailListDesc
                     //   temp={item.temperature}
                     //   name={item.name}
                     //   price={item.price}
