@@ -1,7 +1,11 @@
 import React from "react";
 import { Modal, Avatar, List, Tag, Space, Statistic, Typography } from "antd";
 import TagName from "./TagName";
-import { createFromIconfontCN, CloseOutlined } from "@ant-design/icons";
+import {
+  createFromIconfontCN,
+  CloseOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 const IconFont = createFromIconfontCN({
   scriptUrl: [
     "//at.alicdn.com/t/c/font_4431122_rut41t8545r.js",
@@ -9,6 +13,14 @@ const IconFont = createFromIconfontCN({
   ],
 });
 const { Text } = Typography;
+
+import Android1Url from "../assets/avatar/android-1.JPG";
+import Android2Url from "../assets/avatar/android-2.JPG";
+import Android3Url from "../assets/avatar/android-3.JPG";
+import IOS1Url from "../assets/avatar/ios-1.JPG";
+import IOS2Url from "../assets/avatar/ios-2.JPG";
+import IOS3Url from "../assets/avatar/ios-3.JPG";
+import Fe1Url from "../assets/avatar/fe-1.JPG";
 
 const DayDetail = ({ data, date, visible, onClose }) => {
   const itemData = data.find((item) => item.date === date.format("YYYY-MM-DD"));
@@ -120,11 +132,8 @@ const DayDetail = ({ data, date, visible, onClose }) => {
               renderItem={(item, index) => (
                 <List.Item>
                   <List.Item.Meta
-                    avatar={
-                      <Avatar
-                        src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`}
-                      />
-                    }
+                    // avatar={<Avatar size="large" shape="square" src={Fe1Url} />}
+                    avatar={<AvatarDrinker drinker={item.drinker} />}
                     title={<TagName payer={item.drinker}></TagName>}
                     description={
                       <Space size={"small"}>
@@ -258,6 +267,37 @@ const TempDictComponent = ({ tempDict }) => {
       ))}
     </Space>
   );
+};
+
+const AvatarDrinker = ({ drinker }) => {
+  let url = "";
+  switch (drinker) {
+    case "android-1":
+      url = Android1Url;
+      break;
+    case "android-2":
+      url = Android2Url;
+      break;
+    case "android-3":
+      url = Android3Url;
+      break;
+    case "ios-1":
+      url = IOS1Url;
+      break;
+    case "ios-2":
+      url = IOS2Url;
+      break;
+    case "ios-3":
+      url = IOS3Url;
+      break;
+    case "fe-1":
+      url = Fe1Url;
+      break;
+    default:
+      break;
+  }
+
+  return <Avatar size="large" shape="square" src={url} />;
 };
 
 export default DayDetail;
