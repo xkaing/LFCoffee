@@ -10,7 +10,7 @@ dayjs.locale("zh-cn");
 let themeAlgorithm = "no-preference";
 
 if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  themeAlgorithm = "dark";
+  themeAlgorithm = "light";
 } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
   themeAlgorithm = "light";
 }
