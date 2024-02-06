@@ -1,5 +1,63 @@
 [
     {
+        "date": "2024-02-06",
+        "week":"周二",
+        "payer": "ios-1",
+        "income": 99,
+        "expend": 94.90,
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "贺岁红龙拿铁",
+                "temperature": 0,
+                "price": 14.82,
+                "original_price": 35
+            },
+            {
+                "drinker": "android-2",
+                "name": "生椰丝绒拿铁",
+                "temperature": 0,
+                "price": 14.54,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-3",
+                "name": "陨石拿铁",
+                "temperature": 0,
+                "price": 10.96,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-1",
+                "name": "瑰夏美式",
+                "temperature": 1,
+                "price": 10.96,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-2",
+                "name": "褚橙拿铁",
+                "temperature": 0,
+                "price": 14.54,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-3",
+                "name": "卡布奇诺瑞纳冰",
+                "temperature": 0,
+                "price": 14.54,
+                "original_price": 32
+            },
+            {
+                "drinker": "fe-1",
+                "name": "香草丝绒拿铁",
+                "temperature": 1,
+                "price": 14.54,
+                "original_price": 32
+            }
+        ]
+    },
+    {
         "date": "2024-02-05",
         "week":"周一",
         "payer": "android-3",
