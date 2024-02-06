@@ -26,7 +26,6 @@ const CoffeeCalendar = () => {
 
   // 日历点击事件
   const onChange = useCallback((value) => {
-    console.log("选中的日期", value.format("YYYY-MM-DD"));
     setSelectedDate(value); // 设置选中的日期
     setIsModalVisible(true); // 显示模态框
   }, []);

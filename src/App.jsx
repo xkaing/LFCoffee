@@ -10,7 +10,7 @@ dayjs.locale("zh-cn");
 let themeAlgorithm = "no-preference";
 
 if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  themeAlgorithm = "dark";
+  themeAlgorithm = "light";
 } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
   themeAlgorithm = "light";
 }
@@ -38,7 +38,7 @@ function App() {
           fontSize: "1.2em",
         }}
       >
-        v0.1.0-alpha
+        v0.1.2-alpha
       </Tag>
       <CoffeeCalendar />
     </ConfigProvider>
