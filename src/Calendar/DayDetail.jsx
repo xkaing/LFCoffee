@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Avatar, List, Tag, Space, Statistic, Typography } from "antd";
 import TagName from "./TagName";
-import { createFromIconfontCN } from "@ant-design/icons";
+import { createFromIconfontCN, CloseOutlined } from "@ant-design/icons";
 const IconFont = createFromIconfontCN({
   scriptUrl: [
     "//at.alicdn.com/t/c/font_4431122_rut41t8545r.js",
@@ -9,14 +9,13 @@ const IconFont = createFromIconfontCN({
   ],
 });
 const { Text } = Typography;
-import DetailListDesc from "./DayDetail/DetailListDesc";
 
 const DayDetail = ({ data, date, visible, onClose }) => {
   const itemData = data.find((item) => item.date === date.format("YYYY-MM-DD"));
   let profitNum = 0;
   let averagePrice = 0;
-  const pricesByOriginalPrice = {}; // 初始化一个空对象用来存储每个不同original_price的价格数组
-  const tempDict = {};
+  const pricesDict = {}; // 价位字典
+  const tempDict = {}; // 温度字典
 
   if (itemData && itemData.drinker_list) {
     // 总价
@@ -36,34 +35,31 @@ const DayDetail = ({ data, date, visible, onClose }) => {
       profitNum = itemData.income - itemData.expend;
     }
 
-    // 使用forEach遍历数组，收集每个original_price对应的所有价格
     itemData.drinker_list.forEach((product) => {
-      // 检查original_price是否存在，如果不存在则设定默认值
+      // 检查参数
       let originalPrice = product.hasOwnProperty("original_price")
         ? product.original_price
-        : "undefined";
+        : null;
       let temp = product.hasOwnProperty("temperature")
         ? product.temperature
-        : "undefined";
+        : null;
 
-      // 如果这个原价已经在pricesByOriginalPrice对象中，就将当前商品的价格添加到数组中
-      if (pricesByOriginalPrice[originalPrice]) {
-        pricesByOriginalPrice[originalPrice].push(product.price);
-      } else {
-        // 如果这个原价还不在pricesByOriginalPrice对象中，就初始化一个数组并添加当前商品的价格
-        pricesByOriginalPrice[originalPrice] = [product.price];
+      if (originalPrice !== null) {
+        if (pricesDict[originalPrice]) {
+          pricesDict[originalPrice].push(product.price); // 此价位添加杯数
+        } else {
+          pricesDict[originalPrice] = [product.price]; // 添加新价位
+        }
       }
 
-      if (tempDict[temp]) {
-        tempDict[temp]++;
-      } else {
-        tempDict[temp] = 1;
+      if (temp !== null) {
+        if (tempDict[temp]) {
+          tempDict[temp]++;
+        } else {
+          tempDict[temp] = 1;
+        }
       }
     });
-
-    // 输出每个不同original_price下的所有价格数组
-    console.log(pricesByOriginalPrice);
-    console.log(tempDict);
   }
 
   return (
@@ -115,8 +111,8 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                 </>
               )}
             </Space>
-            <ProductsComponent pricesByOriginalPrice={pricesByOriginalPrice} />
-            <TempComponent tempDict={tempDict} />
+            <TempDictComponent tempDict={tempDict} />
+            <PricesDictComponent pricesDict={pricesDict} />
             <List
               itemLayout="horizontal"
               size="small"
@@ -134,9 +130,9 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                       <Space size={"small"}>
                         {/* 2.温度 */}
                         {item.temperature === 1 ? (
-                          <IconFont type="icon-Coffee" />
+                          <IconFont type="icon-coffee-cup" />
                         ) : (
-                          <IconFont type="icon-coffee-cold" />
+                          <IconFont type="icon-coffee-cold1" />
                         )}
                         {/* 3.名称 */}
                         <Text>{item.name}</Text>
@@ -158,7 +154,6 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                             delete
                             style={{
                               fontSize: "0.8em",
-                              // color: "rgba(0, 0, 0, 0.55)",
                             }}
                           >
                             ¥{item.original_price}
@@ -178,48 +173,53 @@ const DayDetail = ({ data, date, visible, onClose }) => {
   );
 };
 
-const ProductsComponent = ({ pricesByOriginalPrice }) => {
-  const priceEntries = Object.entries(pricesByOriginalPrice); // 将对象转换为 [key, value] 形式的数组
-
+const PricesDictComponent = ({ pricesDict }) => {
+  const priceEntries = Object.entries(pricesDict); // 将对象转换为 [key, value] 形式的数组
   return (
     <Space
       size={"large"}
       style={{
-        marginTop: "0.8em",
+        marginTop: "0.1em",
         marginBottom: "0.8em",
       }}
     >
       {priceEntries.map(([key, prices], index) => (
-        <Tag key={index} bordered={false} color="#e6f4ff">
-          <Space>
-            <Text type="danger">
-              <Text
-                type="danger"
-                style={{
-                  fontSize: "0.8em",
-                }}
-              >
-                ¥
-              </Text>
-              {prices[0]}
-            </Text>
+        <Tag key={index} bordered={false}>
+          <Text type="danger">
             <Text
-              delete
+              type="danger"
               style={{
                 fontSize: "0.8em",
               }}
             >
-              ¥{key}
+              ¥
             </Text>
-            <Text>x{prices.length}</Text>
-          </Space>
+            {prices[0]}
+          </Text>
+          <Text
+            delete
+            style={{
+              fontSize: "1em",
+              marginLeft: "3px",
+            }}
+          >
+            ¥{key}
+          </Text>
+          <CloseOutlined />
+          <Text
+            style={{
+              fontSize: "1.3em",
+            }}
+          >
+            {prices.length}
+          </Text>
         </Tag>
       ))}
     </Space>
   );
 };
 
-const TempComponent = ({ tempDict }) => {
+const TempDictComponent = ({ tempDict }) => {
   const tempEntries = Object.entries(tempDict);
   return (
     <Space
@@ -230,9 +230,30 @@ const TempComponent = ({ tempDict }) => {
       }}
     >
       {tempEntries.map(([key, value], index) => (
-        <Tag key={index} bordered={false} color="#e6f4ff">
-          <Text>{key}</Text>
-          <Text>x{value}</Text>
+        <Tag key={index} bordered={false}>
+          {key == 1 ? (
+            <IconFont
+              type="icon-coffee-cup"
+              style={{
+                fontSize: "1.3em",
+              }}
+            />
+          ) : (
+            <IconFont
+              type="icon-coffee-cold1"
+              style={{
+                fontSize: "1.3em",
+              }}
+            />
+          )}
+          <CloseOutlined />
+          <Text
+            style={{
+              fontSize: "1.3em",
+            }}
+          >
+            {value}
+          </Text>
         </Tag>
       ))}
     </Space>

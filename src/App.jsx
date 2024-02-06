@@ -38,7 +38,7 @@ function App() {
           fontSize: "1.2em",
         }}
       >
-        v0.1.0-alpha
+        v0.1.1-alpha
       </Tag>
       <CoffeeCalendar />
     </ConfigProvider>
