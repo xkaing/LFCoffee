@@ -1,5 +1,49 @@
 [
     {
+        "date": "2024-02-07",
+        "week":"周三",
+        "payer": "ios-2",
+        "income": 60,
+        "expend": 57.89,
+        "drinker_list": [
+            {
+                "drinker": "android-2",
+                "name": "碧螺知春拿铁",
+                "temperature": 0,
+                "price": 13.89,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-3",
+                "name": "美式",
+                "temperature": 0,
+                "price": 9.9,
+                "original_price": 23
+            },
+            {
+                "drinker": "ios-1",
+                "name": "瑰夏美式",
+                "temperature": 1,
+                "price": 10.56,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-2",
+                "name": "新春金龙拿铁",
+                "temperature": 0,
+                "price": 11.72,
+                "original_price": 35
+            },
+            {
+                "drinker": "fe-1",
+                "name": "新春金龙拿铁",
+                "temperature": 1,
+                "price": 11.82,
+                "original_price": 35
+            }
+        ]
+    },
+    {
         "date": "2024-02-06",
         "week":"周二",
         "payer": "ios-1",
@@ -126,43 +170,50 @@
                 "drinker": "android-1",
                 "name": "碧螺知春拿铁",
                 "temperature": 0,
-                "price": 14.46
+                "price": 14.46,
+                "original_price": 32
             },
             {
                 "drinker": "android-2",
                 "name": "瑰夏澳瑞白",
                 "temperature": 1,
-                "price": 14.82
+                "price": 14.82,
+                "original_price": 35
             },
             {
                 "drinker": "android-3",
                 "name": "耶加雪菲美式",
                 "temperature": 0,
-                "price": 11.13
+                "price": 11.13,
+                "original_price": 29
             },
             {
                 "drinker": "ios-1",
                 "name": "瑰夏美式",
                 "temperature": 1,
-                "price": 11.13
+                "price": 11.13,
+                "original_price": 29
             },
             {
                 "drinker": "ios-2",
                 "name": "冰吸生椰拿铁",
                 "temperature": 0,
-                "price": 11.13
+                "price": 11.13,
+                "original_price": 29
             },
             {
                 "drinker": "ios-3",
                 "name": "碧螺知春拿铁",
                 "temperature": 0,
-                "price": 14.46
+                "price": 14.46,
+                "original_price": 32
             },
             {
                 "drinker": "fe-1",
                 "name": "瑰夏拿铁",
                 "temperature": 1,
-                "price": 14.46
+                "price": 14.46,
+                "original_price": 32
             }
         ]
     },
@@ -177,37 +228,43 @@
                 "drinker": "android-1",
                 "name": "闪光橙橙瑞纳冰",
                 "temperature": 0,
-                "price": 15.32
+                "price": 15.32,
+                "original_price": 35
             },
             {
                 "drinker": "android-2",
                 "name": "冰吸生椰拿铁",
                 "temperature": 0,
-                "price": 11.21
+                "price": 11.21,
+                "original_price": 29
             },
             {
                 "drinker": "android-3",
                 "name": "耶加雪菲美式",
                 "temperature": 0,
-                "price": 11.21
+                "price": 11.21,
+                "original_price": 29
             },
             {
                 "drinker": "ios-1",
                 "name": "耶加雪菲美式",
                 "temperature": 1,
-                "price": 11.21
+                "price": 11.21,
+                "original_price": 29
             },
             {
                 "drinker": "ios-3",
                 "name": "茉莉花香拿铁",
                 "temperature": 0,
-                "price": 11.21
+                "price": 11.21,
+                "original_price": 29
             },
             {
                 "drinker": "fe-1",
                 "name": "闪光橙橙瑞纳冰",
                 "temperature": 0,
-                "price": 15.32
+                "price": 15.32,
+                "original_price": 35
             }
         ]
     },
@@ -222,43 +279,50 @@
                 "drinker": "android-1",
                 "name": "抹茶好喝椰",
                 "temperature": 0,
-                "price": 14.79
+                "price": 14.79,
+                "original_price": 32
             },
             {
                 "drinker": "android-2",
                 "name": "橙C美式",
                 "temperature": 0,
-                "price": 11.46
+                "price": 11.46,
+                "original_price": 29
             },
             {
                 "drinker": "android-3",
                 "name": "碧螺知春拿铁",
                 "temperature": 0,
-                "price": 14.79
+                "price": 14.79,
+                "original_price": 32
             },
             {
                 "drinker": "ios-1",
                 "name": "美式",
                 "temperature": 1,
-                "price": 5.92
+                "price": 5.92,
+                "original_price": 23
             },
             {
                 "drinker": "ios-2",
                 "name": "茉莉海盐拿铁",
                 "temperature": 0,
-                "price": 14.79
+                "price": 14.79,
+                "original_price": 32
             },
             {
                 "drinker": "ios-3",
                 "name": "圣诞甜心拿铁",
                 "temperature": 0,
-                "price": 9.9
+                "price": 9.9,
+                "original_price": 35
             },
             {
                 "drinker": "fe-1",
                 "name": "褚橙拿铁",
                 "temperature": 1,
-                "price": 14.79
+                "price": 14.79,
+                "original_price": 32
             }
         ]
     },
@@ -273,43 +337,50 @@
                 "drinker": "android-1",
                 "name": "茉莉海盐拿铁",
                 "temperature": 0,
-                "price": 14.59
+                "price": 14.59,
+                "original_price": 32
             },
             {
                 "drinker": "android-2",
                 "name": "兰韵铁观音拿铁",
                 "temperature": 0,
-                "price": 14.59
+                "price": 14.59,
+                "original_price": 32
             },
             {
                 "drinker": "android-3",
                 "name": "绿宝石美式",
                 "temperature": 0,
-                "price": 10.96
+                "price": 10.96,
+                "original_price": 29
             },
             {
                 "drinker": "ios-1",
                 "name": "热红酒美式",
                 "temperature": 1,
-                "price": 10.96
+                "price": 10.96,
+                "original_price": 29
             },
             {
                 "drinker": "ios-2",
                 "name": "兰韵铁观音拿铁",
                 "temperature": 0,
-                "price": 14.59
+                "price": 14.59,
+                "original_price": 32
             },
             {
                 "drinker": "ios-3",
                 "name": "兰韵铁观音拿铁",
                 "temperature": 1,
-                "price": 14.59
+                "price": 14.59,
+                "original_price": 32
             },
             {
                 "drinker": "fe-1",
                 "name": "抹茶好喝椰",
                 "temperature": 0,
-                "price": 14.59
+                "price": 14.59,
+                "original_price": 32
             }
         ]
     },
@@ -329,43 +400,50 @@
                 "drinker": "android-1",
                 "name": "碧螺知春拿铁",
                 "temperature": 0,
-                "price": 14.79
+                "price": 14.79,
+                "original_price": 32
             },
             {
                 "drinker": "android-2",
                 "name": "碧螺知春拿铁",
                 "temperature": 0,
-                "price": 14.79
+                "price": 14.79,
+                "original_price": 32
             },
             {
                 "drinker": "android-3",
                 "name": "美式",
                 "temperature": 0,
-                "price": 5.92
+                "price": 5.92,
+                "original_price": 23
             },
             {
                 "drinker": "ios-1",
                 "name": "美式",
                 "temperature": 1,
-                "price": 6.92
+                "price": 6.92,
+                "original_price": 23
             },
             {
                 "drinker": "ios-2",
                 "name": "碧螺知春拿铁",
                 "temperature": 0,
-                "price": 14.46
+                "price": 14.46,
+                "original_price": 32
             },
             {
                 "drinker": "ios-3",
                 "name": "茉莉花香拿铁",
                 "temperature": 0,
-                "price": 11.46
+                "price": 11.46,
+                "original_price": 29
             },
             {
                 "drinker": "fe-1",
                 "name": "热红酒美式",
                 "temperature": 1,
-                "price": 11.46
+                "price": 11.46,
+                "original_price": 29
             }
         ]
     },
@@ -385,37 +463,43 @@
                 "drinker": "android-1",
                 "name": "龙年酱香巧克力",
                 "temperature": 0,
-                "price": 17.32
+                "price": 17.32,
+                "original_price": 38
             },
             {
                 "drinker": "android-2",
                 "name": "瑰夏美式",
                 "temperature": 1,
-                "price": 9.98
+                "price": 9.98,
+                "original_price": 29
             },
             {
                 "drinker": "android-3",
                 "name": "美式",
                 "temperature": 0,
-                "price": 5.98
+                "price": 5.98,
+                "original_price": 23
             },
             {
                 "drinker": "ios-1",
                 "name": "美式",
                 "temperature": 1,
-                "price": 6.98
+                "price": 6.98,
+                "original_price": 23
             },
             {
                 "drinker": "ios-3",
                 "name": "闪光橙橙瑞纳冰",
                 "temperature": 0,
-                "price": 15.58
+                "price": 15.58,
+                "original_price": 35
             },
             {
                 "drinker": "fe-1",
                 "name": "热红酒美式",
                 "temperature": 1,
-                "price": 9.98
+                "price": 9.98,
+                "original_price": 29
             }
         ]
     },
@@ -430,37 +514,43 @@
                 "drinker": "android-1",
                 "name": "抹茶好喝椰",
                 "temperature": 0,
-                "price": 14.79
+                "price": 14.79,
+                "original_price": 32
             },
             {
                 "drinker": "android-2",
                 "name":"瑰夏美式",
                 "temperature": 1,
-                "price": 9.98
+                "price": 9.98,
+                "original_price": 29
             },
             {
                 "drinker": "android-3",
                 "name": "闪光橙橙瑞纳冰",
                 "temperature": 0,
-                "price": 15.82
+                "price": 15.82,
+                "original_price": 35
             },
             {
                 "drinker": "ios-1",
                 "name": "美式",
                 "temperature": 1,
-                "price": 5.98
+                "price": 5.98,
+                "original_price": 23
             },
             {
                 "drinker": "ios-3",
                 "name": "圣诞甜心拿铁",
                 "temperature": 0,
-                "price": 15.82
+                "price": 15.82,
+                "original_price": 35
             },
             {
                 "drinker": "fe-1",
                 "name": "褚橙拿铁",
                 "temperature": 0,
-                "price": 14.79
+                "price": 14.79,
+                "original_price": 32
             }
         ]
     },
@@ -475,37 +565,43 @@
                 "drinker": "android-1",
                 "name": "海盐芝士厚乳拿铁",
                 "temperature": 1,
-                "price": 14.79
+                "price": 14.79,
+                "original_price": 32
             },
             {
                 "drinker": "android-2",
                 "name":"瑰夏美式",
                 "temperature": 1,
-                "price": 11.47
+                "price": 11.47,
+                "original_price": 29
             },
             {
                 "drinker": "android-3",
                 "name": "瑰夏美式",
                 "temperature": 0,
-                "price": 11.47
+                "price": 11.47,
+                "original_price": 29
             },
             {
                 "drinker": "ios-1",
                 "name": "美式",
                 "temperature": 1,
-                "price": 5.98
+                "price": 5.98,
+                "original_price": 23
             },
             {
                 "drinker": "ios-3",
                 "name": "抹茶瑞纳冰",
                 "temperature": 0,
-                "price": 14.79
+                "price": 14.79,
+                "original_price": 32
             },
             {
                 "drinker": "fe-1",
                 "name": "美式",
                 "temperature": 1,
-                "price": 6.98
+                "price": 6.98,
+                "original_price": 23
             }
         ]
     },
@@ -520,37 +616,43 @@
                 "drinker": "android-1",
                 "name": "茉莉海盐拿铁",
                 "temperature": 1,
-                "price": 14.29
+                "price": 14.29,
+                "original_price": 32
             },
             {
                 "drinker": "android-2",
                 "name":"瑰夏美式",
                 "temperature": 1,
-                "price": 10.97
+                "price": 10.97,
+                "original_price": 29
             },
             {
                 "drinker": "android-3",
                 "name": "瑰夏美式",
                 "temperature": 0,
-                "price": 10.97
+                "price": 10.97,
+                "original_price": 29
             },
             {
                 "drinker": "ios-1",
                 "name": "美式",
                 "temperature": 1,
-                "price": 5.98
+                "price": 5.98,
+                "original_price": 23
             },
             {
                 "drinker": "ios-3",
                 "name": "兰韵铁观音拿铁",
                 "temperature": 1,
-                "price": 14.29
+                "price": 14.29,
+                "original_price": 32
             },
             {
                 "drinker": "fe-1",
                 "name": "贺岁红龙拿铁",
                 "temperature": 0,
-                "price": 9.90
+                "price": 9.9,
+                "original_price": 35
             }
         ]
     }

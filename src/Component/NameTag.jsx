@@ -2,7 +2,7 @@ import React from "react";
 import { Tag } from "antd";
 import { AndroidFilled, AppleFilled, ChromeFilled } from "@ant-design/icons";
 
-const TagName = ({ payer }) => {
+const NameTag = ({ payer }) => {
   let NameIcon = null;
   let NameColor = null;
   const lowerPayer = payer.toLowerCase();
@@ -25,4 +25,4 @@ const TagName = ({ payer }) => {
   );
 };
 
-export default TagName;
+export default NameTag;

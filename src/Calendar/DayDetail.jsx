@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Avatar, List, Tag, Space, Statistic, Typography } from "antd";
-import TagName from "./TagName";
+import NameTag from "../Component/NameTag";
 import {
   createFromIconfontCN,
   CloseOutlined,
@@ -45,6 +45,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
     // 利润
     if (itemData.income && itemData.expend) {
       profitNum = itemData.income - itemData.expend;
+      profitNum = profitNum.toFixed(2);
     }
 
     itemData.drinker_list.forEach((product) => {
@@ -90,7 +91,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
               <Tag bordered={false} color="processing">
                 {itemData.week}
               </Tag>
-              <p>Payer: {<TagName payer={itemData.payer}></TagName>}</p>
+              <p>Payer: {<NameTag payer={itemData.payer}></NameTag>}</p>
             </Space>
             <Space size={"large"}>
               {itemData.expend && (
@@ -134,7 +135,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                   <List.Item.Meta
                     // avatar={<Avatar size="large" shape="square" src={Fe1Url} />}
                     avatar={<AvatarDrinker drinker={item.drinker} />}
-                    title={<TagName payer={item.drinker}></TagName>}
+                    title={<NameTag payer={item.drinker}></NameTag>}
                     description={
                       <Space size={"small"}>
                         {/* 2.温度 */}
@@ -186,11 +187,12 @@ const PricesDictComponent = ({ pricesDict }) => {
   const priceEntries = Object.entries(pricesDict); // 将对象转换为 [key, value] 形式的数组
   return (
     <Space
-      size={"large"}
+      size={"small"}
       style={{
-        marginTop: "0.1em",
-        marginBottom: "0.8em",
+        marginTop: "0.5em",
+        marginBottom: "1em",
       }}
+      wrap
     >
       {priceEntries.map(([key, prices], index) => (
         <Tag key={index} bordered={false}>
@@ -232,10 +234,11 @@ const TempDictComponent = ({ tempDict }) => {
   const tempEntries = Object.entries(tempDict);
   return (
     <Space
-      size={"large"}
+      size={"small"}
       style={{
-        marginTop: "0.8em",
-        marginBottom: "0.8em",
+        marginTop: "0.5em",
+        marginBottom: "0.5em",
+        marginRight: "0.5em",
       }}
     >
       {tempEntries.map(([key, value], index) => (

@@ -1,12 +1,14 @@
 import React from "react";
 import { Statistic } from "antd";
-import TagName from "./TagName";
+import NameTag from "../Component/NameTag";
 
 const DayRender = ({ payer, expend }) => {
   return (
     <>
-      <TagName payer={payer}></TagName>
-      {expend && <Statistic title="Expend (CNY)" value={expend} precision={2} />}
+      <NameTag payer={payer}></NameTag>
+      {expend && (
+        <Statistic title="Expend (CNY)" value={expend} precision={2} />
+      )}
     </>
   );
 };
