@@ -45,6 +45,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
     // 利润
     if (itemData.income && itemData.expend) {
       profitNum = itemData.income - itemData.expend;
+      profitNum = profitNum.toFixed(2)
     }
 
     itemData.drinker_list.forEach((product) => {
@@ -189,7 +190,7 @@ const PricesDictComponent = ({ pricesDict }) => {
       size={"small"}
       style={{
         marginTop: "0.5em",
-        marginBottom: "0.8em",
+        marginBottom: "1em",
       }}
       wrap
     >
@@ -233,10 +234,11 @@ const TempDictComponent = ({ tempDict }) => {
   const tempEntries = Object.entries(tempDict);
   return (
     <Space
-      size={"large"}
+      size={"small"}
       style={{
-        marginTop: "0.8em",
-        marginBottom: "0.8em",
+        marginTop: "0.5em",
+        marginBottom: "0.5em",
+        marginRight: "0.5em"
       }}
     >
       {tempEntries.map(([key, value], index) => (
