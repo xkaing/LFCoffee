@@ -186,11 +186,12 @@ const PricesDictComponent = ({ pricesDict }) => {
   const priceEntries = Object.entries(pricesDict); // 将对象转换为 [key, value] 形式的数组
   return (
     <Space
-      size={"large"}
+      size={"small"}
       style={{
-        marginTop: "0.1em",
+        marginTop: "0.5em",
         marginBottom: "0.8em",
       }}
+      wrap
     >
       {priceEntries.map(([key, prices], index) => (
         <Tag key={index} bordered={false}>
