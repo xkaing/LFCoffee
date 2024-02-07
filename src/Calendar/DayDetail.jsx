@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Avatar, List, Tag, Space, Statistic, Typography } from "antd";
-import TagName from "./TagName";
+import NameTag from "../Component/NameTag";
 import {
   createFromIconfontCN,
   CloseOutlined,
@@ -45,7 +45,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
     // 利润
     if (itemData.income && itemData.expend) {
       profitNum = itemData.income - itemData.expend;
-      profitNum = profitNum.toFixed(2)
+      profitNum = profitNum.toFixed(2);
     }
 
     itemData.drinker_list.forEach((product) => {
@@ -91,7 +91,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
               <Tag bordered={false} color="processing">
                 {itemData.week}
               </Tag>
-              <p>Payer: {<TagName payer={itemData.payer}></TagName>}</p>
+              <p>Payer: {<NameTag payer={itemData.payer}></NameTag>}</p>
             </Space>
             <Space size={"large"}>
               {itemData.expend && (
@@ -135,7 +135,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                   <List.Item.Meta
                     // avatar={<Avatar size="large" shape="square" src={Fe1Url} />}
                     avatar={<AvatarDrinker drinker={item.drinker} />}
-                    title={<TagName payer={item.drinker}></TagName>}
+                    title={<NameTag payer={item.drinker}></NameTag>}
                     description={
                       <Space size={"small"}>
                         {/* 2.温度 */}
@@ -238,7 +238,7 @@ const TempDictComponent = ({ tempDict }) => {
       style={{
         marginTop: "0.5em",
         marginBottom: "0.5em",
-        marginRight: "0.5em"
+        marginRight: "0.5em",
       }}
     >
       {tempEntries.map(([key, value], index) => (
