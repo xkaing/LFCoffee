@@ -2,7 +2,7 @@ import { Tag, Button, Typography } from "antd";
 import { CodeOutlined, MergeOutlined } from "@ant-design/icons";
 const { Text, Link } = Typography;
 
-const appVerNum = "v0.2.2-beta";
+const appVerNum = "v0.2.4-beta";
 
 const AppVersion = () => {
   return (
