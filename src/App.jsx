@@ -1,4 +1,3 @@
-import "./App.css";
 import CoffeeCalendar from "./Calendar/CoffeeCalendar";
 import { ConfigProvider, theme, Tag } from "antd";
 import { CodeOutlined } from "@ant-design/icons";
