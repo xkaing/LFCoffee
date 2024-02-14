@@ -6,6 +6,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./error-page.jsx";
 import EmptyData from "./components/EmptyData";
+import EmptyPage from "./components/EmptyPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/chart",
-        element: <EmptyData />,
+        element: <EmptyPage />,
       },
     ],
   },
