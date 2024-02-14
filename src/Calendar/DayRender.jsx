@@ -1,6 +1,6 @@
 import React from "react";
 import { Statistic } from "antd";
-import NameTag from "../Component/NameTag";
+import NameTag from "../components/NameTag";
 
 const DayRender = ({ payer, expend }) => {
   return (

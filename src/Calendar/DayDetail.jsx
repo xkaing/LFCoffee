@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Avatar, List, Tag, Space, Statistic, Typography } from "antd";
-import NameTag from "../Component/NameTag";
+import NameTag from "../components/NameTag";
 import {
   createFromIconfontCN,
   CloseOutlined,

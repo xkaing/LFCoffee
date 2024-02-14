@@ -1,7 +1,5 @@
-import "./App.css";
 import CoffeeCalendar from "./Calendar/CoffeeCalendar";
-import { ConfigProvider, theme, Tag } from "antd";
-import { CodeOutlined } from "@ant-design/icons";
+import { ConfigProvider, theme } from "antd";
 import locale from "antd/locale/zh_CN";
 import dayjs from "dayjs";
 import "dayjs/locale/zh-cn";
@@ -27,19 +25,6 @@ function App() {
             : theme.defaultAlgorithm,
       }}
     >
-      <Tag
-        bordered={false}
-        color="error"
-        icon={<CodeOutlined />}
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          right: "20px",
-          fontSize: "1.2em",
-        }}
-      >
-        v0.1.3-alpha
-      </Tag>
       <CoffeeCalendar />
     </ConfigProvider>
   );
