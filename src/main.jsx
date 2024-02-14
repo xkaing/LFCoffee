@@ -5,6 +5,7 @@ import HomeLayout from "./Layout/HomeLayout.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./error-page.jsx";
+import EmptyData from "./components/EmptyData";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/welcome",
-        element: <div>WelCome</div>,
+        element: <EmptyData />,
       },
       {
         path: "/calendar",
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/chart",
-        element: <div>Chart</div>,
+        element: <EmptyData />,
       },
     ],
   },

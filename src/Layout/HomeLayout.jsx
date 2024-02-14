@@ -1,6 +1,10 @@
 import React from "react";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Layout, Menu, theme } from "antd";
 import { Outlet, Link } from "react-router-dom";
+import { Typography } from "antd";
+import AppVersion from "../components/AppVersion";
+
+const { Text } = Typography;
 
 const { Header, Content, Footer } = Layout;
 const items = [
@@ -29,7 +33,22 @@ const HomeLayout = () => {
           alignItems: "center",
         }}
       >
-        <div className="demo-logo" />
+        <div
+          className="demo-logo"
+          style={{
+            marginRight: 24,
+          }}
+        >
+          <Text
+            strong
+            style={{
+              color: "white",
+              fontSize: "1.3rem",
+            }}
+          >
+            LFCoffee
+          </Text>
+        </div>
         <Menu
           theme="dark"
           mode="horizontal"
@@ -40,6 +59,7 @@ const HomeLayout = () => {
             minWidth: 0,
           }}
         />
+        <AppVersion />
       </Header>
       <Content
         style={{
