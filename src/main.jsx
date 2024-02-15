@@ -8,6 +8,8 @@ import ErrorPage from "./error-page.jsx";
 import EmptyData from "./components/EmptyData";
 import EmptyPage from "./components/EmptyPage.jsx";
 import RoutesIndex from "./Layout/RoutesIndex.jsx";
+import Welcome from "./Welcome/Welcome.jsx";
+import XKTrophies, { XKTrophiesShigong } from "./XKTrophies/XKTrophies.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
       { index: true, element: <App /> },
       {
         path: "/welcome",
-        element: <EmptyPage />,
+        element: <Welcome />,
       },
       {
         path: "/calendar",
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/chart",
         element: <EmptyPage />,
+      },
+      {
+        path: "/xk-trophies",
+        element: <XKTrophiesShigong />,
       },
     ],
   },

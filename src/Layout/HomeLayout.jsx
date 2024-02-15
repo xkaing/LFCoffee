@@ -18,8 +18,15 @@ const items = [
   },
   {
     key: "chart",
-    label: "Chart",
-    disabled: true,
+    // label: "Chart",
+    label: <Link to={`/chart`}>Chart</Link>,
+    disabled: false,
+  },
+  {
+    key: "xk-trophies",
+    // label: "Trophy",
+    label: <Link to={`/xk-trophies`}>Trophy</Link>,
+    disabled: false,
   },
 ];
 const HomeLayout = () => {
