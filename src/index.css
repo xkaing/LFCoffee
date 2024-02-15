@@ -21,6 +21,10 @@ body {
   min-height: 100vh;
 }
 
+.ant-timeline p{
+  margin: 0;
+}
+
 /* @media (prefers-color-scheme: light) { */
   :root {
     color: #213547;

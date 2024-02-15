@@ -1,27 +1,27 @@
-import { Tag, Button, Typography } from "antd";
-import { CodeOutlined, MergeOutlined } from "@ant-design/icons";
-const { Text, Link } = Typography;
+import { Typography, Popover } from "antd";
+import { CodeOutlined } from "@ant-design/icons";
+import DeployTimeline from "./DeployTimeline";
+const { Text } = Typography;
 
-const appVerNum = "v0.2.4-beta";
+const appVerNum = "v0.3.0-beta";
 
 const AppVersion = () => {
   return (
-    // <Button type="primary" ghost icon={<CodeOutlined />} size="small">
-    //   {appVerNum}
-    // </Button>
-    <Text
-      type="warning"
-      style={{
-        fontSize: "1.2rem",
-      }}
-    >
-      <CodeOutlined
+    <Popover content={<DeployTimeline />} title="Deploy Timeline">
+      <Text
+        type="warning"
         style={{
-          paddingRight: 6,
+          fontSize: "1.2rem",
         }}
-      />
-      {appVerNum}
-    </Text>
+      >
+        <CodeOutlined
+          style={{
+            paddingRight: 6,
+          }}
+        />
+        {appVerNum}
+      </Text>
+    </Popover>
   );
 };
 
