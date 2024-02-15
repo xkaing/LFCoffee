@@ -9,7 +9,7 @@ import ErrorPage from "./Layout/ErrorPage.jsx"; //路由错误页
 import RoutesIndex from "./Layout/RoutesIndex.jsx"; //路由根页面
 import EmptyPage from "./components/EmptyPage.jsx"; //空页面
 
-import Welcome from "./Welcome/Welcome.jsx"; //Welcome模块
+import Welcome, { loader as welcomeLoader } from "./Welcome/Welcome.jsx"; //Welcome模块
 import XKTrophies, { XKTrophiesShigong } from "./XKTrophies/XKTrophies.jsx"; //XKTrophies模块
 import CoffeeCalendar from "./Calendar/CoffeeCalendar.jsx"; //日历模块
 // 全局化配置
@@ -28,7 +28,8 @@ const router = createBrowserRouter([
       { index: true, element: <RoutesIndex /> },
       {
         path: "/welcome",
-        element: <EmptyPage />,
+        element: <Welcome />,
+        loader: welcomeLoader,
       },
       {
         path: "/calendar",

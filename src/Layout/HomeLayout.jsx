@@ -24,9 +24,9 @@ const items = [
   },
   {
     key: "xk-trophies-js-demo",
-    // label: "Trophy",
-    label: <Link to={`/xk-trophies-js-demo`}>Trophy</Link>,
-    disabled: false,
+    label: "Trophy",
+    // label: <Link to={`/xk-trophies-js-demo`}>Trophy</Link>,
+    disabled: true,
   },
 ];
 const HomeLayout = () => {
