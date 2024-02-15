@@ -1,15 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import HomeLayout from "./Layout/HomeLayout.jsx";
-import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ErrorPage from "./error-page.jsx";
-import EmptyData from "./components/EmptyData";
-import EmptyPage from "./components/EmptyPage.jsx";
-import RoutesIndex from "./Layout/RoutesIndex.jsx";
-import Welcome from "./Welcome/Welcome.jsx";
-import XKTrophies, { XKTrophiesShigong } from "./XKTrophies/XKTrophies.jsx";
+import "./index.css"; //全局样式
+
+import HomeLayout from "./Layout/HomeLayout.jsx"; // 菜单布局
+
+import ErrorPage from "./Layout/ErrorPage.jsx"; //路由错误页
+import RoutesIndex from "./Layout/RoutesIndex.jsx"; //路由根页面
+import EmptyPage from "./components/EmptyPage.jsx"; //空页面
+
+import Welcome from "./Welcome/Welcome.jsx"; //Welcome模块
+import XKTrophies, { XKTrophiesShigong } from "./XKTrophies/XKTrophies.jsx"; //XKTrophies模块
+import CoffeeCalendar from "./Calendar/CoffeeCalendar.jsx"; //日历模块
+// 全局化配置
+import { ConfigProvider, theme } from "antd";
+import locale from "antd/locale/zh_CN";
+import dayjs from "dayjs";
+import "dayjs/locale/zh-cn";
+dayjs.locale("zh-cn");
 
 const router = createBrowserRouter([
   {
@@ -17,14 +25,14 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <App /> },
+      { index: true, element: <RoutesIndex /> },
       {
         path: "/welcome",
-        element: <Welcome />,
+        element: <EmptyPage />,
       },
       {
         path: "/calendar",
-        element: <App />,
+        element: <CoffeeCalendar />,
       },
       {
         path: "/chart",
@@ -32,14 +40,32 @@ const router = createBrowserRouter([
       },
       {
         path: "/xk-trophies-js-demo",
-        element: <XKTrophiesShigong />,
+        element: <EmptyPage />,
       },
     ],
   },
 ]);
 
+let themeAlgorithm = "no-preference";
+
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  themeAlgorithm = "light"; //关闭暗黑模式
+} else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+  themeAlgorithm = "light";
+}
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ConfigProvider
+      locale={locale}
+      theme={{
+        algorithm:
+          themeAlgorithm === "dark"
+            ? theme.darkAlgorithm
+            : theme.defaultAlgorithm,
+      }}
+    >
+      <RouterProvider router={router} />
+    </ConfigProvider>
   </React.StrictMode>
 );

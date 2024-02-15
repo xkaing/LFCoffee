@@ -60,7 +60,7 @@ const HomeLayout = () => {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["calendar"]}
+          // defaultSelectedKeys={["calendar"]}
           items={items}
           style={{
             flex: 1,

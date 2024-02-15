@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Result } from "antd";
+import { Result } from "antd";
 import { createFromIconfontCN, GithubOutlined } from "@ant-design/icons";
 const IconFont = createFromIconfontCN({
   scriptUrl: "//at.alicdn.com/t/c/font_4431122_4ra4s891ysd.js",
