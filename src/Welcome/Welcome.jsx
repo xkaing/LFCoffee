@@ -1,8 +1,15 @@
 import React from "react";
-import { Card, Col, Row, Space, Statistic, Typography } from "antd";
+import { Card, Col, Row, Statistic, Typography } from "antd";
+import CountUp from "react-countup";
 import { getCoffeeData } from "../serve";
 import { useLoaderData } from "react-router-dom";
 const { Title } = Typography;
+
+const formatter = (value) => {
+  const start = Math.floor(value / 100) * 100;
+  const decimals = Number.isInteger(value) ? 0 : 2;
+  return <CountUp start={start} end={value} decimals={decimals} />;
+};
 
 export async function loader() {
   const sourceData = await getCoffeeData();
@@ -41,22 +48,38 @@ const Welcome = () => {
       <Row gutter={16}>
         <Col span={3}>
           <Card bordered={false} hoverable size="small">
-            <Statistic title="Income (CNY)" value={totalIncome} precision={2} />
+            <Statistic
+              title="Income (CNY)"
+              value={totalIncome}
+              formatter={formatter}
+            />
           </Card>
         </Col>
         <Col span={3}>
           <Card bordered={false} size="small" hoverable>
-            <Statistic title="Expend (CNY)" value={totalExpend} precision={2} />
+            <Statistic
+              title="Expend (CNY)"
+              value={totalExpend}
+              formatter={formatter}
+            />
           </Card>
         </Col>
         <Col span={3}>
           <Card bordered={false} size="small" hoverable>
-            <Statistic title="Profit (CNY)" value={totalProfit} precision={2} />
+            <Statistic
+              title="Profit (CNY)"
+              value={totalProfit}
+              formatter={formatter}
+            />
           </Card>
         </Col>
         <Col span={3}>
           <Card bordered={false} size="small" hoverable>
-            <Statistic title="Coffee (Cups)" value={totalCups} precision={0} />
+            <Statistic
+              title="Coffee (Cups)"
+              value={totalCups}
+              formatter={formatter}
+            />
           </Card>
         </Col>
         <Col span={3}>
@@ -64,7 +87,7 @@ const Welcome = () => {
             <Statistic
               title="Average (CNY)"
               value={totalAverage}
-              precision={2}
+              formatter={formatter}
             />
           </Card>
         </Col>
