@@ -23,9 +23,9 @@ const items = [
     disabled: false,
   },
   {
-    key: "xk-trophies",
+    key: "xk-trophies-js-demo",
     // label: "Trophy",
-    label: <Link to={`/xk-trophies`}>Trophy</Link>,
+    label: <Link to={`/xk-trophies-js-demo`}>Trophy</Link>,
     disabled: false,
   },
 ];

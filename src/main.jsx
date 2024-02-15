@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         element: <EmptyPage />,
       },
       {
-        path: "/xk-trophies",
+        path: "/xk-trophies-js-demo",
         element: <XKTrophiesShigong />,
       },
     ],
