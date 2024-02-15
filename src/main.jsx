@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./error-page.jsx";
 import EmptyData from "./components/EmptyData";
 import EmptyPage from "./components/EmptyPage.jsx";
+import RoutesIndex from "./Layout/RoutesIndex.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,9 +15,10 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     errorElement: <ErrorPage />,
     children: [
+      { index: true, element: <App /> },
       {
         path: "/welcome",
-        element: <EmptyData />,
+        element: <EmptyPage />,
       },
       {
         path: "/calendar",

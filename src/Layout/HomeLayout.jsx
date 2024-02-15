@@ -18,7 +18,8 @@ const items = [
   },
   {
     key: "chart",
-    label: <Link to={`/chart`}>Chart</Link>,
+    label: "Chart",
+    disabled: true,
   },
 ];
 const HomeLayout = () => {

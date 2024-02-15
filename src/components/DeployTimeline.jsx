@@ -1,0 +1,91 @@
+import React from "react";
+import { ClockCircleOutlined } from "@ant-design/icons";
+import { Timeline, Typography } from "antd";
+const { Text } = Typography;
+const DeployTimeline = () => (
+  <Timeline
+    mode="right"
+    style={{
+      width: 250,
+    }}
+    items={[
+      {
+        label: (
+          <>
+            <p>2024-02-15</p>
+            <Text type="warning">v0.3.0-beta</Text>
+          </>
+        ),
+        color: "orange",
+        children: (
+          <>
+            <p>优化路由和菜单</p>
+            <p>新增部署时间线</p>
+          </>
+        ),
+      },
+      {
+        label: (
+          <>
+            <p>2024-02-14</p>
+            <Text type="warning">v0.2.0-beta</Text>
+          </>
+        ),
+        color: "orange",
+        children: (
+          <>
+            <p>启用新域名</p>
+            <p>add: react-router</p>
+            <p>新增菜单和路由</p>
+            <p>新增空状态组件</p>
+          </>
+        ),
+      },
+      {
+        label: (
+          <>
+            <p>2024-02-06</p>
+            <Text type="danger">v0.1.3-alpha</Text>
+          </>
+        ),
+        color: "red",
+        children: (
+          <>
+            <p>启用Vercel CI/CD</p>
+            <p>更换网站图标</p>
+            <p>添加用户头像</p>
+            <p>新增温度和价位</p>
+          </>
+        ),
+      },
+      {
+        label: (
+          <>
+            <p>2024-02-02</p>
+            <Text type="danger">v0.1.0-alpha</Text>
+          </>
+        ),
+        color: "red",
+        children: (
+          <>
+            <p>关闭暗黑模式</p>
+            <p>完善每日详情</p>
+            <p>添加版号</p>
+          </>
+        ),
+      },
+      {
+        dot: (
+          <ClockCircleOutlined
+            style={{
+              fontSize: "16px",
+            }}
+          />
+        ),
+        label: "2024-01-31",
+        children: <Text>新建文件夹</Text>,
+      },
+    ]}
+  />
+);
+export default DeployTimeline;

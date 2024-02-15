@@ -15,7 +15,7 @@ const EmptyPage = () => (
     title="Under Construction."
     extra={
       <Button type="text" key="console" disabled icon={<GithubOutlined />}>
-        go push
+        GO PUSH
       </Button>
     }
   />
