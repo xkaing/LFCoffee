@@ -6,9 +6,26 @@ const DeployTimeline = () => (
   <Timeline
     mode="right"
     style={{
-      width: 250,
+      width: 270,
     }}
     items={[
+      {
+        label: (
+          <>
+            <p>2024-02-16</p>
+            <Text type="warning">v0.4.0-beta</Text>
+          </>
+        ),
+        color: "orange",
+        children: (
+          <>
+            <p>新增总体统计数据</p>
+            <p>新增隐藏路由</p>
+            <p>新增路由加载器</p>
+            <p>add:react-countup</p>
+          </>
+        ),
+      },
       {
         label: (
           <>

@@ -8,16 +8,15 @@ const IconFont = createFromIconfontCN({
 // icon-shigonggongdi 施工工地
 // icon-source-code 代码
 
-const EmptyPage = () => (
+const XKTrophies = () => {
+  <p>1</p>;
+};
+export default XKTrophies;
+
+export const XKTrophiesShigong = () => (
   <Result
     // status="warning"
-    icon={<IconFont type="icon-shigonggongdi" />}
-    title="Under Construction."
-    extra={
-      <Button type="text" key="console" disabled icon={<GithubOutlined />}>
-        push
-      </Button>
-    }
+    icon={<IconFont type="icon-source-code" />}
+    title="XKTrophies JS Demo"
   />
 );
-export default EmptyPage;

@@ -18,7 +18,14 @@ const items = [
   },
   {
     key: "chart",
-    label: "Chart",
+    // label: "Chart",
+    label: <Link to={`/chart`}>Chart</Link>,
+    disabled: false,
+  },
+  {
+    key: "xk-trophies-js-demo",
+    label: "Trophy",
+    // label: <Link to={`/xk-trophies-js-demo`}>Trophy</Link>,
     disabled: true,
   },
 ];
@@ -53,7 +60,7 @@ const HomeLayout = () => {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["calendar"]}
+          // defaultSelectedKeys={["calendar"]}
           items={items}
           style={{
             flex: 1,
