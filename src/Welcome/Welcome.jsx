@@ -70,6 +70,9 @@ const Welcome = () => {
               title="Profit (CNY)"
               value={totalProfit}
               formatter={formatter}
+              valueStyle={{
+                color: "green",
+              }}
             />
           </Card>
         </Col>

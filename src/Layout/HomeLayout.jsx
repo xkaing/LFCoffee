@@ -23,10 +23,15 @@ const items = [
     disabled: false,
   },
   {
+    key: "person",
+    // label: "Person",
+    label: <Link to={`/person`}>Person</Link>,
+    disabled: false,
+  },
+  {
     key: "xk-trophies-js-demo",
-    label: "Trophy",
-    // label: <Link to={`/xk-trophies-js-demo`}>Trophy</Link>,
-    disabled: true,
+    label: <Link to={`/xk-trophies-js-demo`}>Trophy</Link>,
+    disabled: false,
   },
 ];
 const HomeLayout = () => {
