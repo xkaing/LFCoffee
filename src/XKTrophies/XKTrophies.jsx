@@ -1,9 +1,77 @@
+import React from "react";
+import { Space, Table, Tag } from "antd";
+import { getTrophyData } from "../serve";
+import { useLoaderData } from "react-router-dom";
+
+export async function loader() {
+  const sourceData = await getTrophyData();
+  return { sourceData };
+}
+
 const XKTrophies = () => {
-  return (
-    <div>
-      <h1>XKTrophies</h1>
-    </div>
-  );
+  const { sourceData } = useLoaderData();
+  const dataSource = sourceData.trophies;
+  const reactArrData = dataSource.map((item, index) => {
+    return { ...item, key: index + 1 };
+  });
+  const columns = [
+    {
+      title: "ID",
+      dataIndex: "key",
+      key: "key",
+    },
+    {
+      title: "Buy Date",
+      dataIndex: "buy_date",
+      key: "buy_date",
+    },
+    {
+      title: "Name",
+      dataIndex: "game_name",
+      key: "game_name",
+    },
+    {
+      title: "Source",
+      dataIndex: "buy_source",
+      key: "buy_source",
+    },
+    {
+      title: "Price(¥)",
+      key: "buy_price",
+      dataIndex: "buy_price",
+    },
+    {
+      title: "Platinum Date",
+      key: "play_platinum_date",
+      dataIndex: "play_platinum_date",
+    },
+    {
+      title: "Trophy",
+      key: "game_trophy",
+      dataIndex: "game_trophy",
+    },
+    {
+      title: "Developer",
+      key: "game_developer",
+      dataIndex: "game_developer",
+    },
+    {
+      title: "Publisher",
+      key: "game_publisher",
+      dataIndex: "game_publisher",
+    },
+    {
+      title: "Release Date",
+      key: "game_release_date",
+      dataIndex: "game_release_date",
+    },
+    {
+      title: "time(h)",
+      key: "play_time",
+      dataIndex: "play_time",
+    },
+  ];
+  return <Table columns={columns} dataSource={reactArrData} />;
 };
 
 export default XKTrophies;

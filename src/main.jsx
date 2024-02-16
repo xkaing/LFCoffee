@@ -13,7 +13,9 @@ import Welcome, { loader as welcomeLoader } from "./Welcome/Welcome.jsx"; //Welc
 import CoffeeCalendar from "./Calendar/CoffeeCalendar.jsx"; //日历模块
 import TeamChart from "./Chart/TeamChart.jsx"; //TeamChart模块
 import Person from "./Person/Person.jsx"; //Person模块
-import XKTrophies from "./XKTrophies/XKTrophies.jsx"; //XKTrophies模块
+import XKTrophies, {
+  loader as xkTrophiesLoader,
+} from "./XKTrophies/XKTrophies.jsx"; //XKTrophies模块
 // 全局化配置
 import { ConfigProvider, theme } from "antd";
 import locale from "antd/locale/zh_CN";
@@ -48,6 +50,7 @@ const router = createBrowserRouter([
       {
         path: "/xk-trophies-js-demo",
         element: <XKTrophies />,
+        loader: xkTrophiesLoader,
       },
     ],
   },
