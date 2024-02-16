@@ -3,8 +3,11 @@ import { Card, Col, Row, Statistic, Typography } from "antd";
 import CountUp from "react-countup";
 import { getCoffeeData } from "../serve";
 import { useLoaderData } from "react-router-dom";
-const { Title } = Typography;
+import ChartColumnAllCups from "./ChartColumnTeamCups";
+import PlotsPieTeamCups from "../Chart/PlotsPieTeamCups";
+import ChartWordCloudTeamCups from "./ChartWordCloudTeamCups";
 
+const { Title } = Typography;
 const formatter = (value) => {
   const start = Math.floor(value / 100) * 100;
   const decimals = Number.isInteger(value) ? 0 : 2;
@@ -23,6 +26,7 @@ const Welcome = () => {
   let totalProfit = 0; //总利润
   let totalAverage = 0; //总平均价格
   let totalCupsArray = []; //所有杯详情
+  let totalNameCounts = {}; //所有名字数量
 
   sourceData.forEach((item) => {
     if (item.income && item.expend) {
@@ -37,13 +41,30 @@ const Welcome = () => {
   });
   totalProfit = totalIncome - totalExpend;
   totalAverage = totalExpend / totalCupsArray.length;
-  //   {
-  //     "drinker": "android-2",
-  //     "name": "碧螺知春拿铁",
-  //     "temperature": 0,
-  //     "price": 13.89,
-  //     "original_price": 32
-  // },
+
+  // 统计所有咖啡的数量
+  totalCupsArray.forEach((drink) => {
+    if (totalNameCounts[drink.name]) {
+      totalNameCounts[drink.name]++;
+    } else {
+      totalNameCounts[drink.name] = 1;
+    }
+  });
+  // 对象转数组
+  const nameCountsArray = Object.entries(totalNameCounts).map(
+    ([name, count]) => ({
+      name,
+      count,
+    })
+  );
+  const typeValueArray = Object.entries(totalNameCounts).map(
+    ([type, value]) => ({
+      type,
+      value,
+    })
+  );
+
+  nameCountsArray.sort((a, b) => a.count - b.count); //数组升序排序
   return (
     <>
       <Title
@@ -104,6 +125,26 @@ const Welcome = () => {
           </Card>
         </Col>
       </Row>
+      <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={24}>
+          <ChartColumnAllCups arr={nameCountsArray} />
+        </Col>
+      </Row>
+      {/* <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={24}>
+          <ChartWordCloudTeamCups arr={nameCountsArray} />
+        </Col>
+      </Row> */}
     </>
   );
 };

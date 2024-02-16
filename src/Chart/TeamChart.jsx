@@ -1,3 +1,5 @@
+import { Card, Col, Row, Statistic, Typography } from "antd";
+
 const TeamChart = () => {
   return (
     <div>
