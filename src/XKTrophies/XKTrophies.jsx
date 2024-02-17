@@ -2,6 +2,7 @@ import React from "react";
 import { Space, Table, Tag } from "antd";
 import { getTrophyData } from "../serve";
 import { useLoaderData } from "react-router-dom";
+import YearColorTag from "./YearColorTag";
 
 export async function loader() {
   const sourceData = await getTrophyData();
@@ -24,6 +25,7 @@ const XKTrophies = () => {
       title: "Buy Date",
       dataIndex: "buy_date",
       key: "buy_date",
+      render: (buy_date) => <YearColorTag date={buy_date} />,
     },
     {
       title: "Name",
