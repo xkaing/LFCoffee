@@ -32,7 +32,7 @@
       "buy_source": "Physical Disc",
       "buy_price": 385,
       "play_platinum_date": "2024-01-27",
-      "game_trophy": 76,
+      "game_trophy": 100,
       "game_developer": "Square Enix",
       "game_publisher": "Square Enix",
       "game_release_date": "2023-06-22",
@@ -51,19 +51,6 @@
       "game_release_date": "2022-10-18",
       "play_time": 30,
       "game_ing": 8
-     },
-     {
-      "buy_date": "2023-10-08",
-      "game_name": "Call of Duty: Modern Warfare 3",
-      "buy_source": "Physical Disc",
-      "buy_price": 440,
-      "play_platinum_date": "-",
-      "game_trophy": "-",
-      "game_developer": "Sledgehammer",
-      "game_publisher": "Activision",
-      "game_release_date": "2023-11-10",
-      "play_time": "-",
-      "game_ing": 0
      },
      {
       "buy_date": "2023-10-08",
@@ -245,7 +232,22 @@
       "game_publisher": "Activision",
       "game_release_date": "2022-10-28",
       "play_time": 47,
-      "game_ing": 8
+      "game_ing": 8,
+      "game_dlc": [
+        {
+            "buy_date": "2023-10-08",
+            "game_name": "Call of Duty: Modern Warfare 3",
+            "buy_source": "Physical Disc",
+            "buy_price": 440,
+            "play_platinum_date": "-",
+            "game_trophy": "-",
+            "game_developer": "Sledgehammer",
+            "game_publisher": "Activision",
+            "game_release_date": "2023-11-10",
+            "play_time": "-",
+            "game_ing": 0
+        }
+      ]
      },
      {
       "buy_date": "2022-10-22",

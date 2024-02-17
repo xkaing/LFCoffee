@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { Tag } from "antd";
 
 const YearColorTag = ({ date }) => {
@@ -18,11 +18,31 @@ const YearColorTag = ({ date }) => {
     case "2021":
       dateColor = "#636C6F";
       break;
+    case "2020":
+      dateColor = "#1A4876";
+      break;
+    case "2019":
+      dateColor = "#FF6F51";
+      break;
+    case "2018":
+      dateColor = "#6A0DAD";
+      break;
+    case "2017":
+      dateColor = "#7BC043";
+      break;
+    case "2016":
+      dateColor = "#607D8B";
+      break;
+    case "2015":
+      dateColor = "#994D43";
+      break;
     default:
       break;
   }
 
-  return <Tag color={dateColor}>{date}</Tag>;
+  return dateColor ? <Tag color={dateColor}>{date}</Tag> : null;
+
+  //   return <Tag color={dateColor}>{date}</Tag>;
 };
 
 export default YearColorTag;
