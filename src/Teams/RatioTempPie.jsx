@@ -11,12 +11,14 @@ const RatioTempPie = ({ data }) => {
       style: {
         fontWeight: "bold",
       },
+      fontSize: 14,
     },
     legend: {
       color: {
         title: false,
         position: "top",
         rowPadding: 5,
+        itemLabelFontSize: 14,
       },
     },
   };
