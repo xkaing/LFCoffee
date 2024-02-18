@@ -3,6 +3,7 @@ import { Card, Col, Row, Statistic, Typography } from "antd";
 import CountUp from "react-countup";
 import { getCoffeeData } from "../serve";
 import { useLoaderData } from "react-router-dom";
+
 const { Title } = Typography;
 
 const formatter = (value) => {
@@ -21,8 +22,8 @@ const Welcome = () => {
   let totalIncome = 0; //总收入
   let totalExpend = 0; //总支出
   let totalProfit = 0; //总利润
-  let totalCups = 0; // 总杯数
   let totalAverage = 0; //总平均价格
+  let totalCupsArray = []; //所有杯详情
 
   sourceData.forEach((item) => {
     if (item.income && item.expend) {
@@ -30,11 +31,14 @@ const Welcome = () => {
       totalExpend += item.expend;
     }
     if (item.drinker_list) {
-      totalCups += item.drinker_list.length;
+      item.drinker_list.forEach((item) => {
+        totalCupsArray.push(item);
+      });
     }
   });
   totalProfit = totalIncome - totalExpend;
-  totalAverage = totalExpend / totalCups;
+  totalAverage = totalExpend / totalCupsArray.length;
+
   return (
     <>
       <Title
@@ -70,6 +74,9 @@ const Welcome = () => {
               title="Profit (CNY)"
               value={totalProfit}
               formatter={formatter}
+              valueStyle={{
+                color: "green",
+              }}
             />
           </Card>
         </Col>
@@ -77,7 +84,7 @@ const Welcome = () => {
           <Card bordered={false} size="small" hoverable>
             <Statistic
               title="Coffee (Cups)"
-              value={totalCups}
+              value={totalCupsArray.length}
               formatter={formatter}
             />
           </Card>

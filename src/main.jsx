@@ -7,11 +7,16 @@ import HomeLayout from "./Layout/HomeLayout.jsx"; // 菜单布局
 
 import ErrorPage from "./Layout/ErrorPage.jsx"; //路由错误页
 import RoutesIndex from "./Layout/RoutesIndex.jsx"; //路由根页面
-import EmptyPage from "./components/EmptyPage.jsx"; //空页面
+import EmptyPage from "./Layout/EmptyPage.jsx"; //空页面
 
 import Welcome, { loader as welcomeLoader } from "./Welcome/Welcome.jsx"; //Welcome模块
-import XKTrophies, { XKTrophiesShigong } from "./XKTrophies/XKTrophies.jsx"; //XKTrophies模块
 import CoffeeCalendar from "./Calendar/CoffeeCalendar.jsx"; //日历模块
+import Teams, { loader as teamsLoader } from "./Teams/Teams.jsx"; //团队模块
+import Person from "./Person/Person.jsx"; //个人模块
+import XKTrophies, {
+  loader as xkTrophiesLoader,
+} from "./XKTrophies/XKTrophies.jsx"; //XKTrophies模块
+
 // 全局化配置
 import { ConfigProvider, theme } from "antd";
 import locale from "antd/locale/zh_CN";
@@ -36,12 +41,18 @@ const router = createBrowserRouter([
         element: <CoffeeCalendar />,
       },
       {
-        path: "/chart",
+        path: "/teams",
+        element: <Teams />,
+        loader: teamsLoader,
+      },
+      {
+        path: "/person",
         element: <EmptyPage />,
       },
       {
-        path: "/xk-trophies-js-demo",
-        element: <EmptyPage />,
+        path: "/psn",
+        element: <XKTrophies />,
+        loader: xkTrophiesLoader,
       },
     ],
   },

@@ -10,11 +10,19 @@ const IconFont = createFromIconfontCN({
 
 const EmptyPage = () => (
   <Result
-    // status="warning"
-    icon={<IconFont type="icon-shigonggongdi" />}
+    status="warning"
+    // icon={<IconFont type="icon-shigonggongdi" />}
     title="Under Construction."
     extra={
-      <Button type="text" key="console" disabled icon={<GithubOutlined />}>
+      <Button
+        type="text"
+        disabled
+        size="large"
+        icon={<GithubOutlined />}
+        style={{
+          color: "purple",
+        }}
+      >
         push
       </Button>
     }

@@ -17,17 +17,22 @@ const items = [
     label: <Link to={`/calendar`}>Calendar</Link>,
   },
   {
-    key: "chart",
+    key: "teams",
     // label: "Chart",
-    label: <Link to={`/chart`}>Chart</Link>,
+    label: <Link to={`/teams`}>Teams</Link>,
     disabled: false,
   },
   {
-    key: "xk-trophies-js-demo",
-    label: "Trophy",
-    // label: <Link to={`/xk-trophies-js-demo`}>Trophy</Link>,
-    disabled: true,
+    key: "person",
+    // label: "Person",
+    label: <Link to={`/person`}>Person</Link>,
+    disabled: false,
   },
+  // {
+  //   key: "xk-trophies-js-demo",
+  //   label: <Link to={`/xk-trophies-js-demo`}>Trophy</Link>,
+  //   disabled: false,
+  // },
 ];
 const HomeLayout = () => {
   const {
