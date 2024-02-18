@@ -3,6 +3,7 @@ import { Card, Col, Row, Statistic, Typography } from "antd";
 import CountUp from "react-countup";
 import { getCoffeeData } from "../serve";
 import { useLoaderData } from "react-router-dom";
+import AllCoffeeWordCloud from "../Teams/AllCoffeeWordCloud";
 
 const { Title } = Typography;
 
@@ -24,6 +25,7 @@ const Welcome = () => {
   let totalProfit = 0; //总利润
   let totalAverage = 0; //总平均价格
   let totalCupsArray = []; //所有杯详情
+  let topCups = {}; //最常喝的咖啡
 
   sourceData.forEach((item) => {
     if (item.income && item.expend) {
@@ -38,7 +40,19 @@ const Welcome = () => {
   });
   totalProfit = totalIncome - totalExpend;
   totalAverage = totalExpend / totalCupsArray.length;
-
+  // 遍历出top数据
+  totalCupsArray.forEach((drink) => {
+    // 喝的最多的咖啡
+    if (topCups[drink.name]) {
+      topCups[drink.name]++;
+    } else {
+      topCups[drink.name] = 1;
+    }
+  });
+  const topCupsArr = Object.entries(topCups).map(([name, value]) => ({
+    name,
+    value,
+  }));
   return (
     <>
       <Title
@@ -99,6 +113,16 @@ const Welcome = () => {
           </Card>
         </Col>
       </Row>
+      {/* <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={24}>
+          <AllCoffeeWordCloud data={topCupsArr} />
+        </Col>
+      </Row> */}
     </>
   );
 };

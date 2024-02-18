@@ -6,7 +6,6 @@ import TopCupsColumn from "./TopCupsColumn";
 import TopDrinkerBar from "./TopDrinkerBar";
 import RatioPricePie from "./RatioPricePie";
 import RatioTempPie from "./RatioTempPie";
-import AllCoffeeWordCloud from "./AllCoffeeWordCloud";
 
 const { Title } = Typography;
 
@@ -73,10 +72,6 @@ const Welcome = () => {
     name,
     count,
   }));
-  const topCupsArr2 = Object.entries(topCups).map(([name, value]) => ({
-    name,
-    value,
-  }));
   const topDrinkerArr = Object.entries(topDrinker).map(([drinker, count]) => ({
     drinker,
     count,
@@ -136,16 +131,6 @@ const Welcome = () => {
           <RatioPricePie arr={ratioPriceArr} />
         </Col>
       </Row>
-      {/* <Row
-        gutter={16}
-        style={{
-          marginTop: 24,
-        }}
-      >
-        <Col span={24}>
-          <AllCoffeeWordCloud data={topCupsArr2} />
-        </Col>
-      </Row> */}
     </>
   );
 };
