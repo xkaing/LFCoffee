@@ -1,5 +1,56 @@
 [
     {
+        "date": "2024-02-19",
+        "week":"周一",
+        "payer": "ios-3",
+        "income": 75,
+        "expend": 74.08,
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "抹茶好喝椰",
+                "temperature": 0,
+                "price": 14.56,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-3",
+                "name": "美式",
+                "temperature": 0,
+                "price": 5.92,
+                "original_price": 23
+            },
+            {
+                "drinker": "ios-1",
+                "name": "绿宝石美式",
+                "temperature": 1,
+                "price": 9.9,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-2",
+                "name": "珞珈樱花拿铁",
+                "temperature": 0,
+                "price": 14.56,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-3",
+                "name": "樱花小铁",
+                "temperature": 0,
+                "price": 14.56,
+                "original_price": 32
+            },
+            {
+                "drinker": "fe-1",
+                "name": "珞珈樱花拿铁",
+                "temperature": 0,
+                "price": 14.56,
+                "original_price": 32
+            }
+        ]
+    },
+    {
         "date": "2024-02-07",
         "week":"周三",
         "payer": "ios-2",
