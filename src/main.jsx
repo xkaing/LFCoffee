@@ -47,10 +47,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/person",
-        element: <EmptyPage />,
+        element: <Person />,
       },
       {
-        path: "/psn",
+        path: "/xk-trophies-js-demo",
         element: <XKTrophies />,
         loader: xkTrophiesLoader,
       },

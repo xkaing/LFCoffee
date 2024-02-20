@@ -6,6 +6,8 @@ import TopCupsColumn from "./TopCupsColumn";
 import TopDrinkerBar from "./TopDrinkerBar";
 import RatioPricePie from "./RatioPricePie";
 import RatioTempPie from "./RatioTempPie";
+import TopProfitLine from "./TopProfitLine";
+import TopAverageLine from "./TopAverageLine";
 
 const { Title } = Typography;
 
@@ -30,13 +32,20 @@ const Welcome = () => {
   let topDrinker = {}; //最常购买者
   let ratioTemp = {}; //温度占比
   let ratioPrice = {}; //价位占比
+  let topProfit = {}; //利润曲线
+  let topAverage = {}; //平均价格曲线
+  let lineDatePrice = []; //日期价格曲线
 
   //遍历出所有咖啡
   sourceData.forEach((item) => {
+    if (item.income && item.expend) {
+      topProfit[item.date] = item.income - item.expend;
+    }
     if (item.drinker_list) {
       item.drinker_list.forEach((item) => {
         totalCupsArray.push(item);
       });
+      topAverage[item.date] = item.expend / item.drinker_list.length;
     }
   });
 
@@ -84,9 +93,22 @@ const Welcome = () => {
     name: priceMapping[key],
     count,
   }));
+  const topProfitArr = Object.entries(topProfit).map(([date, value]) => ({
+    date: date.substring(5),
+    value: parseFloat(value.toFixed(2)),
+  }));
+  const topAverageArr = Object.entries(topAverage).map(([date, value]) => ({
+    date: date.substring(5),
+    value: parseFloat(value.toFixed(2)),
+  }));
+
   topCupsArr.sort((a, b) => a.count - b.count); //升序
   topDrinkerArr.sort((a, b) => b.count - a.count); //降序
+  topProfitArr.reverse(); //倒序
+  topAverageArr.reverse();
 
+  console.log(topProfitArr);
+  console.log(topAverageArr);
   return (
     <>
       <Title
@@ -129,6 +151,27 @@ const Welcome = () => {
         </Col>
         <Col span={12}>
           <RatioPricePie arr={ratioPriceArr} />
+        </Col>
+      </Row>
+      <Title
+        level={3}
+        style={{
+          marginTop: 12,
+        }}
+      >
+        Price Data
+      </Title>
+      <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={12}>
+          <TopProfitLine data={topProfitArr} />
+        </Col>
+        <Col span={12}>
+          <TopAverageLine data={topAverageArr} />
         </Col>
       </Row>
     </>
