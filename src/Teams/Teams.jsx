@@ -107,8 +107,6 @@ const Welcome = () => {
   topProfitArr.reverse(); //倒序
   topAverageArr.reverse();
 
-  console.log(topProfitArr);
-  console.log(topAverageArr);
   return (
     <>
       <Title

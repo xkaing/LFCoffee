@@ -113,7 +113,7 @@ const Welcome = () => {
           </Card>
         </Col>
       </Row>
-      {/* <Row
+      <Row
         gutter={16}
         style={{
           marginTop: 24,
@@ -122,7 +122,7 @@ const Welcome = () => {
         <Col span={24}>
           <AllCoffeeWordCloud data={topCupsArr} />
         </Col>
-      </Row> */}
+      </Row>
     </>
   );
 };
