@@ -6,7 +6,7 @@ import TopCupsColumn from "./TopCupsColumn";
 import TopDrinkerBar from "./TopDrinkerBar";
 import RatioPricePie from "./RatioPricePie";
 import RatioTempPie from "./RatioTempPie";
-import TopProfitLine from "./TopProfitLine";
+import TopProfit from "./TopProfit";
 import TopAverageLine from "./TopAverageLine";
 
 const { Title } = Typography;
@@ -166,7 +166,7 @@ const Welcome = () => {
         }}
       >
         <Col span={12}>
-          <TopProfitLine data={topProfitArr} />
+          <TopProfit data={topProfitArr} />
         </Col>
         <Col span={12}>
           <TopAverageLine data={topAverageArr} />
