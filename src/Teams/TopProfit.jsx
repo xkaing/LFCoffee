@@ -6,6 +6,14 @@ const TopProfit = ({ data }) => {
     data,
     xField: "date",
     yField: "value",
+    style: {
+      fill: ({ date }) => {
+        if (date === "02-02") {
+          return "#f5222d";
+        }
+        return "#2989FF";
+      },
+    },
     scale: {
       y: {
         domainMax: 6,
@@ -13,13 +21,16 @@ const TopProfit = ({ data }) => {
       },
     },
     label: {
-      text: (d) => `${d.value}`,
+      text: "value",
       textBaseline: (d) => {
         if (d.value > 0) {
           return "bottom";
         } else {
           return "top";
         }
+      },
+      style: {
+        fill: (d) => (+d.value > 0 ? "#000" : "#fff"),
       },
     },
   };

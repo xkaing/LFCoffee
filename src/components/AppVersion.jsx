@@ -3,7 +3,7 @@ import { CodeOutlined } from "@ant-design/icons";
 import DeployTimeline from "./DeployTimeline";
 const { Text } = Typography;
 
-const appVerNum = "v0.6.2-beta";
+const appVerNum = "v0.7.0-beta";
 
 const AppVersion = () => {
   return (
