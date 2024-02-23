@@ -3,6 +3,7 @@ import { Calendar } from "antd";
 import axios from "axios";
 import DayRender from "./DayRender";
 import DayDetail from "./DayDetail";
+import { markBecomeName } from "../tools";
 
 const defaultData = [{ date: "2024-02-01", payer: "fe" }];
 
@@ -16,7 +17,7 @@ const CoffeeCalendar = () => {
     const getCoffeeData = async () => {
       try {
         const response = await axios.get("/coffee.json");
-        setCoffeeData(response.data);
+        setCoffeeData(markBecomeName(response.data));
       } catch (error) {
         console.error("Error fetching coffee data:", error);
       }

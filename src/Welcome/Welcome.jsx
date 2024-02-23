@@ -5,6 +5,8 @@ import { getCoffeeData } from "../serve";
 import { useLoaderData } from "react-router-dom";
 import TopPresonProfit from "../Teams/TopPresonProfit";
 import AllCoffeeWordCloud from "../Teams/AllCoffeeWordCloud";
+import TopPersonIncome from "../Teams/TopPersonIncome";
+import { markBecomeName } from "../tools";
 
 const { Title } = Typography;
 
@@ -32,12 +34,29 @@ const Welcome = () => {
   let totalCupsArray = []; //所有杯详情
   let topCups = {}; //最常喝的咖啡
   let topPersonProfit = {}; // 团队每人产生的利润
+  let topPersonIncome = {};
+  let topPersonExpend = {};
 
-  sourceData.forEach((item) => {
+  const sourceArr = markBecomeName(sourceData);
+
+  sourceArr.forEach((item) => {
     if (item.income && item.expend) {
       totalIncome += item.income;
       totalExpend += item.expend;
 
+      // 收入
+      if (topPersonIncome[item.payer]) {
+        topPersonIncome[item.payer].push(item.income);
+      } else {
+        topPersonIncome[item.payer] = [item.income];
+      }
+      // 支出
+      if (topPersonExpend[item.payer]) {
+        topPersonExpend[item.payer].push(item.expend);
+      } else {
+        topPersonExpend[item.payer] = [item.expend];
+      }
+      // 利润
       if (topPersonProfit[item.payer]) {
         topPersonProfit[item.payer].push(toInt(item.income - item.expend));
       } else {
@@ -67,14 +86,33 @@ const Welcome = () => {
     name,
     value,
   }));
-  const topPersonProfitArr = Object.entries(topPersonProfit).map(
+  const topPersonIncomeArr = Object.entries(topPersonIncome).map(
     ([name, value]) => ({
       name,
       value: toInt(value.reduce((a, b) => a + b, 0)),
     })
   );
+  const topPersonExpendArr = Object.entries(topPersonExpend).map(
+    ([name, value]) => ({
+      name,
+      value: toInt(value.reduce((a, b) => a + b, 0)),
+      category: "支出",
+    })
+  );
+  const topPersonProfitArr = Object.entries(topPersonProfit).map(
+    ([name, value]) => ({
+      name,
+      value: toInt(value.reduce((a, b) => a + b, 0)),
+      category: "小费",
+    })
+  );
+
+  topPersonIncomeArr.sort((a, b) => b.value - a.value); //降序
+  topPersonExpendArr.sort((a, b) => b.value - a.value); //降序
   topPersonProfitArr.sort((a, b) => b.value - a.value); //降序
   // console.log(topPersonProfitArr);
+
+  const topPersonMoneyArr = topPersonExpendArr.concat(topPersonProfitArr);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -108,7 +146,7 @@ const Welcome = () => {
           </Card>
         </Col>
         <Col span={3}>
-          <Card bordered={false} size="small" hoverable>
+          <Card bordered={false} size="small" hoverable onClick={showModal}>
             <Statistic
               title="Expend (CNY)"
               value={totalExpend}
@@ -148,13 +186,14 @@ const Welcome = () => {
         </Col>
       </Row>
       <Modal
-        title="TopPresonProfit"
+        title="TopPresonIncome"
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
         footer={null}
       >
-        <TopPresonProfit data={topPersonProfitArr} />
+        {/* <TopPresonProfit data={topPersonProfitArr} /> */}
+        <TopPersonIncome data={topPersonMoneyArr} />
       </Modal>
       <Row
         gutter={16}
