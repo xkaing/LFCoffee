@@ -33,6 +33,15 @@ const TopProfit = ({ data }) => {
         fill: (d) => (+d.value > 0 ? "#000" : "#fff"),
       },
     },
+    axis: {
+      y: { labelFormatter: "~s" },
+      x: {
+        labelSpacing: 4,
+        style: {
+          labelTransform: "rotate(45)",
+        },
+      },
+    },
   };
   return <Column {...config} />;
 };

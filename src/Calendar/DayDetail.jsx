@@ -38,7 +38,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
     sum = sum.toFixed(2);
     // 校验订单总价和支出
     if (sum != itemData.expend) {
-      console.warn("订单总价：" + sum + " 支出：" + itemData.expend);
+      console.log("计算出的订单总价：" + sum + "实际支出：" + itemData.expend);
     }
     // 平均
     averagePrice = sum / itemData.drinker_list.length;
@@ -272,34 +272,24 @@ const TempDictComponent = ({ tempDict }) => {
   );
 };
 
+const avatarUrls2 = {
+  "android-1": Android1Url,
+  "android-2": Android2Url,
+  "android-3": Android3Url,
+  "ios-1": IOS1Url,
+  "ios-2": IOS2Url,
+  "ios-3": IOS3Url,
+  "fe-1": Fe1Url,
+  姜振: Android1Url,
+  刘磊: Android2Url,
+  李泽晋: Android3Url,
+  汪潇翔: IOS1Url,
+  周洋: IOS2Url,
+  曹海洋: IOS3Url,
+  汪潇凯: Fe1Url,
+};
 const AvatarDrinker = ({ drinker }) => {
-  let url = "";
-  switch (drinker) {
-    case "android-1":
-      url = Android1Url;
-      break;
-    case "android-2":
-      url = Android2Url;
-      break;
-    case "android-3":
-      url = Android3Url;
-      break;
-    case "ios-1":
-      url = IOS1Url;
-      break;
-    case "ios-2":
-      url = IOS2Url;
-      break;
-    case "ios-3":
-      url = IOS3Url;
-      break;
-    case "fe-1":
-      url = Fe1Url;
-      break;
-    default:
-      break;
-  }
-
+  let url = avatarUrls2[drinker] || "";
   return <Avatar size="large" shape="square" src={url} />;
 };
 

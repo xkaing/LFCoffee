@@ -6,6 +6,15 @@ const TopCupsColumn = (data) => {
     xField: "name",
     yField: "count",
     colorField: "count",
+    axis: {
+      y: { labelFormatter: "~s" },
+      x: {
+        labelSpacing: 4,
+        style: {
+          labelTransform: "rotate(45)",
+        },
+      },
+    },
   };
   return <Column {...config} />;
 };
