@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css"; //全局样式
@@ -23,6 +24,8 @@ import locale from "antd/locale/zh_CN";
 import dayjs from "dayjs";
 import "dayjs/locale/zh-cn";
 dayjs.locale("zh-cn");
+// 全局数据
+import { CoffeeDataContextProvider } from "./contexts/CoffeeDataContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -77,7 +80,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             : theme.defaultAlgorithm,
       }}
     >
-      <RouterProvider router={router} />
+      <CoffeeDataContextProvider>
+        <RouterProvider router={router} />
+      </CoffeeDataContextProvider>
     </ConfigProvider>
   </React.StrictMode>
 );
