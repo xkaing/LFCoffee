@@ -67,9 +67,14 @@ const addRealNameAndUrlInObject = (item) => {
       item.payer_name = mapKeyName[item.payer] || item.payer;
     }
   } else if (typeof item === "object" && item !== null) {
-    // 处理第二层，因为不包含数组
-    item.drinker_name = mapKeyName[item.drinker] || item.drinker;
-    item.drinker_url = mapKeyAvatarUrl[item.drinker] || item.drinker;
+    if ("payer" in item) {
+      // 特殊情况-登记购买人，但是没有购买信息
+      item.payer_name = mapKeyName[item.payer] || item.payer;
+    } else {
+      // 处理第二层，因为不包含数组
+      item.drinker_name = mapKeyName[item.drinker] || item.drinker;
+      item.drinker_url = mapKeyAvatarUrl[item.drinker] || item.drinker;
+    }
   }
   return item;
 };

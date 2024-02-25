@@ -50,10 +50,9 @@ const processData = (data) => {
     let average = 0; //每天平均价格
 
     if (item.income && item.expend) {
-      // totalIncome += item.income; //计算-总收入
-      totalIncome = totalIncome.plus(item.income);
+      totalIncome = totalIncome.plus(item.income); //计算-总收入
       totalExpend = totalExpend.plus(item.expend); //计算-总支出
-      profit = item.income - item.expend; //计算-每天利润
+      profit = Decimal.sub(item.income, item.expend).toNumber(); //计算-每天利润
 
       //计算-每个人每次的咖啡支出
       if (personExpend[item.payer_name]) {
@@ -70,7 +69,9 @@ const processData = (data) => {
     }
 
     if (item.drinker_list) {
-      average = item.expend / item.drinker_list.length; //计算-每天的平均价格
+      average = Decimal.div(item.expend, item.drinker_list.length)
+        .toDP(3)
+        .toNumber(); //计算-每天的平均价格
       item.drinker_list.forEach((val) => {
         totalCupsArray.push(val); //所有杯详情
         // 计算-每个人喝的咖啡数量
@@ -101,7 +102,7 @@ const processData = (data) => {
 
   const totalProfit = totalIncome.sub(totalExpend).toNumber(); //计算-总利润
   const totalCupsNum = totalCupsArray.length; //总咖啡数量
-  const totalAverage = totalExpend.div(totalCupsNum).toNumber(); //计算-总平均价格
+  const totalAverage = totalExpend.div(totalCupsNum).toDP(3).toNumber(); //计算-总平均价格
 
   // 总体数据
   const totalInfo = {
