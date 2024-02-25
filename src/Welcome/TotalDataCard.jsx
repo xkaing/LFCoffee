@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Card, Col, Row, Statistic, Modal, Typography } from "antd";
 import CountUp from "react-countup";
-import { CoffeeDataContext } from "../contexts/CoffeeDataContext";
+import { TotalInfoContext } from "../contexts/CoffeeDataContext";
 import PersonIncome from "../Charts/PersonIncome";
 
 const { Title } = Typography;
@@ -14,10 +14,13 @@ const formatter = (value) => {
 };
 
 const TotalDataCard = () => {
-  const coffeeData = useContext(CoffeeDataContext);
-  const totalInfo = coffeeData.totalInfo;
-
+  const totalInfo = useContext(TotalInfoContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  if (!totalInfo) {
+    return <div>Loading...</div>;
+  }
+
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -27,6 +30,7 @@ const TotalDataCard = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
   return (
     <>
       <Title

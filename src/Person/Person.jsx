@@ -5,8 +5,6 @@ import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Flex, Segmented } from "antd";
 
 const Person = () => {
-  const coffeeData = useContext(CoffeeDataContext);
-  console.log(coffeeData);
   return (
     <div>
       <PersonSegmented />

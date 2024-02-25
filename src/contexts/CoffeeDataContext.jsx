@@ -4,21 +4,46 @@ import { useEffect, useState } from "react";
 import { addRealNameAndUrl } from "../tools";
 import Decimal from "decimal.js";
 
+// 全部数据
 export const CoffeeDataContext = createContext();
+// 总体数据
+export const TotalInfoContext = createContext();
+// 咖啡数据
+export const CupsDataContext = createContext();
+// 人物数据
+export const PersonDataContext = createContext();
+// 时间数据
+export const DateDataContext = createContext();
 
 export const CoffeeDataContextProvider = ({ children }) => {
   const [coffeeData, setCoffeeData] = useState();
+  const [totalInfo, setTotalInfo] = useState();
+  const [cupsData, setCupsData] = useState();
+  const [personData, setPersonData] = useState();
+  const [dateData, setDateData] = useState();
 
   useEffect(() => {
     getCoffeeData().then((data) => {
       const newData = processData(data);
       setCoffeeData(newData);
+      setTotalInfo(newData.totalInfo);
+      setCupsData(newData.coffeeData);
+      setPersonData(newData.personData);
+      setDateData(newData.dateDataArr);
     });
   }, []);
 
   return (
     <CoffeeDataContext.Provider value={coffeeData}>
-      {children}
+      <TotalInfoContext.Provider value={totalInfo}>
+        <CupsDataContext.Provider value={cupsData}>
+          <PersonDataContext.Provider value={personData}>
+            <DateDataContext.Provider value={dateData}>
+              {children}
+            </DateDataContext.Provider>
+          </PersonDataContext.Provider>
+        </CupsDataContext.Provider>
+      </TotalInfoContext.Provider>
     </CoffeeDataContext.Provider>
   );
 };
