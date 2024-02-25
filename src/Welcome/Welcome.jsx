@@ -195,7 +195,7 @@ const Welcome = () => {
         {/* <TopPresonProfit data={topPersonProfitArr} /> */}
         <TopPersonIncome data={topPersonMoneyArr} />
       </Modal>
-      <Row
+      {/* <Row
         gutter={16}
         style={{
           marginTop: 24,
@@ -204,7 +204,7 @@ const Welcome = () => {
         <Col span={22}>
           <AllCoffeeWordCloud data={topCupsArr} />
         </Col>
-      </Row>
+      </Row> */}
     </>
   );
 };

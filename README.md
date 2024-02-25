@@ -12,6 +12,7 @@
 ![Static Badge](https://img.shields.io/badge/axios-1.6.7-blue)
 ![Static Badge](https://img.shields.io/badge/dayjs-1.11.10-blue)
 ![Static Badge](https://img.shields.io/badge/react--countup-6.5.0-blue)
+![Static Badge](https://img.shields.io/badge/decimal.js-10.4.3-blue)
 
 ![Static Badge](https://img.shields.io/badge/vercel-8A2BE2)
 

@@ -1,7 +1,8 @@
 import { createContext } from "react";
 import { getCoffeeData } from "../serve";
 import { useEffect, useState } from "react";
-import { addRealName } from "../tools";
+import { addRealNameAndUrl } from "../tools";
+import Decimal from "decimal.js";
 
 export const CoffeeDataContext = createContext();
 
@@ -25,10 +26,10 @@ export const CoffeeDataContextProvider = ({ children }) => {
 // 数据处理
 const processData = (data) => {
   // 添加真实姓名
-  const nDataArr = addRealName(data);
+  const nDataArr = addRealNameAndUrl(data);
 
-  let totalIncome = 0; //总收入
-  let totalExpend = 0; //总支出
+  let totalIncome = new Decimal(0); //总收入
+  let totalExpend = new Decimal(0); //总支出
   let totalCupsArray = []; //所有杯详情
 
   // chart数据处理
@@ -49,8 +50,9 @@ const processData = (data) => {
     let average = 0; //每天平均价格
 
     if (item.income && item.expend) {
-      totalIncome += item.income; //计算-总收入
-      totalExpend += item.expend; //计算-总支出
+      // totalIncome += item.income; //计算-总收入
+      totalIncome = totalIncome.plus(item.income);
+      totalExpend = totalExpend.plus(item.expend); //计算-总支出
       profit = item.income - item.expend; //计算-每天利润
 
       //计算-每个人每次的咖啡支出
@@ -97,14 +99,14 @@ const processData = (data) => {
     });
   });
 
-  const totalProfit = totalIncome - totalExpend; //计算-总利润
+  const totalProfit = totalIncome.sub(totalExpend).toNumber(); //计算-总利润
   const totalCupsNum = totalCupsArray.length; //总咖啡数量
-  const totalAverage = totalExpend / totalCupsNum; //计算-总平均价格
+  const totalAverage = totalExpend.div(totalCupsNum).toNumber(); //计算-总平均价格
 
   // 总体数据
   const totalInfo = {
-    totalIncome,
-    totalExpend,
+    totalIncome: totalIncome.toNumber(),
+    totalExpend: totalExpend.toNumber(),
     totalProfit,
     totalCupsNum,
     totalAverage,

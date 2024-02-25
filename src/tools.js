@@ -24,7 +24,7 @@ const mapKeyAvatarUrl = {
   "ios-3": i3,
   "fe-1": f1,
 };
-
+// v1
 const mapPayerInObject = (item) => {
   if (
     typeof item === "object" &&
@@ -54,32 +54,26 @@ export const markBecomeName = (sData) => {
   return nData;
 };
 
-const addRealNameInObject = (item) => {
+// v2
+const addRealNameAndUrlInObject = (item) => {
   if (
     typeof item === "object" &&
     item !== null &&
     Array.isArray(item.drinker_list)
   ) {
-    // 处理数组
-    item.drinker_list = item.drinker_list.map(addRealNameInObject); // 递归遍历数组
+    // 处理第一层，因为包含数组
+    item.drinker_list = item.drinker_list.map(addRealNameAndUrlInObject); // 递归遍历数组
     if ("payer" in item) {
       item.payer_name = mapKeyName[item.payer] || item.payer;
-    } else if ("drinker" in item) {
-      item.drinker_name = mapKeyName[item.drinker] || item.drinker;
-      item.drinker_url = mapKeyAvatarUrl[item.drinker] || item.drinker;
     }
   } else if (typeof item === "object" && item !== null) {
-    // 处理非数组
-    if ("payer" in item) {
-      item.payer_name = mapKeyName[item.payer] || item.payer;
-    } else if ("drinker" in item) {
-      item.drinker_name = mapKeyName[item.drinker] || item.drinker;
-      item.drinker_url = mapKeyAvatarUrl[item.drinker] || item.drinker;
-    }
+    // 处理第二层，因为不包含数组
+    item.drinker_name = mapKeyName[item.drinker] || item.drinker;
+    item.drinker_url = mapKeyAvatarUrl[item.drinker] || item.drinker;
   }
   return item;
 };
 
-export const addRealName = (sData) => {
-  return sData.map(addRealNameInObject);
+export const addRealNameAndUrl = (sData) => {
+  return sData.map(addRealNameAndUrlInObject);
 };
