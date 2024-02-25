@@ -1,3 +1,11 @@
+import a1 from "./assets/avatar/android-1.JPG";
+import a2 from "./assets/avatar/android-2.JPG";
+import a3 from "./assets/avatar/android-3.JPG";
+import i1 from "./assets/avatar/ios-1.JPG";
+import i2 from "./assets/avatar/ios-2.JPG";
+import i3 from "./assets/avatar/ios-3.JPG";
+import f1 from "./assets/avatar/fe-1.JPG";
+
 const mapKeyName = {
   "android-1": "姜振",
   "android-2": "刘磊",
@@ -6,6 +14,15 @@ const mapKeyName = {
   "ios-2": "周洋",
   "ios-3": "曹海洋",
   "fe-1": "汪潇凯",
+};
+const mapKeyAvatarUrl = {
+  "android-1": a1,
+  "android-2": a2,
+  "android-3": a3,
+  "ios-1": i1,
+  "ios-2": i2,
+  "ios-3": i3,
+  "fe-1": f1,
 };
 
 const mapPayerInObject = (item) => {
@@ -49,6 +66,7 @@ const addRealNameInObject = (item) => {
       item.payer_name = mapKeyName[item.payer] || item.payer;
     } else if ("drinker" in item) {
       item.drinker_name = mapKeyName[item.drinker] || item.drinker;
+      item.drinker_url = mapKeyAvatarUrl[item.drinker] || item.drinker;
     }
   } else if (typeof item === "object" && item !== null) {
     // 处理非数组
@@ -56,6 +74,7 @@ const addRealNameInObject = (item) => {
       item.payer_name = mapKeyName[item.payer] || item.payer;
     } else if ("drinker" in item) {
       item.drinker_name = mapKeyName[item.drinker] || item.drinker;
+      item.drinker_url = mapKeyAvatarUrl[item.drinker] || item.drinker;
     }
   }
   return item;
