@@ -13,14 +13,14 @@ const PersonIncome = () => {
   const expendArr = Object.entries(personData.personExpend).map(
     ([name, value]) => ({
       name,
-      value: value.reduce((a, b) => a + b, 0),
+      value: valuesSum(value).toNumber(),
       category: "咖啡",
     })
   );
   const profitArr = Object.entries(personData.personProfit).map(
     ([name, value]) => ({
       name,
-      value: value.reduce((a, b) => a + b, 0),
+      value: valuesSum(value).toNumber(),
       category: "小费",
     })
   );
@@ -41,5 +41,12 @@ const PersonIncome = () => {
   };
   return <Bar {...config} />;
 };
+
+function valuesSum(array) {
+  return array.reduce(
+    (total, value) => total.plus(new Decimal(value)),
+    new Decimal(0)
+  );
+}
 
 export default PersonIncome;

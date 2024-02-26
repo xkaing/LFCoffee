@@ -2,6 +2,7 @@ import { Column } from "@ant-design/plots";
 import React, { useContext } from "react";
 import { DateDataContext } from "../contexts/CoffeeDataContext";
 
+// 日期-利润-图表
 const DateProfit = () => {
   const contextData = useContext(DateDataContext) || [];
   const data = contextData.map((item) => {
@@ -24,7 +25,7 @@ const DateProfit = () => {
     },
     scale: {
       y: {
-        domainMax: 6,
+        domainMax: 9,
         domainMin: -1,
       },
     },

@@ -2,6 +2,7 @@ import { Area } from "@ant-design/plots";
 import React, { useContext } from "react";
 import { DateDataContext } from "../contexts/CoffeeDataContext";
 
+// 日期-平均价格-图表
 const DateAverage = () => {
   const contextData = useContext(DateDataContext) || [];
   const data = contextData.map((item) => {
