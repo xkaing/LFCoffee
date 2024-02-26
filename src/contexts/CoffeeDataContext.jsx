@@ -64,6 +64,7 @@ const processData = (data) => {
   let personExpend = {}; //每个人每次的咖啡支出
   let personProfit = {}; // 每个人每次的小费支出
   let personCupsnum = {}; //每个人喝的咖啡数量
+  let personInfoArr = []; //每个人的信息
 
   let coffeeNameNum = {}; //咖啡名称-数量
   let coffeeTempNum = {}; //咖啡温度-数量
@@ -100,9 +101,19 @@ const processData = (data) => {
       item.drinker_list.forEach((val) => {
         totalCupsArray.push(val); //所有杯详情
         // 计算-每个人喝的咖啡数量
-        personCupsnum[val.drinker_name] = personCupsnum[val.drinker_name]
-          ? (personCupsnum[val.drinker_name] += 1)
-          : 1;
+        // personCupsnum[val.drinker_name] = personCupsnum[val.drinker_name]
+        //   ? (personCupsnum[val.drinker_name] += 1)
+        //   : 1;
+        if (personCupsnum[val.drinker_name]) {
+          personCupsnum[val.drinker_name] += 1;
+        } else {
+          personCupsnum[val.drinker_name] = 1;
+          personInfoArr.push({
+            key: val.drinker,
+            name: val.drinker_name,
+            url: val.drinker_url,
+          });
+        }
         // 计算-最常喝咖啡名称
         coffeeNameNum[val.name] = coffeeNameNum[val.name]
           ? coffeeNameNum[val.name] + 1
@@ -140,6 +151,8 @@ const processData = (data) => {
   let dateDataArr2 = dateDataArr.filter((obj) => obj.average !== 0); // 剔除空订单
   dateDataArr2.reverse(); //数组倒序
 
+  // console.log(personInfoArr);
+
   const totalData = {
     sourceDataArr: nDataArr,
     totalInfo: totalInfo,
@@ -156,6 +169,7 @@ const processData = (data) => {
       personExpend,
       personProfit,
       personCupsnum,
+      personInfoArr,
     },
   };
   return totalData;

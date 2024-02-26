@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { CoffeeDataContext } from "../contexts/CoffeeDataContext.jsx";
-import React from "react";
-import { UserOutlined } from "@ant-design/icons";
+import React, { useState, useContext } from "react";
 import { Avatar, Flex, Segmented } from "antd";
+import { PersonDataContext } from "../contexts/CoffeeDataContext.jsx";
+import EmptyData from "../components/EmptyData.jsx";
+import PersonCupsNum from "../Charts/PersonCupsNum";
 
 const Person = () => {
   return (
@@ -12,62 +12,43 @@ const Person = () => {
   );
 };
 
-const PersonSegmented = () => (
-  <Flex gap="small" align="flex-start" vertical>
-    <Segmented
-      options={[
-        {
-          label: (
-            <div
-              style={{
-                padding: 4,
-              }}
-            >
-              <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />
-              <div>User 1</div>
-            </div>
-          ),
-          value: "user1",
-        },
-        {
-          label: (
-            <div
-              style={{
-                padding: 4,
-              }}
-            >
-              <Avatar
-                style={{
-                  backgroundColor: "#f56a00",
-                }}
-              >
-                K
-              </Avatar>
-              <div>User 2</div>
-            </div>
-          ),
-          value: "user2",
-        },
-        {
-          label: (
-            <div
-              style={{
-                padding: 4,
-              }}
-            >
-              <Avatar
-                style={{
-                  backgroundColor: "#87d068",
-                }}
-                icon={<UserOutlined />}
-              />
-              <div>User 3</div>
-            </div>
-          ),
-          value: "user3",
-        },
-      ]}
-    />
-  </Flex>
-);
+const PersonSegmented = () => {
+  const [value, setValue] = useState("fe-1");
+  const contextData = useContext(PersonDataContext);
+  if (!contextData) {
+    return <EmptyData />;
+  }
+  const personArr = contextData.personInfoArr;
+
+  const labelArr = personArr.map((item, index) => ({
+    label: (
+      <div
+        key={index}
+        style={{
+          padding: 4,
+        }}
+      >
+        <Avatar src={item.url} />
+        <div>{item.name}</div>
+      </div>
+    ),
+    value: item.key,
+  }));
+
+  console.log(value);
+
+  return (
+    <Flex gap="small" align="center" vertical>
+      <Segmented
+        options={labelArr}
+        size="middle"
+        value={value}
+        onChange={setValue}
+      />
+      <p>{value}</p>
+      {/* <PersonCupsNum /> */}
+    </Flex>
+  );
+};
+
 export default Person;
