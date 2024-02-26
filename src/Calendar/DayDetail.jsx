@@ -1,26 +1,13 @@
 import React from "react";
 import { Modal, Avatar, List, Tag, Space, Statistic, Typography } from "antd";
 import NameTag from "../components/NameTag";
-import {
-  createFromIconfontCN,
-  CloseOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { createFromIconfontCN, CloseOutlined } from "@ant-design/icons";
+import Decimal from "decimal.js";
+
 const IconFont = createFromIconfontCN({
-  scriptUrl: [
-    "//at.alicdn.com/t/c/font_4431122_rut41t8545r.js",
-    //icon-Send-Money icon-coffee-cold1 icon-coffee-cup icon-coffee-cold icon-Coffee
-  ],
+  scriptUrl: "//at.alicdn.com/t/c/font_4431122_rut41t8545r.js",
 });
 const { Text } = Typography;
-
-import Android1Url from "../assets/avatar/android-1.JPG";
-import Android2Url from "../assets/avatar/android-2.JPG";
-import Android3Url from "../assets/avatar/android-3.JPG";
-import IOS1Url from "../assets/avatar/ios-1.JPG";
-import IOS2Url from "../assets/avatar/ios-2.JPG";
-import IOS3Url from "../assets/avatar/ios-3.JPG";
-import Fe1Url from "../assets/avatar/fe-1.JPG";
 
 const DayDetail = ({ data, date, visible, onClose }) => {
   const itemData = data.find((item) => item.date === date.format("YYYY-MM-DD"));
@@ -31,21 +18,23 @@ const DayDetail = ({ data, date, visible, onClose }) => {
 
   if (itemData && itemData.drinker_list) {
     // 总价
-    let sum = itemData.drinker_list.reduce(
-      (accumulator, currentValue) => accumulator + currentValue.price,
-      0
-    );
-    sum = sum.toFixed(2);
+    // let sum = itemData.drinker_list.reduce(
+    //   (accumulator, currentValue) => accumulator + currentValue.price,
+    //   0
+    // );
+    // sum = sum.toFixed(2);
     // 校验订单总价和支出
-    if (sum != itemData.expend) {
-      console.log("计算出的订单总价：" + sum + "实际支出：" + itemData.expend);
-    }
+    // if (sum != itemData.expend) {
+    //   console.log("计算出的订单总价：" + sum + "实际支出：" + itemData.expend);
+    // }
+
     // 平均
-    averagePrice = sum / itemData.drinker_list.length;
+    averagePrice = Decimal.div(itemData.expend, itemData.drinker_list.length)
+      .toDP(3)
+      .toNumber();
     // 利润
     if (itemData.income && itemData.expend) {
-      profitNum = itemData.income - itemData.expend;
-      profitNum = profitNum.toFixed(2);
+      profitNum = Decimal.sub(itemData.income, itemData.expend).toNumber();
     }
 
     itemData.drinker_list.forEach((product) => {
@@ -91,7 +80,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
               <Tag bordered={false} color="processing">
                 {itemData.week}
               </Tag>
-              <p>Payer: {<NameTag payer={itemData.payer}></NameTag>}</p>
+              <p>Payer: {<NameTag payer={itemData.payer_name}></NameTag>}</p>
             </Space>
             <Space size={"large"}>
               {itemData.expend && (
@@ -119,7 +108,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                   <Statistic
                     title="Average (CNY)"
                     value={averagePrice}
-                    precision={2}
+                    precision={3}
                   />
                 </>
               )}
@@ -133,9 +122,14 @@ const DayDetail = ({ data, date, visible, onClose }) => {
               renderItem={(item, index) => (
                 <List.Item>
                   <List.Item.Meta
-                    // avatar={<Avatar size="large" shape="square" src={Fe1Url} />}
-                    avatar={<AvatarDrinker drinker={item.drinker} />}
-                    title={<NameTag payer={item.drinker}></NameTag>}
+                    avatar={
+                      <Avatar
+                        size="large"
+                        shape="square"
+                        src={item.drinker_url}
+                      />
+                    }
+                    title={<NameTag payer={item.drinker_name}></NameTag>}
                     description={
                       <Space size={"small"}>
                         {/* 2.温度 */}
@@ -182,7 +176,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
     </>
   );
 };
-
+// 价位tag组件
 const PricesDictComponent = ({ pricesDict }) => {
   const priceEntries = Object.entries(pricesDict); // 将对象转换为 [key, value] 形式的数组
   return (
@@ -229,7 +223,7 @@ const PricesDictComponent = ({ pricesDict }) => {
     </Space>
   );
 };
-
+// 温度tag组件
 const TempDictComponent = ({ tempDict }) => {
   const tempEntries = Object.entries(tempDict);
   return (
@@ -270,27 +264,6 @@ const TempDictComponent = ({ tempDict }) => {
       ))}
     </Space>
   );
-};
-
-const avatarUrls2 = {
-  "android-1": Android1Url,
-  "android-2": Android2Url,
-  "android-3": Android3Url,
-  "ios-1": IOS1Url,
-  "ios-2": IOS2Url,
-  "ios-3": IOS3Url,
-  "fe-1": Fe1Url,
-  姜振: Android1Url,
-  刘磊: Android2Url,
-  李泽晋: Android3Url,
-  汪潇翔: IOS1Url,
-  周洋: IOS2Url,
-  曹海洋: IOS3Url,
-  汪潇凯: Fe1Url,
-};
-const AvatarDrinker = ({ drinker }) => {
-  let url = avatarUrls2[drinker] || "";
-  return <Avatar size="large" shape="square" src={url} />;
 };
 
 export default DayDetail;
