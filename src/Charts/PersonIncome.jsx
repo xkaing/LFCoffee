@@ -26,10 +26,10 @@ const PersonIncome = () => {
   );
   expendArr.sort((a, b) => b.value - a.value);
   profitArr.sort((a, b) => b.value - a.value);
-  const topPersonMoneyArr = expendArr.concat(profitArr);
+  const data = expendArr.concat(profitArr);
 
   const config = {
-    data: topPersonMoneyArr,
+    data,
     xField: "name",
     yField: "value",
     colorField: "category",

@@ -14,6 +14,7 @@ import Welcome, { loader as welcomeLoader } from "./Welcome/Welcome.jsx"; //Welc
 import TotalDataCard from "./Welcome/TotalDataCard.jsx"; //Welcome模块-V2
 import CoffeeCalendar from "./Calendar/CoffeeCalendar.jsx"; //日历模块
 import Teams, { loader as teamsLoader } from "./Teams/Teams.jsx"; //团队模块
+import Teams2 from "./Teams/Teams2.jsx"; //团队模块-V2
 import Person from "./Person/Person.jsx"; //个人模块
 import XKTrophies, {
   loader as xkTrophiesLoader,
@@ -44,10 +45,14 @@ const router = createBrowserRouter([
         path: "/calendar",
         element: <CoffeeCalendar />,
       },
+      // {
+      //   path: "/teams",
+      //   element: <Teams />,
+      //   loader: teamsLoader,
+      // },
       {
         path: "/teams",
-        element: <Teams />,
-        loader: teamsLoader,
+        element: <Teams2 />,
       },
       {
         path: "/person",

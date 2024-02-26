@@ -137,19 +137,22 @@ const processData = (data) => {
     totalCupsNum,
     totalAverage,
   };
+  let dateDataArr2 = dateDataArr.filter((obj) => obj.average !== 0); // 剔除空订单
+  dateDataArr2.reverse(); //数组倒序
 
   const totalData = {
     sourceDataArr: nDataArr,
     totalInfo: totalInfo,
-    dateDataArr, //时间刻度相关数据
+    //时间刻度相关数据
+    dateDataArr: dateDataArr2,
+    // 咖啡相关数据
     coffeeData: {
-      // 咖啡相关数据
       coffeeNameNum,
       coffeeTempNum,
       coffeePriceNum,
     },
+    // 人物相关数据
     personData: {
-      // 人物相关数据
       personExpend,
       personProfit,
       personCupsnum,
