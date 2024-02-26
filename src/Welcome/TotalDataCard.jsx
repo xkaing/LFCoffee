@@ -3,6 +3,7 @@ import { Card, Col, Row, Statistic, Modal, Typography } from "antd";
 import CountUp from "react-countup";
 import { TotalInfoContext } from "../contexts/CoffeeDataContext";
 import PersonIncome from "../Charts/PersonIncome";
+import { CoffeeNameNumWordCloud } from "../Charts/CoffeeNameNum";
 
 const { Title } = Typography;
 
@@ -43,7 +44,7 @@ const TotalDataCard = () => {
       </Title>
       <Row gutter={16}>
         <Col span={3}>
-          <Card bordered={false} hoverable size="small">
+          <Card bordered={false} hoverable size="small" onClick={showModal}>
             <Statistic
               title="Income (CNY)"
               value={totalInfo.totalIncome}
@@ -91,8 +92,18 @@ const TotalDataCard = () => {
           </Card>
         </Col>
       </Row>
+      <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={22}>
+          <CoffeeNameNumWordCloud />
+        </Col>
+      </Row>
       <Modal
-        title="TopPresonIncome"
+        title="总体支出"
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}

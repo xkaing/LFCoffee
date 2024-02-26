@@ -14,7 +14,7 @@ const PersonIncome = () => {
     ([name, value]) => ({
       name,
       value: value.reduce((a, b) => a + b, 0),
-      category: "支出",
+      category: "咖啡",
     })
   );
   const profitArr = Object.entries(personData.personProfit).map(

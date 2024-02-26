@@ -11,7 +11,7 @@ import RoutesIndex from "./Layout/RoutesIndex.jsx"; //路由根页面
 import EmptyPage from "./Layout/EmptyPage.jsx"; //空页面
 
 import Welcome, { loader as welcomeLoader } from "./Welcome/Welcome.jsx"; //Welcome模块
-import TotalDataCard from "./Welcome/TotalDataCard.jsx";
+import TotalDataCard from "./Welcome/TotalDataCard.jsx"; //Welcome模块-V2
 import CoffeeCalendar from "./Calendar/CoffeeCalendar.jsx"; //日历模块
 import Teams, { loader as teamsLoader } from "./Teams/Teams.jsx"; //团队模块
 import Person from "./Person/Person.jsx"; //个人模块

@@ -4,7 +4,6 @@ import CountUp from "react-countup";
 import { getCoffeeData } from "../serve";
 import { useLoaderData } from "react-router-dom";
 import TopPresonProfit from "../Teams/TopPresonProfit";
-import AllCoffeeWordCloud from "../Teams/AllCoffeeWordCloud";
 import TopPersonIncome from "../Teams/TopPersonIncome";
 import { markBecomeName } from "../tools";
 
@@ -195,16 +194,6 @@ const Welcome = () => {
         {/* <TopPresonProfit data={topPersonProfitArr} /> */}
         <TopPersonIncome data={topPersonMoneyArr} />
       </Modal>
-      {/* <Row
-        gutter={16}
-        style={{
-          marginTop: 24,
-        }}
-      >
-        <Col span={22}>
-          <AllCoffeeWordCloud data={topCupsArr} />
-        </Col>
-      </Row> */}
     </>
   );
 };
