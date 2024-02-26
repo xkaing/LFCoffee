@@ -13,6 +13,10 @@ const formatter = (value) => {
   const decimals = Number.isInteger(value) ? 0 : 2;
   return <CountUp start={start} end={value} decimals={decimals} />;
 };
+const formatterAverage = (value) => {
+  const start = Math.floor(value / 100) * 100;
+  return <CountUp start={start} end={value} decimals={3} />;
+};
 
 const TotalDataCard = () => {
   const totalInfo = useContext(TotalInfoContext);
@@ -87,7 +91,7 @@ const TotalDataCard = () => {
             <Statistic
               title="Average (CNY)"
               value={totalInfo.totalAverage}
-              formatter={formatter}
+              formatter={formatterAverage}
             />
           </Card>
         </Col>

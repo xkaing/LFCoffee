@@ -6,7 +6,10 @@ const DeployTimeline = () => (
   <Timeline
     mode="right"
     style={{
-      width: 270,
+      width: 400,
+      height: 800,
+      overflowY: "auto",
+      paddingTop: 5,
     }}
     items={[
       {
@@ -20,6 +23,8 @@ const DeployTimeline = () => (
         children: (
           <>
             <p>使用useContext重构数据层</p>
+            <p>add:decimal.js</p>
+            <p>更新部分成员头像</p>
           </>
         ),
       },
