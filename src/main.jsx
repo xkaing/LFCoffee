@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css"; //全局样式
@@ -10,8 +11,10 @@ import RoutesIndex from "./Layout/RoutesIndex.jsx"; //路由根页面
 import EmptyPage from "./Layout/EmptyPage.jsx"; //空页面
 
 import Welcome, { loader as welcomeLoader } from "./Welcome/Welcome.jsx"; //Welcome模块
+import TotalDataCard from "./Welcome/TotalDataCard.jsx"; //Welcome模块-V2
 import CoffeeCalendar from "./Calendar/CoffeeCalendar.jsx"; //日历模块
 import Teams, { loader as teamsLoader } from "./Teams/Teams.jsx"; //团队模块
+import Teams2 from "./Teams/Teams2.jsx"; //团队模块-V2
 import Person from "./Person/Person.jsx"; //个人模块
 import XKTrophies, {
   loader as xkTrophiesLoader,
@@ -23,6 +26,8 @@ import locale from "antd/locale/zh_CN";
 import dayjs from "dayjs";
 import "dayjs/locale/zh-cn";
 dayjs.locale("zh-cn");
+// 全局数据
+import { CoffeeDataContextProvider } from "./contexts/CoffeeDataContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,17 +38,21 @@ const router = createBrowserRouter([
       { index: true, element: <RoutesIndex /> },
       {
         path: "/welcome",
-        element: <Welcome />,
+        element: <TotalDataCard />,
         loader: welcomeLoader,
       },
       {
         path: "/calendar",
         element: <CoffeeCalendar />,
       },
+      // {
+      //   path: "/teams",
+      //   element: <Teams />,
+      //   loader: teamsLoader,
+      // },
       {
         path: "/teams",
-        element: <Teams />,
-        loader: teamsLoader,
+        element: <Teams2 />,
       },
       {
         path: "/person",
@@ -77,7 +86,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             : theme.defaultAlgorithm,
       }}
     >
-      <RouterProvider router={router} />
+      <CoffeeDataContextProvider>
+        <RouterProvider router={router} />
+      </CoffeeDataContextProvider>
     </ConfigProvider>
   </React.StrictMode>
 );

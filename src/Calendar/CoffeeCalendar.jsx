@@ -1,29 +1,16 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback, useContext } from "react";
 import { Calendar } from "antd";
-import axios from "axios";
 import DayRender from "./DayRender";
 import DayDetail from "./DayDetail";
-import { markBecomeName } from "../tools";
+import { CoffeeDataContext } from "../contexts/CoffeeDataContext";
 
 const defaultData = [{ date: "2024-02-01", payer: "fe" }];
 
 const CoffeeCalendar = () => {
-  const [coffeeData, setCoffeeData] = useState(defaultData); // 咖啡购买数据
+  const contextData = useContext(CoffeeDataContext);
+  const coffeeData2 = contextData ? contextData.sourceDataArr : [];
   const [selectedDate, setSelectedDate] = useState(null); // 存储选中的日期
   const [isModalVisible, setIsModalVisible] = useState(false); // 控制模态框的显示
-
-  // 请求接口
-  useEffect(() => {
-    const getCoffeeData = async () => {
-      try {
-        const response = await axios.get("/coffee.json");
-        setCoffeeData(markBecomeName(response.data));
-      } catch (error) {
-        console.error("Error fetching coffee data:", error);
-      }
-    };
-    getCoffeeData();
-  }, []);
 
   // 日历点击事件
   const onChange = useCallback((value) => {
@@ -33,7 +20,7 @@ const CoffeeCalendar = () => {
 
   // 渲染单元格内容
   const dateCellRender = (value) => {
-    const calendarData = coffeeData.find(
+    const calendarData = coffeeData2.find(
       (item) => item.date === value.format("YYYY-MM-DD")
     );
     return calendarData ? <DayRender {...calendarData} /> : null;
@@ -49,7 +36,7 @@ const CoffeeCalendar = () => {
       <Calendar cellRender={cellRender} onChange={onChange} />
       {selectedDate && (
         <DayDetail
-          data={coffeeData}
+          data={coffeeData2}
           date={selectedDate}
           visible={isModalVisible}
           onClose={() => setIsModalVisible(false)}

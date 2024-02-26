@@ -6,9 +6,28 @@ const DeployTimeline = () => (
   <Timeline
     mode="right"
     style={{
-      width: 270,
+      width: 400,
+      height: 800,
+      overflowY: "auto",
+      paddingTop: 5,
     }}
     items={[
+      {
+        label: (
+          <>
+            <p>2024-02-26</p>
+            <Text type="warning">v0.9.0-beta</Text>
+          </>
+        ),
+        color: "orange",
+        children: (
+          <>
+            <p>使用useContext重构数据层</p>
+            <p>add:decimal.js</p>
+            <p>更新部分成员头像</p>
+          </>
+        ),
+      },
       {
         label: (
           <>

@@ -8,6 +8,12 @@ import RatioPricePie from "./RatioPricePie";
 import RatioTempPie from "./RatioTempPie";
 import TopProfit from "./TopProfit";
 import TopDateAverage from "./TopDateAverage";
+import { CoffeeNameNumColumn } from "../Charts/CoffeeNameNum";
+import PersonCupsNum from "../Charts/PersonCupsNum";
+import CoffeeTempNum from "../Charts/CoffeeTempNum";
+import CoffeePriceNum from "../Charts/CoffeePriceNum";
+import DateProfit from "../Charts/DateProfit";
+import DateAverage from "../Charts/DateAverage";
 
 const { Title } = Typography;
 
@@ -124,10 +130,12 @@ const Welcome = () => {
         }}
       >
         <Col span={12}>
-          <TopDrinkerBar arr={topDrinkerArr} />
+          {/* <TopDrinkerBar arr={topDrinkerArr} /> */}
+          <PersonCupsNum />
         </Col>
         <Col span={12}>
-          <TopCupsColumn arr={topCupsArr} />
+          {/* <TopCupsColumn arr={topCupsArr} /> */}
+          <CoffeeNameNumColumn />
         </Col>
       </Row>
       <Title
@@ -145,10 +153,12 @@ const Welcome = () => {
         }}
       >
         <Col span={12}>
-          <RatioTempPie data={ratioTempArr} />
+          {/* <RatioTempPie data={ratioTempArr} /> */}
+          <CoffeeTempNum />
         </Col>
         <Col span={12}>
-          <RatioPricePie arr={ratioPriceArr} />
+          {/* <RatioPricePie arr={ratioPriceArr} /> */}
+          <CoffeePriceNum />
         </Col>
       </Row>
       <Title
@@ -166,10 +176,12 @@ const Welcome = () => {
         }}
       >
         <Col span={12}>
-          <TopProfit data={topProfitArr} />
+          {/* <TopProfit data={topProfitArr} /> */}
+          <DateProfit />
         </Col>
         <Col span={12}>
-          <TopDateAverage data={topAverageArr} />
+          {/* <TopDateAverage data={topAverageArr} /> */}
+          <DateAverage />
         </Col>
       </Row>
     </>
