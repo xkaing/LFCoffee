@@ -6,6 +6,7 @@ const OneDatePrice = ({ data }) => {
   const config = {
     data,
     height: 450,
+    width: 650,
     xField: "date",
     yField: "price",
     colorField: "name",

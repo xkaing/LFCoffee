@@ -36,7 +36,7 @@ const PersonSegmented = () => {
   }));
 
   return (
-    <Flex gap="small" align="center" vertical>
+    <Flex gap="large" align="center" vertical>
       <Segmented
         options={labelArr}
         size="middle"
