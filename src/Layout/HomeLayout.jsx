@@ -18,20 +18,20 @@ const items = [
   },
   {
     key: "teams",
-    // label: "Chart",
     label: <Link to={`/teams`}>Teams</Link>,
-    disabled: false,
   },
   {
     key: "person",
-    // label: "Person",
     label: <Link to={`/person`}>Person</Link>,
-    disabled: false,
   },
   {
     key: "xk-trophies-js-demo",
-    label: <Link to={`/xk-trophies-js-demo`}>Trophy</Link>,
-    disabled: false,
+    label: (
+      <Link to={`/xk-trophies-js-demo`} className={"disabled-link"}>
+        Trophy
+      </Link>
+    ),
+    disabled: true,
   },
 ];
 const HomeLayout = () => {
