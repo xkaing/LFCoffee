@@ -6,6 +6,8 @@ import Decimal from "decimal.js";
 
 // 全部数据
 export const CoffeeDataContext = createContext();
+// 全部杯咖啡详情
+export const AllCupsContext = createContext();
 // 总体数据
 export const TotalInfoContext = createContext();
 // 咖啡数据
@@ -17,6 +19,7 @@ export const DateDataContext = createContext();
 
 export const CoffeeDataContextProvider = ({ children }) => {
   const [coffeeData, setCoffeeData] = useState();
+  const [allCupsArray, setAllCupsArray] = useState();
   const [totalInfo, setTotalInfo] = useState();
   const [cupsData, setCupsData] = useState();
   const [personData, setPersonData] = useState();
@@ -26,6 +29,7 @@ export const CoffeeDataContextProvider = ({ children }) => {
     getCoffeeData().then((data) => {
       const newData = processData(data);
       setCoffeeData(newData);
+      setAllCupsArray(newData.totalCupsArray);
       setTotalInfo(newData.totalInfo);
       setCupsData(newData.coffeeData);
       setPersonData(newData.personData);
@@ -35,15 +39,17 @@ export const CoffeeDataContextProvider = ({ children }) => {
 
   return (
     <CoffeeDataContext.Provider value={coffeeData}>
-      <TotalInfoContext.Provider value={totalInfo}>
-        <CupsDataContext.Provider value={cupsData}>
-          <PersonDataContext.Provider value={personData}>
-            <DateDataContext.Provider value={dateData}>
-              {children}
-            </DateDataContext.Provider>
-          </PersonDataContext.Provider>
-        </CupsDataContext.Provider>
-      </TotalInfoContext.Provider>
+      <AllCupsContext.Provider value={allCupsArray}>
+        <TotalInfoContext.Provider value={totalInfo}>
+          <CupsDataContext.Provider value={cupsData}>
+            <PersonDataContext.Provider value={personData}>
+              <DateDataContext.Provider value={dateData}>
+                {children}
+              </DateDataContext.Provider>
+            </PersonDataContext.Provider>
+          </CupsDataContext.Provider>
+        </TotalInfoContext.Provider>
+      </AllCupsContext.Provider>
     </CoffeeDataContext.Provider>
   );
 };
@@ -61,6 +67,7 @@ const processData = (data) => {
   let dateDataArr = []; // X：时间，Y：每天利润，每天咖啡平均价格，
 
   // let personDataArr = []; // X；人物，Y：每个人的咖啡支出，每个人的咖啡小费,每个人喝的咖啡数量
+  let personIncome = {};
   let personExpend = {}; //每个人每次的咖啡支出
   let personProfit = {}; // 每个人每次的小费支出
   let personCupsnum = {}; //每个人喝的咖啡数量
@@ -80,6 +87,11 @@ const processData = (data) => {
       totalExpend = totalExpend.plus(item.expend); //计算-总支出
       profit = Decimal.sub(item.income, item.expend).toNumber(); //计算-每天利润
 
+      if (personIncome[item.payer]) {
+        personIncome[item.payer].push(item.income);
+      } else {
+        personIncome[item.payer] = [item.income];
+      }
       //计算-每个人每次的咖啡支出
       if (personExpend[item.payer_name]) {
         personExpend[item.payer_name].push(item.expend);
@@ -99,11 +111,9 @@ const processData = (data) => {
         .toDP(3)
         .toNumber(); //计算-每天的平均价格
       item.drinker_list.forEach((val) => {
+        val.date = item.date;
         totalCupsArray.push(val); //所有杯详情
         // 计算-每个人喝的咖啡数量
-        // personCupsnum[val.drinker_name] = personCupsnum[val.drinker_name]
-        //   ? (personCupsnum[val.drinker_name] += 1)
-        //   : 1;
         if (personCupsnum[val.drinker_name]) {
           personCupsnum[val.drinker_name] += 1;
         } else {
@@ -151,10 +161,9 @@ const processData = (data) => {
   let dateDataArr2 = dateDataArr.filter((obj) => obj.average !== 0); // 剔除空订单
   dateDataArr2.reverse(); //数组倒序
 
-  // console.log(personInfoArr);
-
   const totalData = {
     sourceDataArr: nDataArr,
+    totalCupsArray,
     totalInfo: totalInfo,
     //时间刻度相关数据
     dateDataArr: dateDataArr2,
@@ -166,6 +175,7 @@ const processData = (data) => {
     },
     // 人物相关数据
     personData: {
+      personIncome,
       personExpend,
       personProfit,
       personCupsnum,

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Avatar, Flex, Segmented } from "antd";
 import { PersonDataContext } from "../contexts/CoffeeDataContext.jsx";
 import EmptyData from "../components/EmptyData.jsx";
-import PersonCupsNum from "../Charts/PersonCupsNum";
+import PersonDetail from "./PersonDetail.jsx";
 
 const Person = () => {
   return (
@@ -35,8 +35,6 @@ const PersonSegmented = () => {
     value: item.key,
   }));
 
-  console.log(value);
-
   return (
     <Flex gap="small" align="center" vertical>
       <Segmented
@@ -45,8 +43,7 @@ const PersonSegmented = () => {
         value={value}
         onChange={setValue}
       />
-      <p>{value}</p>
-      {/* <PersonCupsNum /> */}
+      <PersonDetail drinker={value} />
     </Flex>
   );
 };
