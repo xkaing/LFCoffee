@@ -4,7 +4,7 @@ import OneDatePrice from "../Charts/OneDatePrice.jsx";
 import { PersonDataContext } from "../contexts/CoffeeDataContext";
 import Decimal from "decimal.js";
 import CountUp from "react-countup";
-import { Col, Row, Statistic, Card, Flex, Space, Badge } from "antd";
+import { Col, Row, Statistic, Card, Flex, Space, Badge, Tooltip } from "antd";
 import { WarningFilled } from "@ant-design/icons";
 
 const formatterAverage = (value) => {
@@ -46,7 +46,12 @@ const PersonDetail = ({ drinker }) => {
 
   return (
     <>
-      <Flex gap="middle" align="center" justify="space-between">
+      <Flex
+        gap="large"
+        align="center"
+        justify="space-evenly"
+        style={{ width: "100%" }}
+      >
         <OneDatePrice data={chartData} />
         <Flex gap="small" align="center" justify="space-between" vertical>
           <Space>
@@ -65,50 +70,57 @@ const PersonDetail = ({ drinker }) => {
               />
             </Card>
           </Space>
-          <Space>
-            <Badge
-              count={
-                drinker === "ios-2" || drinker === "android-3" ? (
-                  <WarningFilled
-                    style={{
-                      color: "#f5222d",
-                    }}
+          <Tooltip
+            title="少导入一次买单数据"
+            placement="right"
+            color="#f5222d"
+            open={drinker === "ios-2" || drinker === "android-3"}
+          >
+            <Space>
+              <Badge
+                count={
+                  drinker === "ios-2" || drinker === "android-3" ? (
+                    <WarningFilled
+                      style={{
+                        color: "#f5222d",
+                      }}
+                    />
+                  ) : (
+                    0
+                  )
+                }
+              >
+                <Card size="small" hoverable>
+                  <Statistic
+                    title="支出总计(CNY)"
+                    value={drinkerDebit}
+                    formatter={formatterAverage}
                   />
-                ) : (
-                  0
-                )
-              }
-            >
-              <Card size="small" hoverable>
-                <Statistic
-                  title="支出总计(CNY)"
-                  value={drinkerDebit}
-                  formatter={formatterAverage}
-                />
-              </Card>
-            </Badge>
-            <Badge
-              count={
-                drinker === "ios-2" || drinker === "android-3" ? (
-                  <WarningFilled
-                    style={{
-                      color: "#f5222d",
-                    }}
+                </Card>
+              </Badge>
+              <Badge
+                count={
+                  drinker === "ios-2" || drinker === "android-3" ? (
+                    <WarningFilled
+                      style={{
+                        color: "#f5222d",
+                      }}
+                    />
+                  ) : (
+                    0
+                  )
+                }
+              >
+                <Card size="small" hoverable>
+                  <Statistic
+                    title="一共买单(Num)"
+                    value={payerData.length}
+                    formatter={formatterCups}
                   />
-                ) : (
-                  0
-                )
-              }
-            >
-              <Card size="small" hoverable>
-                <Statistic
-                  title="一共买单(Num)"
-                  value={payerData.length}
-                  formatter={formatterCups}
-                />
-              </Card>
-            </Badge>
-          </Space>
+                </Card>
+              </Badge>
+            </Space>
+          </Tooltip>
           <Badge
             count={
               drinker === "ios-2" || drinker === "android-3" ? (
