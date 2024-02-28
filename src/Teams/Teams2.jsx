@@ -4,8 +4,12 @@ import { CoffeeNameNumColumn } from "../Charts/CoffeeNameNum";
 import PersonCupsNum from "../Charts/PersonCupsNum";
 import CoffeeTempNum from "../Charts/CoffeeTempNum";
 import CoffeePriceNum from "../Charts/CoffeePriceNum";
+// 日期价格图表
 import DateProfit from "../Charts/DateProfit";
 import DateAverage from "../Charts/DateAverage";
+import DateIncome from "../Charts/DateIncome";
+import DateExpend from "../Charts/DateExpend";
+import DateIE from "../Charts/DateIE";
 
 const { Title } = Typography;
 
@@ -18,7 +22,7 @@ const Teams = () => {
           marginTop: 12,
         }}
       >
-        Top Data
+        喝的最多 ? 是 ?
       </Title>
       <Row
         gutter={16}
@@ -39,7 +43,7 @@ const Teams = () => {
           marginTop: 12,
         }}
       >
-        比例图表
+        咖啡比例图表
       </Title>
       <Row
         gutter={16}
@@ -60,7 +64,7 @@ const Teams = () => {
           marginTop: 12,
         }}
       >
-        价格图表
+        每日经济图表
       </Title>
       <Row
         gutter={16}
@@ -75,6 +79,29 @@ const Teams = () => {
           <DateAverage />
         </Col>
       </Row>
+      <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={12}>
+          <DateIncome />
+        </Col>
+        <Col span={12}>
+          <DateExpend />
+        </Col>
+      </Row>
+      {/* <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={24}>
+          <DateIE />
+        </Col>
+      </Row> */}
     </>
   );
 };

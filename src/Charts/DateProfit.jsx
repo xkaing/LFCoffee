@@ -4,15 +4,10 @@ import { DateDataContext } from "../contexts/CoffeeDataContext";
 
 // 日期-利润-图表
 const DateProfit = () => {
-  const contextData = useContext(DateDataContext) || [];
-  const data = contextData.map((item) => {
-    return {
-      ...item,
-      date: item.date.substring(5),
-    };
-  });
+  const data = useContext(DateDataContext) || [];
   const config = {
     data,
+    title: "利润",
     xField: "date",
     yField: "profit",
     style: {

@@ -4,6 +4,7 @@ import CountUp from "react-countup";
 import { TotalInfoContext } from "../contexts/CoffeeDataContext";
 import PersonIncome from "../Charts/PersonIncome";
 import { CoffeeNameNumWordCloud } from "../Charts/CoffeeNameNum";
+import DateIE from "../Charts/DateIE";
 
 const { Title } = Typography;
 
@@ -102,10 +103,20 @@ const TotalDataCard = () => {
           marginTop: 24,
         }}
       >
-        <Col span={22}>
-          <CoffeeNameNumWordCloud />
+        <Col span={24}>
+          <DateIE />
         </Col>
       </Row>
+      {/* <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={24}>
+          <CoffeeNameNumWordCloud />
+        </Col>
+      </Row> */}
       <Modal
         title="总体支出"
         open={isModalOpen}
