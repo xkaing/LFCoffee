@@ -9,8 +9,7 @@ const IconFont = createFromIconfontCN({
 });
 const { Text } = Typography;
 
-const DayDetail = ({ data, date, visible, onClose }) => {
-  const itemData = data.find((item) => item.date === date.format("YYYY-MM-DD"));
+const DayDetail = ({ itemData, visible, onClose }) => {
   let profitNum = 0;
   let averagePrice = 0;
   const pricesDict = {}; // 价位字典
@@ -76,7 +75,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
         {itemData && (
           <>
             <Space>
-              Selected date: {date.format("YYYY-MM-DD")}
+              Selected date: {itemData.date}
               <Tag bordered={false} color="processing">
                 {itemData.week}
               </Tag>
