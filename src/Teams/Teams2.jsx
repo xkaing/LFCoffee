@@ -39,7 +39,7 @@ const Teams = () => {
           marginTop: 12,
         }}
       >
-        Radtio Data
+        比例图表
       </Title>
       <Row
         gutter={16}
@@ -60,7 +60,7 @@ const Teams = () => {
           marginTop: 12,
         }}
       >
-        Price Data
+        价格图表
       </Title>
       <Row
         gutter={16}

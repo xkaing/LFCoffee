@@ -3,11 +3,11 @@ import { CodeOutlined } from "@ant-design/icons";
 import DeployTimeline from "./DeployTimeline";
 const { Text } = Typography;
 
-const appVerNum = "v0.10.2-beta";
+const appVerNum = "v0.10.4-beta";
 
 const AppVersion = () => {
   return (
-    <Popover content={<DeployTimeline />} title="Deploy Timeline">
+    <Popover content={<DeployTimeline />} title="部署时间线">
       <Text
         type="warning"
         style={{
