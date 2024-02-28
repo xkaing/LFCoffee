@@ -1,7 +1,21 @@
 import React from "react";
-import { Modal, Avatar, List, Tag, Space, Statistic, Typography } from "antd";
+import {
+  Modal,
+  Avatar,
+  List,
+  Tag,
+  Space,
+  Statistic,
+  Typography,
+  Flex,
+} from "antd";
 import NameTag from "../components/NameTag";
-import { createFromIconfontCN, CloseOutlined } from "@ant-design/icons";
+import {
+  createFromIconfontCN,
+  CloseOutlined,
+  ExclamationCircleOutlined,
+  WarningFilled,
+} from "@ant-design/icons";
 import Decimal from "decimal.js";
 
 const IconFont = createFromIconfontCN({
@@ -12,6 +26,7 @@ const { Text } = Typography;
 const DayDetail = ({ itemData, visible, onClose }) => {
   let profitNum = 0;
   let averagePrice = 0;
+  let warningInfo = "";
   const pricesDict = {}; // 价位字典
   const tempDict = {}; // 温度字典
 
@@ -24,7 +39,7 @@ const DayDetail = ({ itemData, visible, onClose }) => {
       )
       .toNumber();
     if (sum !== itemData.expend) {
-      console.log("订单总价：" + sum + "实际支出：" + itemData.expend);
+      warningInfo = "计算订单总价：" + sum + "，实际支出：" + itemData.expend;
     }
     // **
 
@@ -169,6 +184,14 @@ const DayDetail = ({ itemData, visible, onClose }) => {
                 </List.Item>
               )}
             />
+            {warningInfo && (
+              <Flex justify="flex-end" gap="small" style={{ color: "#ff4d4f" }}>
+                <WarningFilled />
+                <Text style={{ fontSize: "0.9em", color: "#ff7a45" }}>
+                  {warningInfo}
+                </Text>
+              </Flex>
+            )}
           </>
         )}
         {!itemData && <p>No data</p>}

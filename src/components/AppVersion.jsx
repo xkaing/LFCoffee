@@ -11,7 +11,7 @@ const AppVersion = () => {
       <Text
         type="warning"
         style={{
-          fontSize: "1.2rem",
+          fontSize: "1rem",
         }}
       >
         <CodeOutlined
