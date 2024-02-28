@@ -6,9 +6,7 @@ const DayRender = ({ payer_name, expend }) => {
   return (
     <>
       <NameTag payer={payer_name}></NameTag>
-      {expend && (
-        <Statistic title="Expend (CNY)" value={expend} precision={2} />
-      )}
+      {expend && <Statistic title="支出 (CNY)" value={expend} precision={2} />}
     </>
   );
 };
