@@ -67,94 +67,68 @@ const PersonDetail = ({ drinker }) => {
     drinkerDebit
   ).toNumber();
 
+  // 计算-单杯消费平均
+  const oneCupAverage = Decimal.div(drinkerConsumption, drinkerData.length)
+    .toDP(3)
+    .toNumber();
+  // 计算-单次支出平均
+  const oneExpendAverage = Decimal.div(drinkerDebit, payerData.length)
+    .toDP(3)
+    .toNumber();
+
   return (
     <>
-      <Tooltip
-        title="少导入一次买单数据"
-        placement="right"
-        color="#f5222d"
-        open={drinker === "ios-2" || drinker === "android-3"}
-      >
-        <Flex gap="large" align="center" justify="space-between">
-          <Card size="small" hoverable>
-            <Statistic
-              title="一共喝了(Cups)"
-              value={drinkerData.length}
-              formatter={formatterCups}
-            />
-          </Card>
-          <Card hoverable size="small">
-            <Statistic
-              title="消费总计(CNY)"
-              value={drinkerConsumption}
-              formatter={formatterAverage}
-            />
-          </Card>
-          <Badge
-            count={
-              drinker === "ios-2" || drinker === "android-3" ? (
-                <WarningFilled
-                  style={{
-                    color: "#f5222d",
-                  }}
-                />
-              ) : (
-                0
-              )
-            }
-          >
-            <Card size="small" hoverable>
-              <Statistic
-                title="一共买单(Num)"
-                value={payerData.length}
-                formatter={formatterCups}
-              />
-            </Card>
-          </Badge>
-          <Badge
-            count={
-              drinker === "ios-2" || drinker === "android-3" ? (
-                <WarningFilled
-                  style={{
-                    color: "#f5222d",
-                  }}
-                />
-              ) : (
-                0
-              )
-            }
-          >
-            <Card size="small" hoverable>
-              <Statistic
-                title="支出总计(CNY)"
-                value={drinkerDebit}
-                formatter={formatterAverage}
-              />
-            </Card>
-          </Badge>
-          <Badge
-            count={
-              drinker === "ios-2" || drinker === "android-3" ? (
-                <WarningFilled
-                  style={{
-                    color: "#f5222d",
-                  }}
-                />
-              ) : (
-                0
-              )
-            }
-          >
-            <Card size="small" hoverable>
-              <Statistic
-                title="差额总计(CNY)"
-                value={drinkerProfit}
-                formatter={formatterAverage}
-              />
-            </Card>
-          </Badge>
-        </Flex>
-      </Tooltip>
+      <Flex gap="large" align="center" justify="space-between">
+        <Card size="small" hoverable>
+          <Statistic
+            title="一共喝了(Cups)"
+            value={drinkerData.length}
+            formatter={formatterCups}
+          />
+        </Card>
+        <Card hoverable size="small">
+          <Statistic
+            title="消费总计(CNY)"
+            value={drinkerConsumption}
+            formatter={formatterAverage}
+          />
+        </Card>
+        <Card hoverable size="small">
+          <Statistic
+            title="单杯平均(CNY)"
+            value={oneCupAverage}
+            formatter={formatterAverage}
+          />
+        </Card>
+        <Card size="small" hoverable>
+          <Statistic
+            title="一共买单(Num)"
+            value={payerData.length}
+            formatter={formatterCups}
+          />
+        </Card>
+        <Card size="small" hoverable>
+          <Statistic
+            title="支出总计(CNY)"
+            value={drinkerDebit}
+            formatter={formatterAverage}
+          />
+        </Card>
+        <Card hoverable size="small">
+          <Statistic
+            title="每单平均(CNY)"
+            value={oneExpendAverage}
+            formatter={formatterAverage}
+          />
+        </Card>
+        <Card size="small" hoverable>
+          <Statistic
+            title="差额总计(CNY)"
+            value={drinkerProfit}
+            formatter={formatterAverage}
+          />
+        </Card>
+      </Flex>
       <Flex
         gap="large"
         align="center"
