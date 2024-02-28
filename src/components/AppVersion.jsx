@@ -3,7 +3,7 @@ import { CodeOutlined } from "@ant-design/icons";
 import DeployTimeline from "./DeployTimeline";
 const { Text } = Typography;
 
-const appVerNum = "v0.10.6-beta";
+const appVerNum = "v0.10.8-beta";
 
 const AppVersion = () => {
   return (
@@ -11,7 +11,7 @@ const AppVersion = () => {
       <Text
         type="warning"
         style={{
-          fontSize: "1.2rem",
+          fontSize: "1rem",
         }}
       >
         <CodeOutlined
