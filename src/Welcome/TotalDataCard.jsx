@@ -4,6 +4,7 @@ import CountUp from "react-countup";
 import { TotalInfoContext } from "../contexts/CoffeeDataContext";
 import PersonIncome from "../Charts/PersonIncome";
 import { CoffeeNameNumWordCloud } from "../Charts/CoffeeNameNum";
+import DateIE from "../Charts/DateIE";
 
 const { Title } = Typography;
 
@@ -44,13 +45,13 @@ const TotalDataCard = () => {
           marginTop: 12,
         }}
       >
-        TotalData
+        总体数据
       </Title>
       <Row gutter={16}>
         <Col span={3}>
           <Card bordered={false} hoverable size="small" onClick={showModal}>
             <Statistic
-              title="Income (CNY)"
+              title="总收入 (CNY)"
               value={totalInfo.totalIncome}
               formatter={formatter}
             />
@@ -59,7 +60,7 @@ const TotalDataCard = () => {
         <Col span={3}>
           <Card bordered={false} size="small" hoverable onClick={showModal}>
             <Statistic
-              title="Expend (CNY)"
+              title="总支出 (CNY)"
               value={totalInfo.totalExpend}
               formatter={formatter}
             />
@@ -68,7 +69,7 @@ const TotalDataCard = () => {
         <Col span={3}>
           <Card bordered={false} size="small" hoverable onClick={showModal}>
             <Statistic
-              title="Profit (CNY)"
+              title="总利润 (CNY)"
               value={totalInfo.totalProfit}
               formatter={formatter}
               valueStyle={{
@@ -80,7 +81,7 @@ const TotalDataCard = () => {
         <Col span={3}>
           <Card bordered={false} size="small" hoverable>
             <Statistic
-              title="Coffee (Cups)"
+              title="总杯数 (Cups)"
               value={totalInfo.totalCupsNum}
               formatter={formatter}
             />
@@ -89,7 +90,7 @@ const TotalDataCard = () => {
         <Col span={3}>
           <Card bordered={false} size="small" hoverable>
             <Statistic
-              title="Average (CNY)"
+              title="均价 (CNY)"
               value={totalInfo.totalAverage}
               formatter={formatterAverage}
             />
@@ -102,10 +103,20 @@ const TotalDataCard = () => {
           marginTop: 24,
         }}
       >
-        <Col span={22}>
-          <CoffeeNameNumWordCloud />
+        <Col span={24}>
+          <DateIE />
         </Col>
       </Row>
+      {/* <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={24}>
+          <CoffeeNameNumWordCloud />
+        </Col>
+      </Row> */}
       <Modal
         title="总体支出"
         open={isModalOpen}

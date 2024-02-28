@@ -14,7 +14,11 @@ const CoffeeCalendar = () => {
 
   // 日历点击事件
   const onChange = useCallback((value) => {
-    setSelectedDate(value); // 设置选中的日期
+    const itemData = coffeeData2.find(
+      (item) => item.date === value.format("YYYY-MM-DD")
+    );
+    if (!itemData) return;
+    setSelectedDate(itemData); // 设置选中的日期详情况
     setIsModalVisible(true); // 显示模态框
   }, []);
 
@@ -36,8 +40,7 @@ const CoffeeCalendar = () => {
       <Calendar cellRender={cellRender} onChange={onChange} />
       {selectedDate && (
         <DayDetail
-          data={coffeeData2}
-          date={selectedDate}
+          itemData={selectedDate}
           visible={isModalVisible}
           onClose={() => setIsModalVisible(false)}
         />

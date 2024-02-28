@@ -4,15 +4,10 @@ import { DateDataContext } from "../contexts/CoffeeDataContext";
 
 // 日期-平均价格-图表
 const DateAverage = () => {
-  const contextData = useContext(DateDataContext) || [];
-  const data = contextData.map((item) => {
-    return {
-      ...item,
-      date: item.date.substring(5),
-    };
-  });
+  const data = useContext(DateDataContext) || [];
   const config = {
     data,
+    title: "均价",
     xField: "date",
     yField: "average",
     style: {

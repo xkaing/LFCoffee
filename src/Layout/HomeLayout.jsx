@@ -10,19 +10,19 @@ const { Header, Content, Footer } = Layout;
 const items = [
   {
     key: "welcome",
-    label: <Link to={`/welcome`}>Welcome</Link>,
+    label: <Link to={`/welcome`}>首页</Link>,
   },
   {
     key: "calendar",
-    label: <Link to={`/calendar`}>Calendar</Link>,
+    label: <Link to={`/calendar`}>日历</Link>,
   },
   {
     key: "teams",
-    label: <Link to={`/teams`}>Teams</Link>,
+    label: <Link to={`/teams`}>团队</Link>,
   },
   {
     key: "person",
-    label: <Link to={`/person`}>Person</Link>,
+    label: <Link to={`/person`}>个人</Link>,
   },
   {
     key: "xk-trophies-js-demo",

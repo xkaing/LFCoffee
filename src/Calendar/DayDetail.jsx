@@ -9,24 +9,24 @@ const IconFont = createFromIconfontCN({
 });
 const { Text } = Typography;
 
-const DayDetail = ({ data, date, visible, onClose }) => {
-  const itemData = data.find((item) => item.date === date.format("YYYY-MM-DD"));
+const DayDetail = ({ itemData, visible, onClose }) => {
   let profitNum = 0;
   let averagePrice = 0;
   const pricesDict = {}; // 价位字典
   const tempDict = {}; // 温度字典
 
   if (itemData && itemData.drinker_list) {
-    // 总价
-    // let sum = itemData.drinker_list.reduce(
-    //   (accumulator, currentValue) => accumulator + currentValue.price,
-    //   0
-    // );
-    // sum = sum.toFixed(2);
-    // 校验订单总价和支出
-    // if (sum != itemData.expend) {
-    //   console.log("计算出的订单总价：" + sum + "实际支出：" + itemData.expend);
-    // }
+    // ** 校验订单金额
+    let sum = itemData.drinker_list
+      .reduce(
+        (total, value) => total.plus(new Decimal(value.price)),
+        new Decimal(0)
+      )
+      .toNumber();
+    if (sum !== itemData.expend) {
+      console.log("订单总价：" + sum + "实际支出：" + itemData.expend);
+    }
+    // **
 
     // 平均
     averagePrice = Decimal.div(itemData.expend, itemData.drinker_list.length)
@@ -67,7 +67,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
   return (
     <>
       <Modal
-        title="Day Detail"
+        title="订单详情"
         open={visible}
         onOk={onClose}
         onCancel={onClose}
@@ -76,27 +76,27 @@ const DayDetail = ({ data, date, visible, onClose }) => {
         {itemData && (
           <>
             <Space>
-              Selected date: {date.format("YYYY-MM-DD")}
+              买单日期: {itemData.date}
               <Tag bordered={false} color="processing">
                 {itemData.week}
               </Tag>
-              <p>Payer: {<NameTag payer={itemData.payer_name}></NameTag>}</p>
+              <p>买单人: {<NameTag payer={itemData.payer_name}></NameTag>}</p>
             </Space>
             <Space size={"large"}>
               {itemData.expend && (
                 <>
                   <Statistic
-                    title="Income (CNY)"
+                    title="收入 (CNY)"
                     value={itemData.income}
                     precision={2}
                   />
                   <Statistic
-                    title="Expend (CNY)"
+                    title="支出 (CNY)"
                     value={itemData.expend}
                     precision={2}
                   />
                   <Statistic
-                    title="Profit (CNY)"
+                    title="利润 (CNY)"
                     value={profitNum}
                     valueStyle={
                       profitNum >= 0
@@ -106,7 +106,7 @@ const DayDetail = ({ data, date, visible, onClose }) => {
                     precision={2}
                   />
                   <Statistic
-                    title="Average (CNY)"
+                    title="均价 (CNY)"
                     value={averagePrice}
                     precision={3}
                   />
