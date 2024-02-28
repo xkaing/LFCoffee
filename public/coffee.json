@@ -753,7 +753,53 @@
     {
         "date":"2024-01-30",
         "week":"周二",
-        "payer":"ios-2"
+        "payer":"ios-2",
+        "income": 97.62,
+        "expend":  97.62,
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "茉莉海盐拿铁",
+                "temperature": 1,
+                "price": 14.72,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-2",
+                "name": "碧螺知春拿铁",
+                "temperature": 0,
+                "price": 9.9,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-1",
+                "name": "绿宝石美式",
+                "temperature": 1,
+                "price": 17,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-2",
+                "name": "瑰夏Dirty",
+                "temperature": 0,
+                "price": 19,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-3",
+                "name": "茉莉花香拿铁",
+                "temperature": 0,
+                "price": 18,
+                "original_price": 29
+            },
+            {
+                "drinker": "fe-1",
+                "name": "褚橙拿铁",
+                "temperature": 0,
+                "price": 19,
+                "original_price": 32
+            }
+        ]
     },
     {
         "date": "2024-01-29",
