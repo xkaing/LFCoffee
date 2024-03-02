@@ -24,37 +24,8 @@ const mapKeyAvatarUrl = {
   "ios-3": i3,
   "fe-1": f1,
 };
-// v1
-const mapPayerInObject = (item) => {
-  if (
-    typeof item === "object" &&
-    item !== null &&
-    Array.isArray(item.drinker_list)
-  ) {
-    // 处理数组
-    item.drinker_list = item.drinker_list.map(mapPayerInObject); // 递归遍历数组
-    if ("payer" in item) {
-      item.payer = mapKeyName[item.payer] || item.payer;
-    } else if ("drinker" in item) {
-      item.drinker = mapKeyName[item.drinker] || item.drinker;
-    }
-  } else if (typeof item === "object" && item !== null) {
-    // 处理非数组
-    if ("payer" in item) {
-      item.payer = mapKeyName[item.payer] || item.payer;
-    } else if ("drinker" in item) {
-      item.drinker = mapKeyName[item.drinker] || item.drinker;
-    }
-  }
-  return item;
-};
 
-export const markBecomeName = (sData) => {
-  let nData = sData.map(mapPayerInObject);
-  return nData;
-};
-
-// v2
+// 添加 姓名和头像
 const addRealNameAndUrlInObject = (item) => {
   if (
     typeof item === "object" &&

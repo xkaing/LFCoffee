@@ -62,6 +62,7 @@ const processData = (data) => {
   let totalIncome = new Decimal(0); //总收入
   let totalExpend = new Decimal(0); //总支出
   let totalCupsArray = []; //所有杯详情
+  let totalPayerWaitArr = []; //买单人排期记录
 
   // chart数据处理
   let dateDataArr = []; // X：时间，Y：每天利润，每天咖啡平均价格，
@@ -86,6 +87,7 @@ const processData = (data) => {
       totalIncome = totalIncome.plus(item.income); //计算-总收入
       totalExpend = totalExpend.plus(item.expend); //计算-总支出
       profit = Decimal.sub(item.income, item.expend).toNumber(); //计算-每天利润
+      totalPayerWaitArr.push(item.payer);
 
       if (personIncome[item.payer]) {
         personIncome[item.payer].push(item.income);
@@ -148,7 +150,7 @@ const processData = (data) => {
       average,
     });
   });
-
+  const totalWaiting = groupByEnding([...totalPayerWaitArr].reverse(), "fe-1"); //计算-总排期
   const totalProfit = totalIncome.sub(totalExpend).toNumber(); //计算-总利润
   const totalCupsNum = totalCupsArray.length; //总咖啡数量
   const totalAverage = totalExpend.div(totalCupsNum).toDP(3).toNumber(); //计算-总平均价格
@@ -160,6 +162,7 @@ const processData = (data) => {
     totalProfit,
     totalCupsNum,
     totalAverage,
+    totalWaiting,
   };
   let dateDataArr2 = dateDataArr.filter((obj) => obj.average !== 0); // 剔除空订单
   dateDataArr2.reverse(); //数组倒序
@@ -187,3 +190,26 @@ const processData = (data) => {
   };
   return totalData;
 };
+
+// 计算-根据特定表示计算二维数组
+function groupByEnding(arr, ending) {
+  const result = [];
+  let currentGroup = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    currentGroup.push(arr[i]);
+
+    if (arr[i] === ending) {
+      // 当遇到结束标识时，将当前分组（包含结束标识）添加到结果中
+      result.push([...currentGroup]);
+      currentGroup = []; // 清空当前分组
+    }
+  }
+
+  // 检查是否有未完成的分组（即数组末尾没有结束标识），若有则将其加入结果
+  if (currentGroup.length > 0) {
+    result.push(currentGroup);
+  }
+
+  return result;
+}

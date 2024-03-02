@@ -5,6 +5,7 @@ import { TotalInfoContext } from "../contexts/CoffeeDataContext";
 import PersonIncome from "../Charts/PersonIncome";
 import { CoffeeNameNumWordCloud } from "../Charts/CoffeeNameNum";
 import DateIE from "../Charts/DateIE";
+import TotalExpendWaiting from "../components/TotalExpendWaiting";
 
 const { Title } = Typography;
 
@@ -107,7 +108,7 @@ const TotalDataCard = () => {
           <DateIE />
         </Col>
       </Row>
-      {/* <Row
+      <Row
         gutter={16}
         style={{
           marginTop: 24,
@@ -115,6 +116,16 @@ const TotalDataCard = () => {
       >
         <Col span={24}>
           <CoffeeNameNumWordCloud />
+        </Col>
+      </Row>
+      {/* <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={24}>
+          <TotalExpendWaiting />
         </Col>
       </Row> */}
       <Modal
