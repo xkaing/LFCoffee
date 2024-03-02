@@ -26,6 +26,10 @@ const mapKeyAvatarUrl = {
 };
 
 // 添加 姓名和头像
+export const addRealNameAndUrl = (sData) => {
+  return sData.map(addRealNameAndUrlInObject);
+};
+
 const addRealNameAndUrlInObject = (item) => {
   if (
     typeof item === "object" &&
@@ -50,6 +54,10 @@ const addRealNameAndUrlInObject = (item) => {
   return item;
 };
 
-export const addRealNameAndUrl = (sData) => {
-  return sData.map(addRealNameAndUrlInObject);
+export const addNameInSteps = (sData) => {
+  const newStepsArr = sData.map((item) => ({
+    payer: item,
+    title: mapKeyName[item] || item,
+  }));
+  return newStepsArr;
 };

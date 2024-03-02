@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Card, Col, Row, Statistic, Modal, Typography } from "antd";
+import { Card, Col, Row, Statistic, Modal, Typography, Flex } from "antd";
 import CountUp from "react-countup";
 import { TotalInfoContext } from "../contexts/CoffeeDataContext";
 import PersonIncome from "../Charts/PersonIncome";
@@ -40,6 +40,21 @@ const TotalDataCard = () => {
 
   return (
     <>
+      <Flex justify="flex-start" align="center">
+        <Col span={3}>
+          <Title
+            level={3}
+            style={{
+              marginTop: 12,
+            }}
+          >
+            当前排期：
+          </Title>
+        </Col>
+        <Col span={21}>
+          <TotalExpendWaiting />
+        </Col>
+      </Flex>
       <Title
         level={3}
         style={{
@@ -108,16 +123,6 @@ const TotalDataCard = () => {
           <DateIE />
         </Col>
       </Row>
-      <Row
-        gutter={16}
-        style={{
-          marginTop: 24,
-        }}
-      >
-        <Col span={24}>
-          <CoffeeNameNumWordCloud />
-        </Col>
-      </Row>
       {/* <Row
         gutter={16}
         style={{
@@ -125,7 +130,7 @@ const TotalDataCard = () => {
         }}
       >
         <Col span={24}>
-          <TotalExpendWaiting />
+          <CoffeeNameNumWordCloud />
         </Col>
       </Row> */}
       <Modal
