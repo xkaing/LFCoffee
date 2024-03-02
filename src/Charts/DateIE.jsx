@@ -2,7 +2,7 @@ import { Column } from "@ant-design/plots";
 import React, { useContext } from "react";
 import { DateDataContext } from "../contexts/CoffeeDataContext";
 
-// 日期-收入-图表
+// 日期-收入和支出-图表
 const DateIE = () => {
   const dataArr = useContext(DateDataContext) || [];
   const arrI = dataArr.map((item) => {

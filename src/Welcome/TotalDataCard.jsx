@@ -6,6 +6,7 @@ import PersonIncome from "../Charts/PersonIncome";
 import { CoffeeNameNumWordCloud } from "../Charts/CoffeeNameNum";
 import DateIE from "../Charts/DateIE";
 import TotalExpendWaiting from "../components/TotalExpendWaiting";
+import DateAll from "../Charts/DateAll";
 
 const { Title } = Typography;
 
@@ -120,7 +121,8 @@ const TotalDataCard = () => {
         }}
       >
         <Col span={24}>
-          <DateIE />
+          {/* <DateIE /> */}
+          <DateAll />
         </Col>
       </Row>
       {/* <Row
