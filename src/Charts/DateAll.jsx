@@ -5,41 +5,15 @@ import { DateDataContext } from "../contexts/CoffeeDataContext";
 // 日期-所有数据-图表
 const DateExpend = () => {
   const dataArr = useContext(DateDataContext) || [];
-  const arrI = dataArr.map((item) => {
-    return {
-      date: item.date,
-      value: item.income,
-      type: "收入",
-    };
-  });
-  const arrE = dataArr.map((item) => {
-    return {
-      date: item.date,
-      value: item.expend,
-      type: "支出",
-    };
-  });
-  const arrP = dataArr.map((item) => {
-    return {
-      date: item.date,
-      value2: item.profit,
-      category: "利润",
-    };
-  });
-  const arrA = dataArr.map((item) => {
-    return {
-      date: item.date,
-      value2: item.average,
-      category: "均价",
-    };
-  });
-  const dataInterval = [...arrI, ...arrE];
-  const dataLine = [...arrP, ...arrA];
 
-  if (!dataInterval || !dataLine) {
-    console.log("1111");
-    return null;
-  }
+  const dataArray = dataArr.flatMap((item) => [
+    { date: item.date, value: item.income, type: "收入" },
+    { date: item.date, value: item.expend, type: "支出" },
+    { date: item.date, value2: item.profit, category: "利润" },
+    { date: item.date, value2: item.average, category: "均价" },
+  ]);
+  const dataInterval = dataArray.filter((item) => item.type);
+  const dataLine = dataArray.filter((item) => item.category);
 
   const config = {
     xField: "date",
@@ -49,6 +23,7 @@ const DateExpend = () => {
         layout: { justifyContent: "center" },
       },
     },
+    // scale: { color: { range: ["#5B8FF9", "#5D7092", "#5AD8A6", "#F4A49E"] } },
     children: [
       {
         data: dataInterval,
