@@ -27,7 +27,9 @@ const mapKeyAvatarUrl = {
 
 // 添加 姓名和头像
 export const addRealNameAndUrl = (sData) => {
-  return sData.map(addRealNameAndUrlInObject);
+  const newData = sData.map(addRealNameAndUrlInObject);
+  const completeCycleData = newData.slice(0, -2); // 只取完整周期数据
+  return completeCycleData;
 };
 
 const addRealNameAndUrlInObject = (item) => {

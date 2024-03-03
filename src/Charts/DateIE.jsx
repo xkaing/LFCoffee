@@ -23,7 +23,7 @@ const DateIE = () => {
   const data = [...arrI, ...arrE];
   const config = {
     data,
-    title: "收入和支出",
+    title: "收入、支出和利润",
     xField: "date",
     yField: "income",
     colorField: "category",

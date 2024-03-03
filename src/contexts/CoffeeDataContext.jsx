@@ -144,8 +144,10 @@ const processData = (data) => {
     dateDataArr.push({
       date: date.substring(5),
       payer: item.payer,
+      name: item.payer_name,
       income: item.income,
       expend: item.expend,
+      cups: item.drinker_list.length,
       profit,
       average,
     });

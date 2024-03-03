@@ -2,13 +2,6 @@ import React, { useContext } from "react";
 import { Steps } from "antd";
 import { TotalInfoContext } from "../contexts/CoffeeDataContext";
 import { addNameInSteps } from "../tools";
-import {
-  LoadingOutlined,
-  SmileOutlined,
-  SolutionOutlined,
-  UserOutlined,
-  StopOutlined,
-} from "@ant-design/icons";
 
 const TotalExpendWaiting = () => {
   const totalWaiting = useContext(TotalInfoContext).totalWaiting || [];

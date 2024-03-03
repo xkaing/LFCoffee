@@ -23,6 +23,8 @@ const DeployTimeline = () => (
         children: (
           <>
             <p>添加买单排期</p>
+            <p>添加常喝矩阵图</p>
+            <p>统计数据只包含完整周期</p>
           </>
         ),
       },
