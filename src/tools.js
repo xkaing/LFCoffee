@@ -24,37 +24,14 @@ const mapKeyAvatarUrl = {
   "ios-3": i3,
   "fe-1": f1,
 };
-// v1
-const mapPayerInObject = (item) => {
-  if (
-    typeof item === "object" &&
-    item !== null &&
-    Array.isArray(item.drinker_list)
-  ) {
-    // 处理数组
-    item.drinker_list = item.drinker_list.map(mapPayerInObject); // 递归遍历数组
-    if ("payer" in item) {
-      item.payer = mapKeyName[item.payer] || item.payer;
-    } else if ("drinker" in item) {
-      item.drinker = mapKeyName[item.drinker] || item.drinker;
-    }
-  } else if (typeof item === "object" && item !== null) {
-    // 处理非数组
-    if ("payer" in item) {
-      item.payer = mapKeyName[item.payer] || item.payer;
-    } else if ("drinker" in item) {
-      item.drinker = mapKeyName[item.drinker] || item.drinker;
-    }
-  }
-  return item;
+
+// 添加 姓名和头像
+export const addRealNameAndUrl = (sData) => {
+  const newData = sData.map(addRealNameAndUrlInObject);
+  const completeCycleData = newData.slice(0, -2); // 只取完整周期数据
+  return completeCycleData;
 };
 
-export const markBecomeName = (sData) => {
-  let nData = sData.map(mapPayerInObject);
-  return nData;
-};
-
-// v2
 const addRealNameAndUrlInObject = (item) => {
   if (
     typeof item === "object" &&
@@ -79,6 +56,10 @@ const addRealNameAndUrlInObject = (item) => {
   return item;
 };
 
-export const addRealNameAndUrl = (sData) => {
-  return sData.map(addRealNameAndUrlInObject);
+export const addNameInSteps = (sData) => {
+  const newStepsArr = sData.map((item) => ({
+    payer: item,
+    title: mapKeyName[item] || item,
+  }));
+  return newStepsArr;
 };

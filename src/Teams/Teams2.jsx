@@ -4,12 +4,14 @@ import { CoffeeNameNumColumn } from "../Charts/CoffeeNameNum";
 import PersonCupsNum from "../Charts/PersonCupsNum";
 import CoffeeTempNum from "../Charts/CoffeeTempNum";
 import CoffeePriceNum from "../Charts/CoffeePriceNum";
+import { CoffeeNameNumTreemap } from "../Charts/CoffeeNameNum";
 // 日期价格图表
 import DateProfit from "../Charts/DateProfit";
 import DateAverage from "../Charts/DateAverage";
 import DateIncome from "../Charts/DateIncome";
 import DateExpend from "../Charts/DateExpend";
 import DateIE from "../Charts/DateIE";
+import DateCups from "../Charts/DateCups";
 
 const { Title } = Typography;
 
@@ -92,16 +94,19 @@ const Teams = () => {
           <DateExpend />
         </Col>
       </Row>
-      {/* <Row
+      <Row
         gutter={16}
         style={{
           marginTop: 24,
         }}
       >
-        <Col span={24}>
-          <DateIE />
+        <Col span={12}>
+          <DateCups />
         </Col>
-      </Row> */}
+        {/* <Col span={12}>
+          <CoffeeNameNumTreemap />
+        </Col> */}
+      </Row>
     </>
   );
 };

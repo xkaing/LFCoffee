@@ -5,7 +5,6 @@ import { getCoffeeData } from "../serve";
 import { useLoaderData } from "react-router-dom";
 import TopPresonProfit from "../Teams/TopPresonProfit";
 import TopPersonIncome from "../Teams/TopPersonIncome";
-import { markBecomeName } from "../tools";
 
 const { Title } = Typography;
 

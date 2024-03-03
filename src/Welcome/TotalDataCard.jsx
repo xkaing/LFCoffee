@@ -1,10 +1,15 @@
 import React, { useState, useContext } from "react";
-import { Card, Col, Row, Statistic, Modal, Typography } from "antd";
+import { Card, Col, Row, Statistic, Modal, Typography, Flex } from "antd";
 import CountUp from "react-countup";
 import { TotalInfoContext } from "../contexts/CoffeeDataContext";
 import PersonIncome from "../Charts/PersonIncome";
-import { CoffeeNameNumWordCloud } from "../Charts/CoffeeNameNum";
+import {
+  CoffeeNameNumWordCloud,
+  CoffeeNameNumTreemap,
+} from "../Charts/CoffeeNameNum";
 import DateIE from "../Charts/DateIE";
+import TotalExpendWaiting from "../components/TotalExpendWaiting";
+import DateAll from "../Charts/DateAll";
 
 const { Title } = Typography;
 
@@ -39,6 +44,21 @@ const TotalDataCard = () => {
 
   return (
     <>
+      <Flex justify="flex-start" align="center">
+        <Col span={3}>
+          <Title
+            level={3}
+            style={{
+              marginTop: 12,
+            }}
+          >
+            当前周期：
+          </Title>
+        </Col>
+        <Col span={21}>
+          <TotalExpendWaiting />
+        </Col>
+      </Flex>
       <Title
         level={3}
         style={{
@@ -105,18 +125,19 @@ const TotalDataCard = () => {
       >
         <Col span={24}>
           <DateIE />
+          {/* <DateAll /> */}
         </Col>
       </Row>
-      {/* <Row
+      <Row
         gutter={16}
         style={{
           marginTop: 24,
         }}
       >
         <Col span={24}>
-          <CoffeeNameNumWordCloud />
+          <CoffeeNameNumTreemap />
         </Col>
-      </Row> */}
+      </Row>
       <Modal
         title="总体支出"
         open={isModalOpen}
