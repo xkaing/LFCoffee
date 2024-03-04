@@ -10,8 +10,9 @@ import {
 import DateIE from "../Charts/DateIE";
 import TotalExpendWaiting from "../components/TotalExpendWaiting";
 import DateAll from "../Charts/DateAll";
+import EmptyData from "../components/EmptyData";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 // 设置数值动画
 const formatter = (value) => {
@@ -29,8 +30,9 @@ const TotalDataCard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (!totalInfo) {
-    return <div>Loading...</div>;
+    return <EmptyData />;
   }
+  const cicloInCorso = totalInfo.totalWaiting.length;
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -44,7 +46,7 @@ const TotalDataCard = () => {
 
   return (
     <>
-      <Flex justify="flex-start" align="flex-start">
+      <Row gutter={[16, 24]}>
         <Col span={3}>
           <Title
             level={3}
@@ -54,21 +56,26 @@ const TotalDataCard = () => {
           >
             当前周期：
           </Title>
+          <Text type="secondary" style={{ fontSize: "1.2em" }}>
+            （第{cicloInCorso}轮）
+          </Text>
         </Col>
         <Col span={21}>
           <TotalExpendWaiting />
         </Col>
-      </Flex>
-      <Title
-        level={3}
-        style={{
-          marginTop: 12,
-        }}
-      >
-        总体数据
-      </Title>
-      <Row gutter={16}>
+      </Row>
+      <Row gutter={[16, 24]} style={{ marginTop: 12, marginBottom: 12 }}>
         <Col span={3}>
+          <Title
+            level={3}
+            style={{
+              marginTop: 12,
+            }}
+          >
+            总体数据：
+          </Title>
+        </Col>
+        <Col span={4}>
           <Card bordered={false} hoverable size="small" onClick={showModal}>
             <Statistic
               title="总收入 (CNY)"
@@ -77,7 +84,7 @@ const TotalDataCard = () => {
             />
           </Card>
         </Col>
-        <Col span={3}>
+        <Col span={4}>
           <Card bordered={false} size="small" hoverable onClick={showModal}>
             <Statistic
               title="总支出 (CNY)"
@@ -86,7 +93,7 @@ const TotalDataCard = () => {
             />
           </Card>
         </Col>
-        <Col span={3}>
+        <Col span={4}>
           <Card bordered={false} size="small" hoverable onClick={showModal}>
             <Statistic
               title="总利润 (CNY)"
@@ -98,7 +105,7 @@ const TotalDataCard = () => {
             />
           </Card>
         </Col>
-        <Col span={3}>
+        <Col span={4}>
           <Card bordered={false} size="small" hoverable>
             <Statistic
               title="总杯数 (Cups)"
@@ -107,7 +114,7 @@ const TotalDataCard = () => {
             />
           </Card>
         </Col>
-        <Col span={3}>
+        <Col span={4}>
           <Card bordered={false} size="small" hoverable>
             <Statistic
               title="均价 (CNY)"
@@ -117,6 +124,7 @@ const TotalDataCard = () => {
           </Card>
         </Col>
       </Row>
+      {/* 日期图 */}
       <Row
         gutter={16}
         style={{
@@ -125,9 +133,9 @@ const TotalDataCard = () => {
       >
         <Col span={24}>
           <DateIE />
-          {/* <DateAll /> */}
         </Col>
       </Row>
+      {/* 矩阵图 */}
       <Row
         gutter={16}
         style={{
