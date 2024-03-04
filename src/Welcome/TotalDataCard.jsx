@@ -12,7 +12,7 @@ import TotalExpendWaiting from "../components/TotalExpendWaiting";
 import DateAll from "../Charts/DateAll";
 import EmptyData from "../components/EmptyData";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 // 设置数值动画
 const formatter = (value) => {
@@ -32,6 +32,7 @@ const TotalDataCard = () => {
   if (!totalInfo) {
     return <EmptyData />;
   }
+  const cicloInCorso = totalInfo.totalWaiting.length;
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -55,6 +56,9 @@ const TotalDataCard = () => {
           >
             当前周期：
           </Title>
+          <Text type="secondary" style={{ fontSize: "1.2em" }}>
+            （第{cicloInCorso}轮）
+          </Text>
         </Col>
         <Col span={21}>
           <TotalExpendWaiting />
