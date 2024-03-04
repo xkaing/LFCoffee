@@ -44,12 +44,12 @@ const TotalDataCard = () => {
 
   return (
     <>
-      <Flex justify="flex-start" align="center">
+      <Flex justify="flex-start" align="flex-start">
         <Col span={3}>
           <Title
             level={3}
             style={{
-              marginTop: 12,
+              marginTop: 0,
             }}
           >
             当前周期：
