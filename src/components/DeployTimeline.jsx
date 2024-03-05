@@ -6,8 +6,7 @@ const DeployTimeline = () => (
   <Timeline
     mode="right"
     style={{
-      width: 400,
-      height: 800,
+      width: 380,
       overflowY: "auto",
       paddingTop: 5,
     }}
@@ -16,7 +15,7 @@ const DeployTimeline = () => (
         label: (
           <>
             <p>2024-03-03</p>
-            <Text type="warning">v0.11.2-beta</Text>
+            <Text type="warning">v0.11.0-beta</Text>
           </>
         ),
         color: "orange",
