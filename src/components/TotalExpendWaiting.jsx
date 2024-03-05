@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
-import { Steps, Typography, Space } from "antd";
+import React, { useContext, useState } from "react";
+import { Steps, Typography, Space, Button, Drawer } from "antd";
 import {
   TotalInfoContext,
   DateDataContext,
 } from "../contexts/CoffeeDataContext";
 import { addNameInSteps } from "../tools";
+import DayDetailInfo from "./DayDetailInfo";
 const { Text } = Typography;
 
 const TotalExpendWaiting = () => {
@@ -44,11 +45,24 @@ const TotalExpendWaiting = () => {
 export default TotalExpendWaiting;
 
 const StepsDesc = ({ payerInfo }) => {
+  const [open, setOpen] = useState(false);
+  const onShow = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
   return (
     <Space direction="vertical" size={"small"}>
       <Text>日期：{payerInfo.date}</Text>
       <Text>杯数：{payerInfo.cups}</Text>
       <Text>均价：¥{payerInfo.average}</Text>
+      <Button type="primary" size="small" ghost onClick={onShow}>
+        详情
+      </Button>
+      <Drawer title="买单详情" onClose={onClose} open={open} width={430}>
+        <DayDetailInfo date={payerInfo.date} />
+      </Drawer>
     </Space>
   );
 };
