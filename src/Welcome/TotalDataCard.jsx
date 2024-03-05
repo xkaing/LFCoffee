@@ -1,5 +1,14 @@
 import React, { useState, useContext } from "react";
-import { Card, Col, Row, Statistic, Modal, Typography, Flex } from "antd";
+import {
+  Card,
+  Col,
+  Row,
+  Statistic,
+  Modal,
+  Typography,
+  Flex,
+  Empty,
+} from "antd";
 import CountUp from "react-countup";
 import { TotalInfoContext } from "../contexts/CoffeeDataContext";
 import PersonIncome from "../Charts/PersonIncome";
@@ -10,7 +19,6 @@ import {
 import DateIE from "../Charts/DateIE";
 import TotalExpendWaiting from "../components/TotalExpendWaiting";
 import DateAll from "../Charts/DateAll";
-import EmptyData from "../components/EmptyData";
 
 const { Title, Text } = Typography;
 
@@ -30,7 +38,7 @@ const TotalDataCard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (!totalInfo) {
-    return <EmptyData />;
+    return <Empty />;
   }
   const cicloInCorso = totalInfo.totalWaiting.length;
 
