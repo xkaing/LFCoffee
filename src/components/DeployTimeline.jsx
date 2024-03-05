@@ -6,7 +6,6 @@ const DeployTimeline = () => (
   <Timeline
     mode="right"
     style={{
-      width: 380,
       overflowY: "auto",
       paddingTop: 5,
     }}

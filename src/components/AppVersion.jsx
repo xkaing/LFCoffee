@@ -30,7 +30,7 @@ const AppVersion = () => {
         />
         {appVerNum}
       </Text>
-      <Drawer title="版本更新日志" onClose={onClose} open={open}>
+      <Drawer title="版本更新日志" onClose={onClose} open={open} width={400}>
         <DeployTimeline />
       </Drawer>
     </>
