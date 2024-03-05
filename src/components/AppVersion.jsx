@@ -1,18 +1,27 @@
-import { Typography, Popover } from "antd";
+import React, { useState } from "react";
+import { Typography, Popover, Drawer } from "antd";
 import { CodeOutlined } from "@ant-design/icons";
 import DeployTimeline from "./DeployTimeline";
 const { Text } = Typography;
 
-const appVerNum = "v0.11.5-beta";
+const appVerNum = "v0.11.8-beta";
 
 const AppVersion = () => {
+  const [open, setOpen] = useState(false);
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
   return (
-    <Popover content={<DeployTimeline />} title="部署时间线">
+    <>
       <Text
         type="warning"
         style={{
           fontSize: "1rem",
         }}
+        onClick={showDrawer}
       >
         <CodeOutlined
           style={{
@@ -21,7 +30,10 @@ const AppVersion = () => {
         />
         {appVerNum}
       </Text>
-    </Popover>
+      <Drawer title="版本更新日志" onClose={onClose} open={open} width={400}>
+        <DeployTimeline />
+      </Drawer>
+    </>
   );
 };
 

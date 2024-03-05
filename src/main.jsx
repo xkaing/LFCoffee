@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <RoutesIndex /> },
+      { index: true, element: <TotalDataCard /> },
       {
         path: "/welcome",
         element: <TotalDataCard />,
