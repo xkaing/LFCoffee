@@ -1,5 +1,49 @@
 [
     {
+        "date": "2024-03-07",
+        "week":"周四",
+        "payer": "android-1",
+        "income": 0,
+        "expend": 64.17,
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "海盐芝士厚乳拿铁",
+                "temperature": 0,
+                "price": 14.46,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-2",
+                "name": "碧螺知春拿铁",
+                "temperature": 0,
+                "price": 14.46,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-3",
+                "name": "瑰夏美式",
+                "temperature": 0,
+                "price": 10.40,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-1",
+                "name": "瑰夏美式",
+                "temperature": 1,
+                "price": 10.40,
+                "original_price": 29
+            },
+            {
+                "drinker": "fe-1",
+                "name": "小白梨拿铁",
+                "temperature": 0,
+                "price": 14.46,
+                "original_price": 32
+            }
+        ]
+    },
+    {
         "date": "2024-03-06",
         "week":"周三",
         "payer": "fe-1",

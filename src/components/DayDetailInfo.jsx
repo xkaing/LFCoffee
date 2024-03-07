@@ -1,11 +1,21 @@
 import React, { useContext } from "react";
-import { Avatar, List, Tag, Space, Statistic, Typography, Flex } from "antd";
+import {
+  Avatar,
+  List,
+  Tag,
+  Space,
+  Statistic,
+  Typography,
+  Flex,
+  QRCode,
+} from "antd";
 import NameTag from "./NameTag";
 import {
   createFromIconfontCN,
   CloseOutlined,
   ExclamationCircleOutlined,
   WarningFilled,
+  WechatOutlined,
 } from "@ant-design/icons";
 import Decimal from "decimal.js";
 import { CoffeeDataContext } from "../contexts/CoffeeDataContext";
@@ -15,10 +25,12 @@ const IconFont = createFromIconfontCN({
 });
 const { Text } = Typography;
 
-const DayDetail = ({ date }) => {
+const DayDetailInfo = ({ waitDate, calDate }) => {
   const allData = useContext(CoffeeDataContext) || [];
   const coffeeData = allData.sourceDataArr;
-  const dayDate = `2024-` + date;
+
+  // 检查日期参数
+  const dayDate = calDate ? calDate : `2024-` + waitDate;
   const itemData = coffeeData.find((item) => item.date === dayDate);
 
   let profitNum = 0;
@@ -45,7 +57,7 @@ const DayDetail = ({ date }) => {
       .toDP(3)
       .toNumber();
     // 利润
-    if (itemData.income && itemData.expend) {
+    if (itemData.expend) {
       profitNum = Decimal.sub(itemData.income, itemData.expend).toNumber();
     }
 
@@ -162,6 +174,7 @@ const DayDetail = ({ date }) => {
           </List.Item>
         )}
       />
+      {/* 金额校验提示 */}
       {warningInfo && (
         <Flex justify="flex-end" gap="small" style={{ color: "#ff4d4f" }}>
           <WarningFilled />
@@ -169,6 +182,29 @@ const DayDetail = ({ date }) => {
             {warningInfo}
           </Text>
         </Flex>
+      )}
+      {/* 收款码 */}
+      {waitDate && itemData.income == 0 && (
+        <Space
+          direction="vertical"
+          align="center"
+          style={{ width: "100%", marginTop: "24px" }}
+          size="small"
+        >
+          <Tag icon={<WechatOutlined />} color="#87d068">
+            微信支付
+          </Tag>
+          <QRCode
+            errorLevel="H"
+            value="wxp://f2f05hGRGz8C4e0p61mXhEWN2jZ-4x9taM8Hl7vgtxOEJFo"
+            size={250}
+            iconSize={250 / 4}
+            bordered={false}
+            color="#87d068"
+            bgColor="#f6ffed"
+            icon="https://www.lfcoffee.cn/coffee_2.svg"
+          />
+        </Space>
       )}
     </>
   );
@@ -265,4 +301,4 @@ const TempDictComponent = ({ tempDict }) => {
   );
 };
 
-export default DayDetail;
+export default DayDetailInfo;

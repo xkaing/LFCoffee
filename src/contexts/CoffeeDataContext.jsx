@@ -83,7 +83,7 @@ const processData = (data) => {
     let profit = 0; //每天利润
     let average = 0; //每天平均价格
 
-    if (item.income && item.expend) {
+    if (item.expend) {
       totalIncome = totalIncome.plus(item.income); //计算-总收入
       totalExpend = totalExpend.plus(item.expend); //计算-总支出
       profit = Decimal.sub(item.income, item.expend).toNumber(); //计算-每天利润
