@@ -15,10 +15,12 @@ const IconFont = createFromIconfontCN({
 });
 const { Text } = Typography;
 
-const DayDetail = ({ date }) => {
+const DayDetailInfo = ({ waitDate, calDate }) => {
   const allData = useContext(CoffeeDataContext) || [];
   const coffeeData = allData.sourceDataArr;
-  const dayDate = `2024-` + date;
+
+  // 检查日期参数
+  const dayDate = calDate ? calDate : `2024-` + waitDate;
   const itemData = coffeeData.find((item) => item.date === dayDate);
 
   let profitNum = 0;
@@ -265,4 +267,4 @@ const TempDictComponent = ({ tempDict }) => {
   );
 };
 
-export default DayDetail;
+export default DayDetailInfo;

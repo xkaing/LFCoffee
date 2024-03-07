@@ -1,10 +1,8 @@
 import React, { useState, useCallback, useContext } from "react";
-import { Calendar } from "antd";
-import DayRender from "./DayRender";
-import DayDetail from "./DayDetail";
+import { Calendar, Statistic, Modal } from "antd";
+import NameTag from "../components/NameTag";
+import DayDetailInfo from "../components/DayDetailInfo";
 import { CoffeeDataContext } from "../contexts/CoffeeDataContext";
-
-const defaultData = [{ date: "2024-02-01", payer: "fe" }];
 
 const CoffeeCalendar = () => {
   const contextData = useContext(CoffeeDataContext);
@@ -14,11 +12,9 @@ const CoffeeCalendar = () => {
 
   // 日历点击事件
   const onChange = useCallback((value) => {
-    const itemData = coffeeData2.find(
-      (item) => item.date === value.format("YYYY-MM-DD")
-    );
-    if (!itemData) return;
-    setSelectedDate(itemData); // 设置选中的日期详情况
+    const date = value.format("YYYY-MM-DD");
+    if (!date) return;
+    setSelectedDate(date); // 设置选中的日期详情况
     setIsModalVisible(true); // 显示模态框
   }, []);
 
@@ -38,15 +34,25 @@ const CoffeeCalendar = () => {
   return (
     <>
       <Calendar cellRender={cellRender} onChange={onChange} />
-      {selectedDate && (
-        <DayDetail
-          itemData={selectedDate}
-          visible={isModalVisible}
-          onClose={() => setIsModalVisible(false)}
-        />
-      )}
+      <Modal
+        title="订单详情"
+        open={isModalVisible}
+        onOk={() => setIsModalVisible(false)}
+        onCancel={() => setIsModalVisible(false)}
+        footer={null}
+      >
+        <DayDetailInfo calDate={selectedDate} />
+      </Modal>
     </>
   );
 };
 
 export default CoffeeCalendar;
+
+// 日历-单元格渲染
+const DayRender = ({ payer_name, expend }) => (
+  <>
+    <NameTag payer={payer_name}></NameTag>
+    {expend && <Statistic title="支出 (CNY)" value={expend} precision={2} />}
+  </>
+);

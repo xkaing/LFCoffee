@@ -60,8 +60,8 @@ const StepsDesc = ({ payerInfo }) => {
       <Button type="primary" size="small" ghost onClick={onShow}>
         详情
       </Button>
-      <Drawer title="买单详情" onClose={onClose} open={open} width={430}>
-        <DayDetailInfo date={payerInfo.date} />
+      <Drawer title="订单详情" onClose={onClose} open={open} width={430}>
+        <DayDetailInfo waitDate={payerInfo.date} />
       </Drawer>
     </Space>
   );
