@@ -45,7 +45,7 @@ const DayDetail = ({ date }) => {
       .toDP(3)
       .toNumber();
     // 利润
-    if (itemData.income && itemData.expend) {
+    if (itemData.expend) {
       profitNum = Decimal.sub(itemData.income, itemData.expend).toNumber();
     }
 
