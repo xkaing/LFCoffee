@@ -13,6 +13,21 @@ const DeployTimeline = () => (
       {
         label: (
           <>
+            <p>CT</p>
+            <Text type="warning">v0.12.0-beta</Text>
+          </>
+        ),
+        color: "orange",
+        children: (
+          <>
+            <p>添加微信收款码</p>
+            <p>优化算法，支持零收入</p>
+          </>
+        ),
+      },
+      {
+        label: (
+          <>
             <p>2024-03-03</p>
             <Text type="warning">v0.11.0-beta</Text>
           </>
