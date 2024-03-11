@@ -19,6 +19,7 @@ import {
 import DateIE from "../Charts/DateIE";
 import TotalExpendWaiting from "../components/TotalExpendWaiting";
 import DateAll from "../Charts/DateAll";
+import PersonProfit from "../Charts/PersonProfit";
 
 const { Title, Text } = Typography;
 
@@ -84,7 +85,7 @@ const TotalDataCard = () => {
           </Title>
         </Col>
         <Col span={4}>
-          <Card bordered={false} hoverable size="small" onClick={showModal}>
+          <Card bordered={false} hoverable size="small">
             <Statistic
               title="总收入 (CNY)"
               value={totalInfo.totalIncome}
@@ -93,7 +94,7 @@ const TotalDataCard = () => {
           </Card>
         </Col>
         <Col span={4}>
-          <Card bordered={false} size="small" hoverable onClick={showModal}>
+          <Card bordered={false} size="small" hoverable>
             <Statistic
               title="总支出 (CNY)"
               value={totalInfo.totalExpend}
@@ -155,13 +156,13 @@ const TotalDataCard = () => {
         </Col>
       </Row>
       <Modal
-        title="总体支出"
+        title="小费榜单"
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
         footer={null}
       >
-        <PersonIncome />
+        <PersonProfit />
       </Modal>
     </>
   );
