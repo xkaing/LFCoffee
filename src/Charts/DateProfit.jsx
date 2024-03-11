@@ -11,11 +11,8 @@ const DateProfit = () => {
     xField: "date",
     yField: "profit",
     style: {
-      fill: ({ date }) => {
-        if (date === "02-02") {
-          return "#f5222d";
-        }
-        return "#2989FF";
+      fill: ({ profit }) => {
+        return profit > 0 ? "#2989FF" : "#f5222d";
       },
     },
     scale: {
