@@ -18,7 +18,7 @@ const DateProfit = () => {
     scale: {
       y: {
         domainMax: 9,
-        domainMin: -1,
+        domainMin: -6,
       },
     },
     label: {
