@@ -3,6 +3,7 @@ import { CupsDataContext } from "../contexts/CoffeeDataContext";
 import { Pie } from "@ant-design/plots";
 const priceMapping = {
   23: "CNY: 23",
+  26: "CNY: 26",
   29: "CNY: 29",
   32: "CNY: 32",
   35: "CNY: 35",
