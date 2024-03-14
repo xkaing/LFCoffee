@@ -20,6 +20,8 @@ import {
   OneCoffeeNameNumColumn,
   OneCoffeeNameNumPie,
 } from "../Charts/OneCoffeeNameNum.jsx";
+import { OneCoffeeTempNum } from "../Charts/OneCoffeeTempNum.jsx";
+import OneCoffeeOldPriceNum from "../Charts/OneCoffeeOldPriceNum.jsx";
 
 const { Title } = Typography;
 
@@ -37,12 +39,23 @@ const PersonDetail = ({ drinker }) => {
 
   // 计算-图表数据
   const drinkerData = contextData.filter((obj) => obj.drinker === drinker);
-  const drinkerCoffeeNameNum = []; // 个人口味记录
+  const drinkerCoffeeNameNum = []; // 个人咖啡名称数量
+  const drinkerCoffeeTempNum = []; // 个人咖啡温度数量
+  const drinkerCoffeeOriPriceNum = []; // 个人咖啡原价数量
   const chartData = drinkerData
     .map((item) => {
       drinkerCoffeeNameNum[item.name] = drinkerCoffeeNameNum[item.name]
         ? drinkerCoffeeNameNum[item.name] + 1
         : 1;
+      drinkerCoffeeTempNum[item.temperature] = drinkerCoffeeTempNum[
+        item.temperature
+      ]
+        ? drinkerCoffeeTempNum[item.temperature] + 1
+        : 1;
+      drinkerCoffeeOriPriceNum["CNY: " + item.original_price] =
+        drinkerCoffeeOriPriceNum["CNY: " + item.original_price]
+          ? drinkerCoffeeOriPriceNum["CNY: " + item.original_price] + 1
+          : 1;
       return { ...item, date: item.date.slice(5) };
     })
     .reverse();
@@ -156,6 +169,35 @@ const PersonDetail = ({ drinker }) => {
             口味习惯
           </Title>
           <OneCoffeeNameNumColumn obj={drinkerCoffeeNameNum} />
+        </div>
+      </Flex>
+      <Flex
+        gap="large"
+        align="center"
+        justify="space-evenly"
+        style={{ width: "100%" }}
+      >
+        <div>
+          <Title
+            level={3}
+            style={{
+              marginTop: 12,
+            }}
+          >
+            温度
+          </Title>
+          <OneCoffeeTempNum obj={drinkerCoffeeTempNum} />
+        </div>
+        <div>
+          <Title
+            level={3}
+            style={{
+              marginTop: 12,
+            }}
+          >
+            价位
+          </Title>
+          <OneCoffeeOldPriceNum obj={drinkerCoffeeOriPriceNum} />
         </div>
       </Flex>
     </>

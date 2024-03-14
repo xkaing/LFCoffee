@@ -16,6 +16,7 @@ export const CoffeeNameNumWordCloud = () => {
   const config = {
     paddingTop: 40,
     data,
+    title: "常喝咖啡",
     layout: { spiral: "rectangular" },
     colorField: "name",
     textField: "name",

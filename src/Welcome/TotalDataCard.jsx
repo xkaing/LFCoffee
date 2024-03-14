@@ -14,6 +14,7 @@ import { TotalInfoContext } from "../contexts/CoffeeDataContext";
 import PersonIncome from "../Charts/PersonIncome";
 import {
   CoffeeNameNumWordCloud,
+  CoffeeNameNumColumn,
   CoffeeNameNumTreemap,
 } from "../Charts/CoffeeNameNum";
 import DateIE from "../Charts/DateIE";
@@ -152,7 +153,8 @@ const TotalDataCard = () => {
         }}
       >
         <Col span={24}>
-          <CoffeeNameNumTreemap />
+          {/* <CoffeeNameNumTreemap /> */}
+          <CoffeeNameNumWordCloud />
         </Col>
       </Row>
       <Modal
