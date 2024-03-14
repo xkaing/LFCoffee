@@ -13,7 +13,8 @@ const CoffeeCalendar = () => {
   // 日历点击事件
   const onChange = useCallback((value) => {
     const date = value.format("YYYY-MM-DD");
-    if (!date) return;
+    const calendarData = coffeeData2.find((item) => item.date === date);
+    if (!calendarData) return;
     setSelectedDate(date); // 设置选中的日期详情况
     setIsModalVisible(true); // 显示模态框
   }, []);
@@ -40,6 +41,7 @@ const CoffeeCalendar = () => {
         onOk={() => setIsModalVisible(false)}
         onCancel={() => setIsModalVisible(false)}
         footer={null}
+        width={430}
       >
         <DayDetailInfo calDate={selectedDate} />
       </Modal>
@@ -50,9 +52,12 @@ const CoffeeCalendar = () => {
 export default CoffeeCalendar;
 
 // 日历-单元格渲染
-const DayRender = ({ payer_name, expend }) => (
+const DayRender = ({ payer_name, income, expend }) => (
   <>
     <NameTag payer={payer_name}></NameTag>
+    {/* {income - expend && (
+      <Statistic title="利润 (CNY)" value={income - expend} precision={2} />
+    )} */}
     {expend && <Statistic title="支出 (CNY)" value={expend} precision={2} />}
   </>
 );
