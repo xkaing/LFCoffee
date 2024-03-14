@@ -4,15 +4,14 @@ const OneCoffeeOldPriceNum = ({ obj }) => {
     name,
     count,
   }));
-  data.sort((a, b) => a.value - b.value); //升序
+  data.sort((a, b) => a.count - b.count); //升序
+  console.log(data);
   const config = {
     data,
-    width: 400,
-    height: 400,
+    width: 450,
+    height: 450,
     angleField: "count",
     colorField: "name",
-    paddingRight: 80,
-    innerRadius: 0.6,
     label: {
       text: "count",
       style: {
@@ -28,19 +27,6 @@ const OneCoffeeOldPriceNum = ({ obj }) => {
         itemLabelFontSize: 14,
       },
     },
-    annotations: [
-      {
-        type: "text",
-        style: {
-          text: "价位",
-          x: "50%",
-          y: "50%",
-          textAlign: "center",
-          fontSize: 40,
-          fontStyle: "bold",
-        },
-      },
-    ],
   };
   return <Pie {...config} />;
 };

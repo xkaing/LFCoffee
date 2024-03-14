@@ -1,4 +1,4 @@
-import { Column, Pie } from "@ant-design/plots";
+import { Pie } from "@ant-design/plots";
 import React from "react";
 const tempeMapping = { 0: "冰", 1: "热" };
 export const OneCoffeeTempNum = ({ obj }) => {
@@ -9,12 +9,10 @@ export const OneCoffeeTempNum = ({ obj }) => {
 
   const config = {
     data,
-    width: 400,
-    height: 400,
+    width: 450,
+    height: 450,
     angleField: "value",
     colorField: "name",
-    paddingRight: 80,
-    innerRadius: 0.6,
     label: {
       text: "value",
       style: {
@@ -30,19 +28,6 @@ export const OneCoffeeTempNum = ({ obj }) => {
         itemLabelFontSize: 14,
       },
     },
-    annotations: [
-      {
-        type: "text",
-        style: {
-          text: "温度",
-          x: "50%",
-          y: "50%",
-          textAlign: "center",
-          fontSize: 40,
-          fontStyle: "bold",
-        },
-      },
-    ],
   };
   return <Pie {...config} />;
 };
