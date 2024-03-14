@@ -32,6 +32,10 @@ const DayDetailInfo = ({ waitDate, calDate }) => {
   // 检查日期参数
   const dayDate = calDate ? calDate : `2024-` + waitDate;
   const itemData = coffeeData.find((item) => item.date === dayDate);
+  if (!itemData) {
+    console.log("找不到该日期：" + dayDate);
+    return <>本日没有订单数据</>;
+  }
 
   let profitNum = 0;
   let averagePrice = 0;

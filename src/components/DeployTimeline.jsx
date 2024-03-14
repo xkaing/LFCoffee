@@ -13,7 +13,7 @@ const DeployTimeline = () => (
       {
         label: (
           <>
-            <p>CT</p>
+            <p>2024-03-14</p>
             <Text type="warning">v0.12.0-beta</Text>
           </>
         ),
@@ -22,6 +22,7 @@ const DeployTimeline = () => (
           <>
             <p>添加微信收款码</p>
             <p>优化算法，支持零收入</p>
+            <p>个人图表添加温度和价位</p>
           </>
         ),
       },

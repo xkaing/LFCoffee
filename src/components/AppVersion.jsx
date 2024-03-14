@@ -4,7 +4,7 @@ import { CodeOutlined } from "@ant-design/icons";
 import DeployTimeline from "./DeployTimeline";
 const { Text } = Typography;
 
-const appVerNum = "v0.11.10-beta";
+const appVerNum = "v0.12.2-beta";
 
 const AppVersion = () => {
   const [open, setOpen] = useState(false);
