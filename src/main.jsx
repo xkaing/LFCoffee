@@ -16,6 +16,7 @@ import CoffeeCalendar from "./Calendar/CoffeeCalendar.jsx"; //日历模块
 import Teams, { loader as teamsLoader } from "./Teams/Teams.jsx"; //团队模块
 import Teams2 from "./Teams/Teams2.jsx"; //团队模块-V2
 import Person from "./Person/Person.jsx"; //个人模块
+import Add from "./AddOrder/Add.jsx";
 import XKTrophies, {
   loader as xkTrophiesLoader,
 } from "./XKTrophies/XKTrophies.jsx"; //XKTrophies模块
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/person",
         element: <Person />,
+      },
+      {
+        path: "/add",
+        element: <Add />,
       },
       {
         path: "/xk-trophies-js-demo",
