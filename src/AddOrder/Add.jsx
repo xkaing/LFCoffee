@@ -1,108 +1,81 @@
 import React from "react";
-import { CloseOutlined } from "@ant-design/icons";
-import { Button, Card, Form, Input, Space, Typography } from "antd";
-const App = () => {
-  const [form] = Form.useForm();
-  return (
-    <Form
-      labelCol={{
-        span: 6,
-      }}
+import { Button, DatePicker, Form, Input } from "antd";
+const onFinish = (values) => {
+  console.log("Success:", values);
+};
+const onFinishFailed = (errorInfo) => {
+  console.log("Failed:", errorInfo);
+};
+const App = () => (
+  <Form
+    name="basic"
+    labelCol={{
+      span: 8,
+    }}
+    wrapperCol={{
+      span: 16,
+    }}
+    style={{
+      maxWidth: 600,
+    }}
+    initialValues={{
+      remember: true,
+    }}
+    onFinish={onFinish}
+    onFinishFailed={onFinishFailed}
+    autoComplete="off"
+    variant="filled"
+  >
+    <Form.Item
+      label="日期"
+      name="date"
+      rules={[
+        {
+          required: true,
+          message: "必须有购买日期!",
+        },
+      ]}
+    >
+      <DatePicker />
+    </Form.Item>
+    <Form.Item
+      label="买单"
+      name="payer"
+      rules={[
+        {
+          required: true,
+          message: "必须有买单人!",
+        },
+      ]}
+    >
+      <Input />
+    </Form.Item>
+    <Form.Item label="收入" name="income">
+      <Input />
+    </Form.Item>
+    <Form.Item
+      label="支出"
+      name="expend"
+      rules={[
+        {
+          required: true,
+          message: "必须有购买咖啡支出!",
+        },
+      ]}
+    >
+      <Input />
+    </Form.Item>
+
+    <Form.Item
       wrapperCol={{
-        span: 18,
-      }}
-      form={form}
-      name="dynamic_form_complex"
-      style={{
-        maxWidth: 1200,
-        width: "100%",
-      }}
-      autoComplete="off"
-      initialValues={{
-        items: [{}],
+        offset: 8,
+        span: 16,
       }}
     >
-      <Form.List name="items">
-        {(fields, { add, remove }) => (
-          <div
-            style={{
-              display: "flex",
-              rowGap: 16,
-              flexDirection: "column",
-            }}
-          >
-            {fields.map((field) => (
-              <Card
-                size="small"
-                title={`Item ${field.name + 1}`}
-                key={field.key}
-                extra={
-                  <CloseOutlined
-                    onClick={() => {
-                      remove(field.name);
-                    }}
-                  />
-                }
-              >
-                <Form.Item label="Name" name={[field.name, "name"]}>
-                  <Input />
-                </Form.Item>
-
-                {/* Nest Form.List */}
-                <Form.Item label="List">
-                  <Form.List name={[field.name, "list"]}>
-                    {(subFields, subOpt) => (
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          rowGap: 16,
-                        }}
-                      >
-                        {subFields.map((subField) => (
-                          <Space key={subField.key}>
-                            <Form.Item noStyle name={[subField.name, "first"]}>
-                              <Input placeholder="first" />
-                            </Form.Item>
-                            <Form.Item noStyle name={[subField.name, "second"]}>
-                              <Input placeholder="second" />
-                            </Form.Item>
-                            <CloseOutlined
-                              onClick={() => {
-                                subOpt.remove(subField.name);
-                              }}
-                            />
-                          </Space>
-                        ))}
-                        <Button
-                          type="dashed"
-                          onClick={() => subOpt.add()}
-                          block
-                        >
-                          + Add Sub Item
-                        </Button>
-                      </div>
-                    )}
-                  </Form.List>
-                </Form.Item>
-              </Card>
-            ))}
-
-            <Button type="dashed" onClick={() => add()} block>
-              + Add Item
-            </Button>
-          </div>
-        )}
-      </Form.List>
-
-      <Form.Item noStyle shouldUpdate>
-        {() => (
-          <Typography>
-            <pre>{JSON.stringify(form.getFieldsValue(), null, 2)}</pre>
-          </Typography>
-        )}
-      </Form.Item>
-    </Form>
-  );
-};
+      <Button type="primary" htmlType="submit">
+        提交订单
+      </Button>
+    </Form.Item>
+  </Form>
+);
 export default App;
