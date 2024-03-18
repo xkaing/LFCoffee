@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Button,
   DatePicker,
@@ -9,11 +8,17 @@ import {
   Select,
 } from "antd";
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
+import React, { useContext } from "react";
+import { CupsDataContext } from "../contexts/CoffeeDataContext";
+
 const onFinish = (values) => {
   console.log("Success:", values);
 };
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
+};
+const onCoffeeSearch = (value) => {
+  console.log("search:", value);
 };
 // 对象转字典
 function convertToObjectArray(map) {
@@ -49,6 +54,17 @@ const tempSelArr = convertToObjectArray(tempeMapping);
 const oldPriceSelArr = convertToObjectArray(priceMapping);
 
 const Add = () => {
+  const cupsData = useContext(CupsDataContext);
+  if (!cupsData) {
+    return null;
+  }
+  const coffeeSelArr = Object.entries(cupsData.coffeeNameNum).map(
+    ([name, value]) => ({
+      value: name,
+      label: name,
+    })
+  );
+
   const [form] = Form.useForm();
   const onGenderChange = (value) => {
     console.log(value);
@@ -56,6 +72,8 @@ const Add = () => {
   const onReset = () => {
     form.resetFields();
   };
+  const filterOption = (input, option) =>
+    (option?.label ?? "").toLowerCase().includes(input.toLowerCase());
   return (
     <Form
       name="basic"
@@ -145,8 +163,21 @@ const Add = () => {
                       options={personSelArr}
                     />
                   </Form.Item>
-                  <Form.Item {...restField} name={[name, "name"]}>
-                    <Input placeholder="咖啡" />
+                  <Form.Item
+                    {...restField}
+                    name={[name, "name"]}
+                    style={{ width: 140 }}
+                  >
+                    <Select
+                      showSearch
+                      placeholder="咖啡"
+                      onChange={onGenderChange}
+                      onSearch={onCoffeeSearch}
+                      options={coffeeSelArr}
+                      filterOption={filterOption}
+                      optionFilterProp="children"
+                      allowClear
+                    />
                   </Form.Item>
                   <Form.Item
                     {...restField}
