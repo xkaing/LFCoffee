@@ -25,6 +25,10 @@ const items = [
     label: <Link to={`/person`}>个人</Link>,
   },
   {
+    key: "add",
+    label: <Link to={`/add`}>add</Link>,
+  },
+  {
     key: "xk-trophies-js-demo",
     label: (
       <Link to={`/xk-trophies-js-demo`} className={"disabled-link"}>

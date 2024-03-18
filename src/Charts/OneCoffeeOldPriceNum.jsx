@@ -5,7 +5,6 @@ const OneCoffeeOldPriceNum = ({ obj }) => {
     count,
   }));
   data.sort((a, b) => a.count - b.count); //升序
-  console.log(data);
   const config = {
     data,
     width: 450,
