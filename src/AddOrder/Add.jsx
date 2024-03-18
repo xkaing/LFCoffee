@@ -1,14 +1,58 @@
 import React from "react";
-import { Button, DatePicker, Form, Input, Typography, Space } from "antd";
+import {
+  Button,
+  DatePicker,
+  Form,
+  Input,
+  Typography,
+  Space,
+  Select,
+} from "antd";
+import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 const onFinish = (values) => {
   console.log("Success:", values);
 };
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
+// 对象转字典
+function convertToObjectArray(map) {
+  return Object.entries(map).map(([key, value]) => ({
+    value: key,
+    label: value,
+  }));
+}
+const mapKeyName = {
+  "android-1": "姜振",
+  "android-2": "刘磊",
+  "android-3": "李泽晋",
+  "ios-1": "汪潇翔",
+  "ios-2": "周洋",
+  "ios-3": "曹海洋",
+  "fe-1": "汪潇凯",
+};
+const priceMapping = {
+  23: "CNY: 23",
+  26: "CNY: 26",
+  29: "CNY: 29",
+  32: "CNY: 32",
+  35: "CNY: 35",
+  38: "CNY: 38",
+};
+const tempeMapping = {
+  0: "冰",
+  1: "热",
+};
+
+const personSelArr = convertToObjectArray(mapKeyName);
+const tempSelArr = convertToObjectArray(tempeMapping);
+const oldPriceSelArr = convertToObjectArray(priceMapping);
 
 const Add = () => {
   const [form] = Form.useForm();
+  const onGenderChange = (value) => {
+    console.log(value);
+  };
   const onReset = () => {
     form.resetFields();
   };
@@ -23,7 +67,7 @@ const Add = () => {
         span: 16,
       }}
       style={{
-        maxWidth: 600,
+        maxWidth: 800,
       }}
       initialValues={{
         remember: true,
@@ -55,7 +99,11 @@ const Add = () => {
           },
         ]}
       >
-        <Input />
+        <Select
+          placeholder="本次买单人"
+          onChange={onGenderChange}
+          options={personSelArr}
+        />
       </Form.Item>
       <Form.Item label="收入" name="income">
         <Input />
@@ -70,9 +118,81 @@ const Add = () => {
           },
         ]}
       >
-        <Input />
+        <Input placeholder="本次纯咖啡支出" />
       </Form.Item>
-
+      {/* List数据 */}
+      <Form.Item label="咖啡列表">
+        <Form.List name="drinker_list">
+          {(fields, { add, remove }) => (
+            <>
+              {fields.map(({ key, name, ...restField }) => (
+                <Space
+                  key={key}
+                  style={{
+                    display: "flex",
+                    marginBottom: 8,
+                  }}
+                  align="baseline"
+                >
+                  <Form.Item
+                    {...restField}
+                    name={[name, "drinker"]}
+                    style={{ width: 100 }}
+                  >
+                    <Select
+                      placeholder="饮者"
+                      onChange={onGenderChange}
+                      options={personSelArr}
+                    />
+                  </Form.Item>
+                  <Form.Item {...restField} name={[name, "name"]}>
+                    <Input placeholder="咖啡" />
+                  </Form.Item>
+                  <Form.Item
+                    {...restField}
+                    name={[name, "temperature"]}
+                    style={{ width: 70 }}
+                  >
+                    <Select
+                      placeholder="温度"
+                      onChange={onGenderChange}
+                      options={tempSelArr}
+                      allowClear
+                    />
+                  </Form.Item>
+                  <Form.Item {...restField} name={[name, "price"]}>
+                    <Input placeholder="价格" />
+                  </Form.Item>
+                  <Form.Item
+                    {...restField}
+                    name={[name, "original_price"]}
+                    style={{ width: 100 }}
+                  >
+                    <Select
+                      placeholder="价位"
+                      onChange={onGenderChange}
+                      options={oldPriceSelArr}
+                      allowClear
+                    />
+                  </Form.Item>
+                  <MinusCircleOutlined onClick={() => remove(name)} />
+                </Space>
+              ))}
+              <Form.Item>
+                <Button
+                  type="dashed"
+                  onClick={() => add()}
+                  block
+                  icon={<PlusOutlined />}
+                >
+                  加一杯咖啡
+                </Button>
+              </Form.Item>
+            </>
+          )}
+        </Form.List>
+      </Form.Item>
+      {/* 表单操作 */}
       <Form.Item
         wrapperCol={{
           offset: 8,
@@ -88,7 +208,8 @@ const Add = () => {
           </Button>
         </Space>
       </Form.Item>
-      <Form.Item noStyle shouldUpdate>
+      {/* 展示JSON数据 */}
+      <Form.Item label="JSON.stringify" shouldUpdate>
         {() => (
           <Typography>
             <pre>{JSON.stringify(form.getFieldsValue(), null, 2)}</pre>
