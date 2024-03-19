@@ -25,6 +25,10 @@ const items = [
     label: <Link to={`/person`}>个人</Link>,
   },
   {
+    key: "table",
+    label: <Link to={`/table`}>列表</Link>,
+  },
+  {
     key: "add",
     label: <Link to={`/add`}>add</Link>,
   },

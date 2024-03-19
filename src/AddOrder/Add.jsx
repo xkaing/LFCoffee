@@ -54,10 +54,10 @@ const tempSelArr = convertToObjectArray(tempeMapping);
 const oldPriceSelArr = convertToObjectArray(priceMapping);
 
 const Add = () => {
-  const cupsData = useContext(CupsDataContext);
-  if (!cupsData) {
-    return null;
-  }
+  const cupsData = useContext(CupsDataContext) || {};
+  // if (!cupsData) {
+  //   return null;
+  // }
   const coffeeSelArr = Object.entries(cupsData.coffeeNameNum).map(
     ([name, value]) => ({
       value: name,
