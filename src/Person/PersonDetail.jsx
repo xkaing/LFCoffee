@@ -14,6 +14,7 @@ import {
   Badge,
   Tooltip,
   Typography,
+  Empty,
 } from "antd";
 import { WarningFilled } from "@ant-design/icons";
 import {
@@ -71,6 +72,9 @@ const PersonDetail = ({ drinker }) => {
   // 计算-支出总计
   const personIncome = personContextData.personIncome;
   const payerData = personIncome[drinker];
+  if (!payerData) {
+    return <Empty />;
+  }
   const drinkerDebit = payerData
     .reduce((total, value) => total.plus(new Decimal(value)), new Decimal(0))
     .toNumber();
