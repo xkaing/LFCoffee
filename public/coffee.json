@@ -1,5 +1,107 @@
 [
     {
+        "date": "2024-03-26",
+        "week": "周二",
+        "payer": "android-3",
+        "income": 62,
+        "expend": 61.70,
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "生椰拿铁",
+                "temperature": 1,
+                "price": 11.09,
+                "original_price": 29
+            },
+            {
+                "drinker": "android-2",
+                "name": "山茶花拿铁",
+                "temperature": 0,
+                "price": 14.22,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-1",
+                "name": "橙C美式",
+                "temperature": 0,
+                "price": 11.09,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-3",
+                "name": "小白梨拿铁",
+                "temperature": 1,
+                "price": 14.22,
+                "original_price": 32
+            },
+            {
+                "drinker": "fe-1",
+                "name": "热红酒美式",
+                "temperature": 1,
+                "price": 11.09,
+                "original_price": 29
+            }
+        ]
+    },
+    {
+        "date": "2024-03-25",
+        "week": "周一",
+        "payer": "android-2",
+        "income": 90,
+        "expend": 86.64,
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "抹茶好喝椰",
+                "temperature": 0,
+                "price": 14.39,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-2",
+                "name": "冷萃咖啡",
+                "temperature": 0,
+                "price": 10.22,
+                "original_price": 26
+            },
+            {
+                "drinker": "android-3",
+                "name": "瑰夏美式",
+                "temperature": 0,
+                "price": 11.09,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-1",
+                "name": "橙C美式",
+                "temperature": 0,
+                "price": 11.09,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-3",
+                "name": "抹茶瑞纳冰",
+                "temperature": 0,
+                "price": 14.39,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-4",
+                "name": "生酪拿铁",
+                "temperature": 1,
+                "price": 11.09,
+                "original_price": 29
+            },
+            {
+                "drinker": "fe-1",
+                "name": "山茶花拿铁",
+                "temperature": 0,
+                "price": 14.39,
+                "original_price": 32
+            }
+        ]
+    },
+    {
         "date": "2024-03-22",
         "week": "周五",
         "payer": "android-1",
