@@ -10,35 +10,35 @@
                 "drinker": "android-1",
                 "name": "抹茶好喝椰",
                 "temperature": 0,
-                "price": 14.49,
+                "price": 13.82,
                 "original_price": 32
             },
             {
                 "drinker": "android-2",
                 "name": "瑰夏美式",
                 "temperature": 0,
-                "price": 14.49,
+                "price": 11.37,
                 "original_price": 29
             },
             {
                 "drinker": "android-3",
                 "name": "瑰夏美式",
                 "temperature": 0,
-                "price": 10.32,
-                "original_price": 23
+                "price": 11.37,
+                "original_price": 29
             },
             {
                 "drinker": "ios-1",
                 "name": "橙C美式",
                 "temperature": 0,
-                "price": 11.12,
+                "price": 11.37,
                 "original_price": 29
             },
             {
                 "drinker": "fe-1",
                 "name": "橙C美式",
                 "temperature": 0,
-                "price": 11.12,
+                "price": 11.37,
                 "original_price": 29
             }
         ]
