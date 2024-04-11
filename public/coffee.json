@@ -1,9 +1,83 @@
 [
     {
+        "date": "2024-04-11",
+        "week": "周四",
+        "payer": "android-3",
+        "income": 0,
+        "expend": 60.7,
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "抹茶好喝椰",
+                "temperature": 0,
+                "price": 14.32,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-2",
+                "name": "碧螺知春拿铁",
+                "temperature": 0,
+                "price": 14.32,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-3",
+                "name": "美式",
+                "temperature": 0,
+                "price": 10.32,
+                "original_price": 23
+            },
+            {
+                "drinker": "ios-1",
+                "name": "橙C美式",
+                "temperature": 0,
+                "price": 10.62,
+                "original_price": 29
+            },
+            {
+                "drinker": "fe-1",
+                "name": "橙C美式",
+                "temperature": 0,
+                "price": 11.12,
+                "original_price": 29
+            }
+        ]
+    },
+    {
+        "date": "2024-04-10",
+        "week": "周三",
+        "payer": "android-2",
+        "income": 45,
+        "expend": 39.76,
+        "drinker_list": [
+            {
+                "drinker": "android-2",
+                "name": "黄山毛峰拿铁",
+                "temperature": 0,
+                "price": 14.32,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-1",
+                "name": "橙C美式",
+                "temperature": 0,
+                "price": 11.12,
+                "original_price": 29
+            },
+            {
+                "drinker": "fe-1",
+                "name": "抹茶好喝椰",
+                "temperature": 0,
+                "price": 14.32,
+                "original_price": 32
+            }
+        ]
+    },
+    {
         "date": "2024-04-09",
         "week": "周二",
         "payer": "android-1",
-        "income": 0,
+        "income": 55,
         "expend": 54.08,
         "drinker_list": [
             {
