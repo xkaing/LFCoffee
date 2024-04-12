@@ -1,16 +1,42 @@
 {
     "trophies":[
+      {
+        "buy_date": "2024-04-01",
+        "game_name": "Star Wars Jedi: Survivor",
+        "buy_source": "Physical Disc",
+        "buy_price": 285,
+        "play_platinum_date": "-",
+        "game_trophy": "-",
+        "game_developer": "Respawn",
+        "game_publisher": "Electronic Arts",
+        "game_release_date": "2023-04-28",
+        "play_time": "-",
+        "game_ing": 0
+       },
+      {
+        "buy_date": "2024-03-01",
+        "game_name": "Dragon's Dogma 2",
+        "buy_source": "Physical Disc",
+        "buy_price": 415,
+        "play_platinum_date": "2024-04-11",
+        "game_trophy": 100,
+        "game_developer": "Capcom",
+        "game_publisher": "Capcom",
+        "game_release_date": "2024-03-22",
+        "play_time": 68,
+        "game_ing": 0
+       },
      {
       "buy_date": "2024-02-01",
       "game_name": "Final Fantasy VII Rebirth",
       "buy_source": "Physical Disc",
       "buy_price": 488,
       "play_platinum_date": "-",
-      "game_trophy": "-",
+      "game_trophy": 57,
       "game_developer": "Square Enix",
       "game_publisher": "Square Enix",
       "game_release_date": "2024-02-29",
-      "play_time": "-",
+      "play_time": 55,
       "game_ing": 0
      },
      {
