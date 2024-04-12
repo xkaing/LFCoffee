@@ -10,11 +10,9 @@ import ErrorPage from "./Layout/ErrorPage.jsx"; //路由错误页
 import RoutesIndex from "./Layout/RoutesIndex.jsx"; //路由根页面
 import EmptyPage from "./Layout/EmptyPage.jsx"; //空页面
 
-import Welcome, { loader as welcomeLoader } from "./Welcome/Welcome.jsx"; //Welcome模块
-import TotalDataCard from "./Welcome/TotalDataCard.jsx"; //Welcome模块-V2
+import Welcome from "./Welcome/Welcome.jsx"; //Welcome模块
 import CoffeeCalendar from "./Calendar/CoffeeCalendar.jsx"; //日历模块
-import Teams, { loader as teamsLoader } from "./Teams/Teams.jsx"; //团队模块
-import Teams2 from "./Teams/Teams2.jsx"; //团队模块-V2
+import Teams from "./Teams/Teams.jsx"; //团队模块
 import Person from "./Person/Person.jsx"; //个人模块
 import Add from "./AddOrder/Add.jsx";
 import OrderTable from "./OrderTable/OrderTable.jsx";
@@ -37,36 +35,30 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <TotalDataCard /> },
+      { index: true, element: <Welcome /> },
       {
         path: "/welcome",
-        element: <TotalDataCard />,
-        loader: welcomeLoader,
+        element: <Welcome />,
       },
       {
         path: "/calendar",
         element: <CoffeeCalendar />,
       },
-      // {
-      //   path: "/teams",
-      //   element: <Teams />,
-      //   loader: teamsLoader,
-      // },
       {
         path: "/teams",
-        element: <Teams2 />,
+        element: <Teams />,
       },
       {
         path: "/person",
         element: <Person />,
       },
       {
-        path: "/add",
-        element: <Add />,
-      },
-      {
         path: "/table",
         element: <OrderTable />,
+      },
+      {
+        path: "/add",
+        element: <Add />,
       },
       {
         path: "/xk-trophies-js-demo",
@@ -80,7 +72,7 @@ const router = createBrowserRouter([
 let themeAlgorithm = "no-preference";
 
 if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  themeAlgorithm = "light"; //关闭暗黑模式
+  themeAlgorithm = "dark"; //关闭暗黑模式
 } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
   themeAlgorithm = "light";
 }

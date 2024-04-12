@@ -34,12 +34,7 @@ const items = [
   },
   {
     key: "xk-trophies-js-demo",
-    label: (
-      <Link to={`/xk-trophies-js-demo`} className={"disabled-link"}>
-        Trophy
-      </Link>
-    ),
-    disabled: true,
+    label: <Link to={`/xk-trophies-js-demo`}>Trophy</Link>,
   },
 ];
 const HomeLayout = () => {

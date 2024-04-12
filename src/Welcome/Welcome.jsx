@@ -1,118 +1,49 @@
-import React, { useState } from "react";
-import { Card, Col, Row, Statistic, Typography, Modal } from "antd";
+import React, { useState, useContext } from "react";
+import {
+  Card,
+  Col,
+  Row,
+  Statistic,
+  Modal,
+  Typography,
+  Flex,
+  Empty,
+} from "antd";
 import CountUp from "react-countup";
-import { getCoffeeData } from "../serve";
-import { useLoaderData } from "react-router-dom";
-import TopPresonProfit from "../Teams/TopPresonProfit";
-import TopPersonIncome from "../Teams/TopPersonIncome";
+import { TotalInfoContext } from "../contexts/CoffeeDataContext";
+import PersonIncome from "../Charts/PersonIncome";
+import {
+  CoffeeNameNumWordCloud,
+  CoffeeNameNumColumn,
+  CoffeeNameNumTreemap,
+} from "../Charts/CoffeeNameNum";
+import DateIE from "../Charts/DateIE";
+import TotalExpendWaiting from "../components/TotalExpendWaiting";
+import DateAll from "../Charts/DateAll";
+import PersonProfit from "../Charts/PersonProfit";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
-const toInt = (num) => {
-  return parseFloat(num.toFixed(2));
-};
-
+// 设置数值动画
 const formatter = (value) => {
   const start = Math.floor(value / 100) * 100;
   const decimals = Number.isInteger(value) ? 0 : 2;
   return <CountUp start={start} end={value} decimals={decimals} />;
 };
-
-export async function loader() {
-  const sourceData = await getCoffeeData();
-  return { sourceData };
-}
+const formatterAverage = (value) => {
+  const start = Math.floor(value / 100) * 100;
+  return <CountUp start={start} end={value} decimals={3} />;
+};
 
 const Welcome = () => {
-  const { sourceData } = useLoaderData();
-  let totalIncome = 0; //总收入
-  let totalExpend = 0; //总支出
-  let totalProfit = 0; //总利润
-  let totalAverage = 0; //总平均价格
-  let totalCupsArray = []; //所有杯详情
-  let topCups = {}; //最常喝的咖啡
-  let topPersonProfit = {}; // 团队每人产生的利润
-  let topPersonIncome = {};
-  let topPersonExpend = {};
-
-  const sourceArr = markBecomeName(sourceData);
-
-  sourceArr.forEach((item) => {
-    if (item.income && item.expend) {
-      totalIncome += item.income;
-      totalExpend += item.expend;
-
-      // 收入
-      if (topPersonIncome[item.payer]) {
-        topPersonIncome[item.payer].push(item.income);
-      } else {
-        topPersonIncome[item.payer] = [item.income];
-      }
-      // 支出
-      if (topPersonExpend[item.payer]) {
-        topPersonExpend[item.payer].push(item.expend);
-      } else {
-        topPersonExpend[item.payer] = [item.expend];
-      }
-      // 利润
-      if (topPersonProfit[item.payer]) {
-        topPersonProfit[item.payer].push(toInt(item.income - item.expend));
-      } else {
-        topPersonProfit[item.payer] = [toInt(item.income - item.expend)];
-      }
-    }
-    if (item.drinker_list) {
-      item.drinker_list.forEach((item) => {
-        totalCupsArray.push(item);
-      });
-    }
-  });
-  // console.log(topPersonProfit);
-
-  totalProfit = totalIncome - totalExpend;
-  totalAverage = totalExpend / totalCupsArray.length;
-  // 遍历出top数据
-  totalCupsArray.forEach((drink) => {
-    // 喝的最多的咖啡
-    if (topCups[drink.name]) {
-      topCups[drink.name]++;
-    } else {
-      topCups[drink.name] = 1;
-    }
-  });
-  const topCupsArr = Object.entries(topCups).map(([name, value]) => ({
-    name,
-    value,
-  }));
-  const topPersonIncomeArr = Object.entries(topPersonIncome).map(
-    ([name, value]) => ({
-      name,
-      value: toInt(value.reduce((a, b) => a + b, 0)),
-    })
-  );
-  const topPersonExpendArr = Object.entries(topPersonExpend).map(
-    ([name, value]) => ({
-      name,
-      value: toInt(value.reduce((a, b) => a + b, 0)),
-      category: "支出",
-    })
-  );
-  const topPersonProfitArr = Object.entries(topPersonProfit).map(
-    ([name, value]) => ({
-      name,
-      value: toInt(value.reduce((a, b) => a + b, 0)),
-      category: "小费",
-    })
-  );
-
-  topPersonIncomeArr.sort((a, b) => b.value - a.value); //降序
-  topPersonExpendArr.sort((a, b) => b.value - a.value); //降序
-  topPersonProfitArr.sort((a, b) => b.value - a.value); //降序
-  // console.log(topPersonProfitArr);
-
-  const topPersonMoneyArr = topPersonExpendArr.concat(topPersonProfitArr);
-
+  const totalInfo = useContext(TotalInfoContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  if (!totalInfo) {
+    return <Empty />;
+  }
+  const cicloInCorso = totalInfo.totalWaiting.length;
+
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -125,38 +56,58 @@ const Welcome = () => {
 
   return (
     <>
-      <Title
-        level={3}
-        style={{
-          marginTop: 12,
-        }}
-      >
-        TotalData
-      </Title>
-      <Row gutter={16}>
+      <Row gutter={[16, 24]}>
         <Col span={3}>
+          <Title
+            level={3}
+            style={{
+              marginTop: 0,
+            }}
+          >
+            当前周期：
+          </Title>
+          <Text type="secondary" style={{ fontSize: "1.2em" }}>
+            （第{cicloInCorso}轮）
+          </Text>
+        </Col>
+        <Col span={21}>
+          <TotalExpendWaiting />
+        </Col>
+      </Row>
+      <Row gutter={[16, 24]} style={{ marginTop: 12, marginBottom: 12 }}>
+        <Col span={3}>
+          <Title
+            level={3}
+            style={{
+              marginTop: 12,
+            }}
+          >
+            总体数据：
+          </Title>
+        </Col>
+        <Col span={4}>
           <Card bordered={false} hoverable size="small">
             <Statistic
-              title="Income (CNY)"
-              value={totalIncome}
+              title="总收入 (CNY)"
+              value={totalInfo.totalIncome}
               formatter={formatter}
             />
           </Card>
         </Col>
-        <Col span={3}>
-          <Card bordered={false} size="small" hoverable onClick={showModal}>
+        <Col span={4}>
+          <Card bordered={false} size="small" hoverable>
             <Statistic
-              title="Expend (CNY)"
-              value={totalExpend}
+              title="总支出 (CNY)"
+              value={totalInfo.totalExpend}
               formatter={formatter}
             />
           </Card>
         </Col>
-        <Col span={3}>
+        <Col span={4}>
           <Card bordered={false} size="small" hoverable onClick={showModal}>
             <Statistic
-              title="Profit (CNY)"
-              value={totalProfit}
+              title="总利润 (CNY)"
+              value={totalInfo.totalProfit}
               formatter={formatter}
               valueStyle={{
                 color: "green",
@@ -164,34 +115,58 @@ const Welcome = () => {
             />
           </Card>
         </Col>
-        <Col span={3}>
+        <Col span={4}>
           <Card bordered={false} size="small" hoverable>
             <Statistic
-              title="Coffee (Cups)"
-              value={totalCupsArray.length}
+              title="总杯数 (Cups)"
+              value={totalInfo.totalCupsNum}
               formatter={formatter}
             />
           </Card>
         </Col>
-        <Col span={3}>
+        <Col span={4}>
           <Card bordered={false} size="small" hoverable>
             <Statistic
-              title="Average (CNY)"
-              value={totalAverage}
-              formatter={formatter}
+              title="均价 (CNY)"
+              value={totalInfo.totalAverage}
+              formatter={formatterAverage}
             />
           </Card>
         </Col>
       </Row>
+      {/* 日期图 */}
+      {/* <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={24}>
+          <DateIE />
+        </Col>
+      </Row> */}
+
+      <Row
+        gutter={16}
+        style={{
+          marginTop: 24,
+        }}
+      >
+        <Col span={24}>
+          {/* 矩阵图 */}
+          {/* <CoffeeNameNumTreemap /> */}
+          {/* 词云图 */}
+          <CoffeeNameNumWordCloud />
+        </Col>
+      </Row>
       <Modal
-        title="TopPresonIncome"
+        title="小费榜单"
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
         footer={null}
       >
-        {/* <TopPresonProfit data={topPersonProfitArr} /> */}
-        <TopPersonIncome data={topPersonMoneyArr} />
+        <PersonProfit />
       </Modal>
     </>
   );
