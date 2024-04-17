@@ -40,7 +40,16 @@ const YearColorTag = ({ date }) => {
       break;
   }
 
-  return dateColor ? <Tag color={dateColor}>{date}</Tag> : null;
+  return dateColor ? (
+    <Tag
+      color={dateColor}
+      style={{
+        fontSize: "14px",
+      }}
+    >
+      {date}
+    </Tag>
+  ) : null;
 
   //   return <Tag color={dateColor}>{date}</Tag>;
 };

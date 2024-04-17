@@ -86,6 +86,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           themeAlgorithm === "dark"
             ? theme.darkAlgorithm
             : theme.defaultAlgorithm,
+        components: {
+          Table: {
+            cellPaddingBlockSM: 2,
+            cellPaddingInlineSM: 2,
+          },
+        },
       }}
     >
       <CoffeeDataContextProvider>
