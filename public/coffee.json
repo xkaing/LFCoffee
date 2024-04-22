@@ -1,4 +1,48 @@
 [
+    {
+        "date": "2024-04-22",
+        "week": "周一",
+        "payer": "android-3",
+        "income": 0,
+        "expend": 68.82,
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "抹茶好喝椰",
+                "temperature": 0,
+                "price": 14.49,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-2",
+                "name": "碧螺知春拿铁",
+                "temperature": 0,
+                "price": 14.49,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-1",
+                "name": "橙C美式",
+                "temperature": 0,
+                "price": 12.68,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-2",
+                "name": "抹茶瑞纳冰",
+                "temperature": 0,
+                "price": 14.49,
+                "original_price": 32
+            },
+            {
+                "drinker": "fe-1",
+                "name": "椰青冰萃美式",
+                "temperature": 0,
+                "price": 12.68,
+                "original_price": 29
+            }
+        ]
+    },
         {
         "date": "2024-04-19",
         "week": "周五",
