@@ -1,9 +1,60 @@
 [
+        {
+        "date": "2024-04-26",
+        "week": "周五",
+        "payer": "android-2",
+        "income": 78,
+        "expend": 75.16,
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "椰青冰萃美式",
+                "temperature": 0,
+                "price": 13.15,
+                "original_price": 29
+            },
+            {
+                "drinker": "android-2",
+                "name": "满萃拿铁",
+                "temperature": 0,
+                "price": 11.28,
+                "original_price": 26
+            },
+            {
+                "drinker": "android-3",
+                "name": "美式",
+                "temperature": 0,
+                "price": 10.52,
+                "original_price": 23
+            },
+            {
+                "drinker": "ios-1",
+                "name": "橙C美式",
+                "temperature": 0,
+                "price": 13.15,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-3",
+                "name": "抹茶瑞纳冰",
+                "temperature": 0,
+                "price": 13.92,
+                "original_price": 32
+            },
+            {
+                "drinker": "fe-1",
+                "name": "满萃陨石拿铁",
+                "temperature": 0,
+                "price": 13.15,
+                "original_price": 29
+            }
+        ]
+    },
     {
         "date": "2024-04-25",
         "week": "周四",
         "payer": "android-1",
-        "income": 0,
+        "income": 76,
         "expend": 75.16,
         "drinker_list": [
             {
