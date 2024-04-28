@@ -1,4 +1,41 @@
 [
+    {
+        "date": "2024-04-28",
+        "week": "周一",
+        "payer": "android-3",
+        "income": 0,
+        "expend": 56.24,
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "夏日青提小铁",
+                "temperature": 0,
+                "price": 14.59,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-2",
+                "name": "碧螺知春拿铁",
+                "temperature": 0,
+                "price": 14.59,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-1",
+                "name": "橙C美式",
+                "temperature": 1,
+                "price": 12.48,
+                "original_price": 29
+            },
+            {
+                "drinker": "fe-1",
+                "name": "夏日青提拿铁",
+                "temperature": 0,
+                "price": 14.59,
+                "original_price": 32
+            }
+        ]
+    },
         {
         "date": "2024-04-26",
         "week": "周五",
