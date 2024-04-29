@@ -1,7 +1,37 @@
 [
     {
-        "date": "2024-04-28",
+        "date": "2024-04-29",
         "week": "周一",
+        "payer": "ios-1",
+        "income": 0,
+        "expend": 42.68,
+        "drinker_list": [
+            {
+                "drinker": "android-2",
+                "name": "碧螺知春拿铁",
+                "temperature": 0,
+                "price": 13.92,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-1",
+                "name": "橙C美式",
+                "temperature": 0,
+                "price": 12.48,
+                "original_price": 29
+            },
+            {
+                "drinker": "fe-1",
+                "name": "冰镇杨梅瑞纳冰",
+                "temperature": 0,
+                "price": 16.28,
+                "original_price": 38
+            }
+        ]
+    },
+    {
+        "date": "2024-04-28",
+        "week": "周日",
         "payer": "android-3",
         "income": 0,
         "expend": 56.24,
