@@ -72,7 +72,7 @@ const router = createBrowserRouter([
 let themeAlgorithm = "no-preference";
 
 if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  themeAlgorithm = "dark"; //关闭暗黑模式
+  themeAlgorithm = "light"; //关闭暗黑模式
 } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
   themeAlgorithm = "light";
 }
