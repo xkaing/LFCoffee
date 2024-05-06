@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Space, Table, Tag } from "antd";
 import { CoffeeDataContext } from "../contexts/CoffeeDataContext";
 import NameTag from "../components/NameTag";
+import CupsTag from "../components/CupsTag";
 import Decimal from "decimal.js";
 
 const columns = [
@@ -83,12 +84,14 @@ const columns = [
     title: "杯数",
     dataIndex: "drinker_list",
     key: "drinker_list",
-    render: (drinker_list) => <p>{drinker_list.length}</p>,
+    // render: (drinker_list) => <p>{drinker_list.length}</p>,
+    render: (drinker_list) => <CupsTag count={drinker_list.length} />,
+    width: "150px",
   },
 ];
-const onChange = (pagination, filters, sorter, extra) => {
-  console.log("params", pagination, filters, sorter, extra);
-};
+// const onChange = (pagination, filters, sorter, extra) => {
+//   console.log("params", pagination, filters, sorter, extra);
+// };
 const OrderTable = () => {
   const contextData = useContext(CoffeeDataContext);
   const coffeeData = contextData ? contextData.sourceDataArr : [];
@@ -104,7 +107,7 @@ const OrderTable = () => {
       columns={columns}
       dataSource={data}
       size="small"
-      onChange={onChange}
+      // onChange={onChange}
     />
   );
 };
