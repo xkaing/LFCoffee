@@ -7,9 +7,14 @@ import {
   Space,
   Select,
 } from "antd";
+const { Paragraph, Text } = Typography;
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 import React, { useContext } from "react";
-import { CupsDataContext } from "../contexts/CoffeeDataContext";
+import {
+  CupsDataContext,
+  CoffeeDataContext,
+} from "../contexts/CoffeeDataContext";
+import dayjs from "dayjs";
 
 const onFinish = (values) => {
   console.log("Success:", values);
@@ -27,6 +32,14 @@ function convertToObjectArray(map) {
     label: value,
   }));
 }
+
+function arrStringToInt(arr) {
+  return arr.map((item) => ({
+    value: parseInt(item.value),
+    label: item.label,
+  }));
+}
+
 const mapKeyName = {
   "android-1": "姜振",
   "android-2": "刘磊",
@@ -34,6 +47,7 @@ const mapKeyName = {
   "ios-1": "汪潇翔",
   "ios-2": "周洋",
   "ios-3": "曹海洋",
+  "ios-4": "ios-4",
   "fe-1": "汪潇凯",
 };
 const priceMapping = {
@@ -50,11 +64,13 @@ const tempeMapping = {
 };
 
 const personSelArr = convertToObjectArray(mapKeyName);
-const tempSelArr = convertToObjectArray(tempeMapping);
-const oldPriceSelArr = convertToObjectArray(priceMapping);
+const tempSelArr = arrStringToInt(convertToObjectArray(tempeMapping));
+const oldPriceSelArr = arrStringToInt(convertToObjectArray(priceMapping));
 
 const Add = () => {
   const cupsData = useContext(CupsDataContext) || {};
+  const coffeeData = useContext(CoffeeDataContext) || {};
+  const recentOrderObj = coffeeData.sourceDataArr[0];
   // if (!cupsData) {
   //   return null;
   // }
@@ -71,6 +87,25 @@ const Add = () => {
   };
   const onReset = () => {
     form.resetFields();
+  };
+  const onFill = () => {
+    const dateFormat = "YYYY-MM-DD";
+    const drinkerListArr = recentOrderObj.drinker_list.map((item) => {
+      return {
+        drinker: item.drinker,
+        name: item.name,
+        temperature: item.temperature,
+        price: item.price,
+        original_price: item.original_price,
+      };
+    });
+    form.setFieldsValue({
+      date: dayjs(recentOrderObj.date, dateFormat),
+      payer: recentOrderObj.payer,
+      income: recentOrderObj.income,
+      expend: recentOrderObj.expend,
+      drinker_list: drinkerListArr,
+    });
   };
   const filterOption = (input, option) =>
     (option?.label ?? "").toLowerCase().includes(input.toLowerCase());
@@ -123,11 +158,11 @@ const Add = () => {
           options={personSelArr}
         />
       </Form.Item>
-      <Form.Item label="收入" name="income">
+      <Form.Item label="收入(¥)" name="income">
         <Input />
       </Form.Item>
       <Form.Item
-        label="支出"
+        label="支出(¥)"
         name="expend"
         rules={[
           {
@@ -236,6 +271,9 @@ const Add = () => {
           </Button>
           <Button htmlType="button" onClick={onReset}>
             重置
+          </Button>
+          <Button htmlType="button" onClick={onFill}>
+            填充最近订单数据
           </Button>
         </Space>
       </Form.Item>
