@@ -35,17 +35,17 @@
                 "original_price": 32
             },
             {
-                "drinker": "ios-4",
-                "name": "夏日青提拿铁",
-                "temperature": 0,
-                "price": 13.82,
-                "original_price": 32
-            },
-            {
                 "drinker": "fe-1",
                 "name": "夏日青提拿铁",
                 "temperature": 0,
                 "price": 14.32,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-4",
+                "name": "夏日青提拿铁",
+                "temperature": 0,
+                "price": 13.82,
                 "original_price": 32
             }
         ]
