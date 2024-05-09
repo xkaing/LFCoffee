@@ -126,9 +126,18 @@ const DayDetailInfo = ({ waitDate, calDate }) => {
           </>
         )}
       </Space>
-      {itemData.brand && <Tag color="blue">{itemData.brand}</Tag>}
+      {itemData.brand && (
+        <Space>
+          <p>
+            品牌:{" "}
+            <Tag bordered={false} color="processing">
+              {itemData.brand}
+            </Tag>
+          </p>
+        </Space>
+      )}
       <TempDictComponent tempDict={tempDict} />
-      <PricesDictComponent pricesDict={pricesDict} />
+      <PricesDictComponent pricesDict={pricesDict} brand={itemData.brand} />
       <List
         itemLayout="horizontal"
         size="small"
@@ -216,7 +225,7 @@ const DayDetailInfo = ({ waitDate, calDate }) => {
 };
 
 // 价位tag组件
-const PricesDictComponent = ({ pricesDict }) => {
+const PricesDictComponent = ({ pricesDict, brand }) => {
   const priceEntries = Object.entries(pricesDict); // 将对象转换为 [key, value] 形式的数组
   return (
     <Space
@@ -240,15 +249,17 @@ const PricesDictComponent = ({ pricesDict }) => {
             </Text>
             {prices[0]}
           </Text>
-          <Text
-            delete
-            style={{
-              fontSize: "1em",
-              marginLeft: "3px",
-            }}
-          >
-            ¥{key}
-          </Text>
+          {!brand && (
+            <Text
+              delete
+              style={{
+                fontSize: "1em",
+                marginLeft: "3px",
+              }}
+            >
+              ¥{key}
+            </Text>
+          )}
           <CloseOutlined />
           <Text
             style={{
