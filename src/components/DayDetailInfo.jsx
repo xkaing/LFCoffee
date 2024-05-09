@@ -126,6 +126,7 @@ const DayDetailInfo = ({ waitDate, calDate }) => {
           </>
         )}
       </Space>
+      {itemData.brand && <Tag color="blue">{itemData.brand}</Tag>}
       <TempDictComponent tempDict={tempDict} />
       <PricesDictComponent pricesDict={pricesDict} />
       <List
@@ -302,6 +303,21 @@ const TempDictComponent = ({ tempDict }) => {
         </Tag>
       ))}
     </Space>
+  );
+};
+
+// 温度tag组件
+const BrandComponent = ({ brand }) => {
+  const tempEntries = Object.entries(tempDict);
+  return (
+    <Space
+      size={"small"}
+      style={{
+        marginTop: "0.5em",
+        marginBottom: "0.5em",
+        marginRight: "0.5em",
+      }}
+    ></Space>
   );
 };
 
