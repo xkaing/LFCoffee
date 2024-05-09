@@ -1,5 +1,50 @@
 [
     {
+        "date": "2024-05-09",
+        "week": "周四",
+        "payer": "ios-3",
+        "income": 0,
+        "expend": 80,
+        "brand": "manner",
+        "drinker_list": [
+            {
+                "drinker": "android-1",
+                "name": "香蕉拿铁",
+                "temperature": 0,
+                "price": 20,
+                "original_price": 20
+            },
+            {
+                "drinker": "android-2",
+                "name": "冰葡美式",
+                "temperature": 0,
+                "price": 15,
+                "original_price": 15
+            },
+            {
+                "drinker": "android-3",
+                "name": "超大杯冰美式",
+                "temperature": 0,
+                "price": 15,
+                "original_price": 15
+            },
+            {
+                "drinker": "ios-3",
+                "name": "冰橙美式",
+                "temperature": 0,
+                "price": 15,
+                "original_price": 15
+            },
+            {
+                "drinker": "fe-1",
+                "name": "冰橙美式",
+                "temperature": 0,
+                "price": 15,
+                "original_price": 15
+            }
+        ]
+    },
+    {
         "date": "2024-05-08",
         "week": "周三",
         "payer": "android-3",

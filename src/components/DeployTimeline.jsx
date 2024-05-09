@@ -13,6 +13,21 @@ const DeployTimeline = () => (
       {
         label: (
           <>
+            <p>TC</p>
+            <Text type="warning">v0.14.0-beta</Text>
+          </>
+        ),
+        color: "orange",
+        children: (
+          <>
+            <p>添加表单，新增数据导入</p>
+            <p>添加品牌方</p>
+          </>
+        ),
+      },
+      {
+        label: (
+          <>
             <p>2024-03-19</p>
             <Text type="warning">v0.13.0-beta</Text>
           </>
