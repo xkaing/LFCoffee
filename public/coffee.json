@@ -1,5 +1,49 @@
 [
     {
+        "date": "2024-05-14",
+        "week": "周二",
+        "payer": "android-2",
+        "income": 70.16,
+        "expend": 68,
+        "drinker_list": [
+            {
+                "drinker": "android-2",
+                "name": "大话西瓜拿铁",
+                "temperature": 0,
+                "price": 14.49,
+                "original_price": 32
+            },
+            {
+                "drinker": "android-3",
+                "name": "柠C美式",
+                "temperature": 0,
+                "price": 12.38,
+                "original_price": 29
+            },
+            {
+                "drinker": "ios-3",
+                "name": "大话西瓜小铁",
+                "temperature": 0,
+                "price": 14.49,
+                "original_price": 32
+            },
+            {
+                "drinker": "ios-4",
+                "name": "夏日青提小铁",
+                "temperature": 0,
+                "price": 12.16,
+                "original_price": 32
+            },
+            {
+                "drinker": "fe-1",
+                "name": "大话西瓜拿铁",
+                "temperature": 0,
+                "price": 14.49,
+                "original_price": 32
+            }
+        ]
+    },
+    {
         "date": "2024-05-13",
         "week": "周一",
         "payer": "android-1",
