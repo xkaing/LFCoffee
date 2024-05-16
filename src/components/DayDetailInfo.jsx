@@ -151,6 +151,11 @@ const DayDetailInfo = ({ waitDate, calDate }) => {
               title={<NameTag payer={item.drinker_name}></NameTag>}
               description={
                 <Space size={"small"}>
+                  {item.brand && (
+                    <Tag bordered={false} color="processing">
+                      {item.brand}
+                    </Tag>
+                  )}
                   {/* 2.温度 */}
                   {item.temperature === 1 ? (
                     <IconFont type="icon-coffee-cup" />
