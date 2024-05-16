@@ -85,7 +85,9 @@ const columns = [
     dataIndex: "drinker_list",
     key: "drinker_list",
     // render: (drinker_list) => <p>{drinker_list.length}</p>,
-    render: (drinker_list) => <CupsTag count={drinker_list.length} />,
+    render: (drinker_list) => (
+      <CupsTag count={drinker_list ? drinker_list.length : 0} />
+    ),
     width: "150px",
   },
 ];
