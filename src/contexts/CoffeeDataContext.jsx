@@ -147,7 +147,7 @@ const processData = (data) => {
       name: item.payer_name,
       income: item.income,
       expend: item.expend,
-      cups: item.drinker_list.length,
+      cups: item.drinker_list ? item.drinker_list.length : 0,
       profit,
       average,
     });
