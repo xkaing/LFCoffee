@@ -1,9 +1,110 @@
 [
   {
+    "date": "2024-05-20",
+    "week": "周一",
+    "payer": "ios-4",
+    "income": 70,
+    "expend": 69.28,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "抹茶好喝椰",
+        "temperature": 0,
+        "price": 12.82,
+        "original_price": 32
+      },
+      {
+        "drinker": "android-2",
+        "name": "椰皇拿铁",
+        "temperature": 0,
+        "price": 14.49,
+        "original_price": 32
+      },
+      {
+        "drinker": "ios-3",
+        "name": "金桔柠檬",
+        "temperature": 0,
+        "price": 11,
+        "original_price": 13,
+        "brand": "书亦烧仙草"
+      },
+      {
+        "drinker": "ios-4",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 14.49,
+        "original_price": 32
+      },
+      {
+        "drinker": "fe-1",
+        "name": "大话西瓜小铁",
+        "temperature": 0,
+        "price": 14.49,
+        "original_price": 32
+      }
+    ]
+  },
+  {
+    "date": "2024-05-17",
+    "week": "周五",
+    "payer": "fe-1",
+    "income": 76.48,
+    "expend": 76.48,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "霸气香水芝士草莓",
+        "temperature": 0,
+        "price": 14.5,
+        "original_price": 29,
+        "brand": "奈雪的茶"
+      },
+      {
+        "drinker": "android-2",
+        "name": "霸气香水葡萄",
+        "temperature": 0,
+        "price": 12.5,
+        "original_price": 23,
+        "brand": "奈雪的茶"
+      },
+      {
+        "drinker": "android-3",
+        "name": "美式",
+        "temperature": 0,
+        "price": 10.58,
+        "original_price": 23
+      },
+      {
+        "drinker": "ios-3",
+        "name": "多肉西瓜椰椰",
+        "temperature": 0,
+        "price": 11.9,
+        "original_price": 14,
+        "brand": "书亦烧仙草"
+      },
+      {
+        "drinker": "ios-4",
+        "name": "霸气香水芝士草莓",
+        "temperature": 0,
+        "price": 14.5,
+        "original_price": 29,
+        "brand": "奈雪的茶"
+      },
+      {
+        "drinker": "fe-1",
+        "name": "霸气一通杨梅",
+        "temperature": 0,
+        "price": 12.5,
+        "original_price": 25,
+        "brand": "奈雪的茶"
+      }
+    ]
+  },
+  {
     "date": "2024-05-16",
     "week": "周四",
     "payer": "ios-3",
-    "income": 0,
+    "income": 80,
     "expend": 79.9,
     "drinker_list": [
       {
@@ -54,7 +155,7 @@
   {
     "date": "2024-05-15",
     "week": "周三",
-    "payer": "android-3",
+    "payer": "android-2",
     "income": 73.22,
     "expend": 73.22
   },
