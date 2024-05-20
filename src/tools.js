@@ -1,10 +1,22 @@
-import a1 from "./assets/avatar/android-1.JPG";
-import a2 from "./assets/avatar/android-2.JPG";
-import a3 from "./assets/avatar/android-3.JPG";
-import i1 from "./assets/avatar/ios-1.JPG";
-import i2 from "./assets/avatar/ios-2.JPG";
-import i3 from "./assets/avatar/ios-3.JPG";
-import f1 from "./assets/avatar/fe-1.JPG";
+import a1 from "./assets/avatar/android-1.jpg";
+import a2 from "./assets/avatar/android-2.jpg";
+import a3 from "./assets/avatar/android-3.jpg";
+import i1 from "./assets/avatar/ios-1.jpg";
+import i2 from "./assets/avatar/ios-2.jpg";
+import i3 from "./assets/avatar/ios-3.jpg";
+import i4 from "./assets/avatar/ios-4.jpg";
+import f1 from "./assets/avatar/fe-1.jpg";
+
+const mapKeyAvatarUrl = {
+  "android-1": a1,
+  "android-2": a2,
+  "android-3": a3,
+  "ios-1": i1,
+  "ios-2": i2,
+  "ios-3": i3,
+  "ios-4": i4,
+  "fe-1": f1,
+};
 
 const mapKeyName = {
   "android-1": "姜振",
@@ -13,16 +25,8 @@ const mapKeyName = {
   "ios-1": "汪潇翔",
   "ios-2": "周洋",
   "ios-3": "曹海洋",
+  "ios-4": "张亚东",
   "fe-1": "汪潇凯",
-};
-const mapKeyAvatarUrl = {
-  "android-1": a1,
-  "android-2": a2,
-  "android-3": a3,
-  "ios-1": i1,
-  "ios-2": i2,
-  "ios-3": i3,
-  "fe-1": f1,
 };
 
 // 添加 姓名和头像

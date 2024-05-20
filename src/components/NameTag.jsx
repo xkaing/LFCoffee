@@ -19,7 +19,8 @@ const NameTag = ({ payer }) => {
     lowerPayer.includes("ios") ||
     lowerPayer.includes("汪潇翔") ||
     lowerPayer.includes("周洋") ||
-    lowerPayer.includes("曹海洋")
+    lowerPayer.includes("曹海洋") ||
+    lowerPayer.includes("张亚东")
   ) {
     NameIcon = <AppleFilled />;
     NameColor = "#2db7f5";
