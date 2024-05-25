@@ -1,5 +1,90 @@
 [
   {
+    "date": "2024-05-24",
+    "week": "周五",
+    "payer": "android-3",
+    "income": 0,
+    "expend": 56.56,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "橙C冰茶",
+        "temperature": 0,
+        "price": 11.12,
+        "original_price": 26
+      },
+      {
+        "drinker": "android-2",
+        "name": "椰青冰萃美式",
+        "temperature": 0,
+        "price": 12.82,
+        "original_price": 29
+      },
+      {
+        "drinker": "ios-3",
+        "name": "杨梅白月光",
+        "temperature": 0,
+        "price": 9.9,
+        "original_price": 14,
+        "brand": "书亦烧仙草"
+      },
+      {
+        "drinker": "ios-4",
+        "name": "茉莉花香拿铁",
+        "temperature": 1,
+        "price": 12.82,
+        "original_price": 29
+      },
+      {
+        "drinker": "fe-1",
+        "name": "多肉杨梅",
+        "temperature": 0,
+        "price": 9.9,
+        "original_price": 14,
+        "brand": "书亦烧仙草"
+      }
+    ]
+  },
+  {
+    "date": "2024-05-23",
+    "week": "周四",
+    "payer": "android-3",
+    "income": 0,
+    "expend": 55.64,
+    "drinker_list": [
+      {
+        "drinker": "android-2",
+        "name": "柠C美式",
+        "temperature": 0,
+        "price": 16.82,
+        "original_price": 29
+      },
+      {
+        "drinker": "ios-3",
+        "name": "柚子香柠白月光",
+        "temperature": 0,
+        "price": 12.5,
+        "original_price": 14,
+        "brand": "书亦烧仙草"
+      },
+      {
+        "drinker": "ios-4",
+        "name": "夏日青提拿铁",
+        "temperature": 0,
+        "price": 13.82,
+        "original_price": 29
+      },
+      {
+        "drinker": "fe-1",
+        "name": "柚子桃桃白月光",
+        "temperature": 0,
+        "price": 12.5,
+        "original_price": 14,
+        "brand": "书亦烧仙草"
+      }
+    ]
+  },
+  {
     "date": "2024-05-22",
     "week": "周三",
     "payer": "ios-2",
