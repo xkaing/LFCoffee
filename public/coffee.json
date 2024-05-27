@@ -1,5 +1,250 @@
 [
   {
+    "date": "2024-05-27",
+    "payer": "ios-3",
+    "income": 0,
+    "expend": 96.72,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "万里木兰",
+        "temperature": 0,
+        "price": 18.4,
+        "original_price": 20,
+        "brand": "霸王茶姬"
+      },
+      {
+        "drinker": "android-2",
+        "name": "万里木兰",
+        "temperature": 0,
+        "price": 18.4,
+        "original_price": 20,
+        "brand": "霸王茶姬"
+      },
+      {
+        "drinker": "android-3",
+        "name": "葡萄芋圆冻冻",
+        "temperature": 0,
+        "price": 15.3,
+        "original_price": 17,
+        "brand": "书亦烧仙草"
+      },
+      {
+        "drinker": "ios-3",
+        "name": "多肉西瓜冰茶",
+        "temperature": 0,
+        "price": 10.8,
+        "original_price": 12,
+        "brand": "书亦烧仙草"
+      },
+      {
+        "drinker": "ios-4",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 13.82,
+        "original_price": 32
+      },
+      {
+        "drinker": "fe-1",
+        "name": "桂馥兰香",
+        "temperature": 0,
+        "price": 20,
+        "original_price": 20,
+        "brand": "霸王茶姬"
+      }
+    ]
+  },
+  {
+    "date": "2024-05-24",
+    "week": "周五",
+    "payer": "android-3",
+    "income": 57,
+    "expend": 56.56,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "橙C冰茶",
+        "temperature": 0,
+        "price": 11.12,
+        "original_price": 26
+      },
+      {
+        "drinker": "android-2",
+        "name": "椰青冰萃美式",
+        "temperature": 0,
+        "price": 12.82,
+        "original_price": 29
+      },
+      {
+        "drinker": "ios-3",
+        "name": "杨梅白月光",
+        "temperature": 0,
+        "price": 9.9,
+        "original_price": 14,
+        "brand": "书亦烧仙草"
+      },
+      {
+        "drinker": "ios-4",
+        "name": "茉莉花香拿铁",
+        "temperature": 1,
+        "price": 12.82,
+        "original_price": 29
+      },
+      {
+        "drinker": "fe-1",
+        "name": "多肉杨梅",
+        "temperature": 0,
+        "price": 9.9,
+        "original_price": 14,
+        "brand": "书亦烧仙草"
+      }
+    ]
+  },
+  {
+    "date": "2024-05-23",
+    "week": "周四",
+    "payer": "android-3",
+    "income": 56,
+    "expend": 55.64,
+    "drinker_list": [
+      {
+        "drinker": "android-2",
+        "name": "柠C美式",
+        "temperature": 0,
+        "price": 16.82,
+        "original_price": 29
+      },
+      {
+        "drinker": "ios-3",
+        "name": "柚子香柠白月光",
+        "temperature": 0,
+        "price": 12.5,
+        "original_price": 14,
+        "brand": "书亦烧仙草"
+      },
+      {
+        "drinker": "ios-4",
+        "name": "夏日青提拿铁",
+        "temperature": 0,
+        "price": 13.82,
+        "original_price": 29
+      },
+      {
+        "drinker": "fe-1",
+        "name": "柚子桃桃白月光",
+        "temperature": 0,
+        "price": 12.5,
+        "original_price": 14,
+        "brand": "书亦烧仙草"
+      }
+    ]
+  },
+  {
+    "date": "2024-05-22",
+    "week": "周三",
+    "payer": "ios-2",
+    "income": 100,
+    "expend": 96.6,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "抹茶好喝椰",
+        "temperature": 0,
+        "price": 14.49,
+        "original_price": 32
+      },
+      {
+        "drinker": "android-2",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 14.49,
+        "original_price": 32
+      },
+      {
+        "drinker": "android-3",
+        "name": "柠C美式",
+        "temperature": 0,
+        "price": 12.32,
+        "original_price": 29
+      },
+      {
+        "drinker": "ios-2",
+        "name": "夏日青提拿铁",
+        "temperature": 0,
+        "price": 14.49,
+        "original_price": 32
+      },
+      {
+        "drinker": "ios-3",
+        "name": "生椰烧仙草",
+        "temperature": 0,
+        "price": 14.4,
+        "original_price": 16,
+        "brand": "书亦烧仙草"
+      },
+      {
+        "drinker": "ios-4",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 13.82,
+        "original_price": 32
+      },
+      {
+        "drinker": "fe-1",
+        "name": "多肉西瓜椰椰",
+        "temperature": 0,
+        "price": 12.6,
+        "original_price": 14,
+        "brand": "书亦烧仙草"
+      }
+    ]
+  },
+  {
+    "date": "2024-05-21",
+    "week": "周二",
+    "payer": "android-1",
+    "income": 70,
+    "expend": 69.44,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "抹茶好喝椰",
+        "temperature": 0,
+        "price": 13.82,
+        "original_price": 32
+      },
+      {
+        "drinker": "android-2",
+        "name": "椰青冰萃美式",
+        "temperature": 0,
+        "price": 12.32,
+        "original_price": 29
+      },
+      {
+        "drinker": "ios-3",
+        "name": "椰子OK瑞纳冰",
+        "temperature": 0,
+        "price": 16.28,
+        "original_price": 35
+      },
+      {
+        "drinker": "ios-4",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 13.82,
+        "original_price": 32
+      },
+      {
+        "drinker": "fe-1",
+        "name": "书亦烧仙草",
+        "temperature": 0,
+        "price": 13.2,
+        "original_price": 15,
+        "brand": "书亦烧仙草"
+      }
+    ]
+  },
+  {
     "date": "2024-05-20",
     "week": "周一",
     "payer": "ios-4",
