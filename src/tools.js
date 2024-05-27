@@ -4,7 +4,7 @@ import a3 from "./assets/avatar/android-3.JPG";
 import i1 from "./assets/avatar/ios-1.JPG";
 import i2 from "./assets/avatar/ios-2.JPG";
 import i3 from "./assets/avatar/ios-3.JPG";
-import i4 from "./assets/avatar/ios-4.JPG";
+import i4 from "./assets/avatar/ios-44.JPG";
 import f1 from "./assets/avatar/fe-1.JPG";
 
 const mapKeyAvatarUrl = {
