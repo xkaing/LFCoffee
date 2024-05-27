@@ -46,6 +46,10 @@ const columns = [
         value: "曹海洋",
       },
       {
+        text: "张亚东",
+        value: "张亚东",
+      },
+      {
         text: "汪潇凯",
         value: "汪潇凯",
       },

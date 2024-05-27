@@ -57,6 +57,9 @@ const addRealNameAndUrlInObject = (item) => {
       item.drinker_url = mapKeyAvatarUrl[item.drinker] || item.drinker;
     }
   }
+  if (!item.week) {
+    item.week = getWeekday(item.date);
+  }
   return item;
 };
 
@@ -66,4 +69,11 @@ export const addNameInSteps = (sData) => {
     title: mapKeyName[item] || item,
   }));
   return newStepsArr;
+};
+
+const getWeekday = (dateString) => {
+  const weekdays = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+  const date = new Date(dateString);
+  const weekdayIndex = date.getDay(); // getDay() 返回的是一个整数，0 表示周日，1 表示周一，以此类推直到6表示周六
+  return weekdays[weekdayIndex];
 };
