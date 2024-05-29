@@ -13,7 +13,7 @@ const DeployTimeline = () => (
       {
         label: (
           <>
-            <p>TC</p>
+            <p>2024-06-29</p>
             <Text type="warning">v0.14.0-beta</Text>
           </>
         ),
@@ -22,6 +22,7 @@ const DeployTimeline = () => (
           <>
             <p>添加表单，新增数据导入</p>
             <p>添加品牌方</p>
+            <p>添加停服倒计时</p>
           </>
         ),
       },
