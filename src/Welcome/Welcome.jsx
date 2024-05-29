@@ -23,6 +23,9 @@ import DateAll from "../Charts/DateAll";
 import PersonProfit from "../Charts/PersonProfit";
 
 const { Title, Text } = Typography;
+const { Countdown } = Statistic;
+
+const deadline = new Date("2024-07-01").getTime();
 
 // 设置数值动画
 const formatter = (value) => {
@@ -56,7 +59,7 @@ const Welcome = () => {
 
   return (
     <>
-      <Row gutter={[16, 24]}>
+      {/* <Row gutter={[16, 24]}>
         <Col span={3}>
           <Title
             level={3}
@@ -73,9 +76,31 @@ const Welcome = () => {
         <Col span={21}>
           <TotalExpendWaiting />
         </Col>
+      </Row> */}
+      <Row style={{ marginTop: 48, marginBottom: 60 }}>
+        <Col span={5} offset={5}>
+          <Title
+            level={2}
+            style={{
+              marginTop: 36,
+            }}
+            type="danger"
+          >
+            LFCoffee 停服：
+          </Title>
+        </Col>
+        <Col span={6}>
+          <Card bordered={false} hoverable size="small">
+            <Countdown
+              title="倒计时"
+              value={deadline}
+              format="D 天 H 时 m 分 s 秒"
+            />
+          </Card>
+        </Col>
       </Row>
       <Row gutter={[16, 24]} style={{ marginTop: 12, marginBottom: 12 }}>
-        <Col span={3}>
+        {/* <Col span={3}>
           <Title
             level={3}
             style={{
@@ -84,8 +109,8 @@ const Welcome = () => {
           >
             总体数据：
           </Title>
-        </Col>
-        <Col span={4}>
+        </Col> */}
+        <Col span={4} offset={2}>
           <Card bordered={false} hoverable size="small">
             <Statistic
               title="总收入 (CNY)"
@@ -104,7 +129,12 @@ const Welcome = () => {
           </Card>
         </Col>
         <Col span={4}>
-          <Card bordered={false} size="small" hoverable onClick={showModal}>
+          <Card
+            bordered={false}
+            size="small"
+            hoverable
+            // onClick={showModal}
+          >
             <Statistic
               title="总利润 (CNY)"
               value={totalInfo.totalProfit}
@@ -149,10 +179,10 @@ const Welcome = () => {
       <Row
         gutter={16}
         style={{
-          marginTop: 24,
+          marginTop: 12,
         }}
       >
-        <Col span={24}>
+        <Col span={21} offset={1}>
           {/* 矩阵图 */}
           {/* <CoffeeNameNumTreemap /> */}
           {/* 词云图 */}
