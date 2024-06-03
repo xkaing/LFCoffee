@@ -137,7 +137,7 @@ const DayDetailInfo = ({ waitDate, calDate }) => {
         </Space>
       )}
       <TempDictComponent tempDict={tempDict} />
-      <PricesDictComponent pricesDict={pricesDict} brand={itemData.brand} />
+      {/* <PricesDictComponent pricesDict={pricesDict} brand={itemData.brand} /> */}
       <List
         itemLayout="horizontal"
         size="small"

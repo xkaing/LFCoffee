@@ -1,5 +1,108 @@
 [
   {
+    "date": "2024-06-03",
+    "payer": "fe-1",
+    "income": 54.68,
+    "expend": 54.68,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "抹茶好喝椰",
+        "temperature": 0,
+        "price": 14.32,
+        "original_price": 32
+      },
+      {
+        "drinker": "android-2",
+        "name": "椰青冰萃美式",
+        "temperature": 0,
+        "price": 12.22,
+        "original_price": 29
+      },
+      {
+        "drinker": "ios-4",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 13.82,
+        "original_price": 32
+      },
+      {
+        "drinker": "fe-1",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 14.32,
+        "original_price": 32
+      }
+    ]
+  },
+  {
+    "date": "2024-05-31",
+    "payer": "ios-4",
+    "income": 55,
+    "expend": 54.08,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "抹茶好喝椰",
+        "temperature": 0,
+        "price": 14.32,
+        "original_price": 32
+      },
+      {
+        "drinker": "android-2",
+        "name": "椰青冰萃美式",
+        "temperature": 0,
+        "price": 12.72,
+        "original_price": 29
+      },
+      {
+        "drinker": "ios-4",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 14.32,
+        "original_price": 32
+      },
+      {
+        "drinker": "fe-1",
+        "name": "橘金气泡美式",
+        "temperature": 0,
+        "price": 12.72,
+        "original_price": 29
+      }
+    ]
+  },
+  {
+    "date": "2024-05-30",
+    "payer": "android-2",
+    "income": 45,
+    "expend": 41.22,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "伯牙绝弦",
+        "temperature": 1,
+        "price": 13.5,
+        "original_price": 16,
+        "brand": "霸王茶姬"
+      },
+      {
+        "drinker": "android-2",
+        "name": "椰青冰萃美式",
+        "temperature": 0,
+        "price": 12.22,
+        "original_price": 29
+      },
+      {
+        "drinker": "fe-1",
+        "name": "醒时春山",
+        "temperature": 0,
+        "price": 15.5,
+        "original_price": 18,
+        "brand": "霸王茶姬"
+      }
+    ]
+  },
+  {
     "date": "2024-05-29",
     "payer": "android-1",
     "income": 55,
