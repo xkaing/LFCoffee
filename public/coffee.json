@@ -1,5 +1,74 @@
 [
   {
+    "date": "2024-06-07",
+    "payer": "android-1",
+    "income": 54.24,
+    "expend": 54.24,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "万里木兰",
+        "temperature": 1,
+        "price": 13.5,
+        "original_price": 16,
+        "brand": "霸王茶姬"
+      },
+      {
+        "drinker": "android-2",
+        "name": "夏日青提拿铁",
+        "temperature": 0,
+        "price": 13.82,
+        "original_price": 32
+      },
+      {
+        "drinker": "android-3",
+        "name": "加浓美式",
+        "temperature": 0,
+        "price": 11.52,
+        "original_price": 26
+      },
+      {
+        "drinker": "fe-1",
+        "name": "白雾红尘",
+        "temperature": 1,
+        "price": 15.4,
+        "original_price": 18,
+        "brand": "霸王茶姬"
+      }
+    ]
+  },
+  {
+    "date": "2024-06-06",
+    "payer": "fe-1",
+    "income": 65.17,
+    "expend": 65.17,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "霸气一通桃",
+        "temperature": 0,
+        "price": 25.17,
+        "original_price": 28,
+        "brand": "奈雪的茶"
+      },
+      {
+        "drinker": "android-2",
+        "name": "冰椰SOE美式",
+        "temperature": 0,
+        "price": 18,
+        "original_price": 20
+      },
+      {
+        "drinker": "fe-1",
+        "name": "霸气一通杨梅",
+        "temperature": 0,
+        "price": 22,
+        "original_price": 25,
+        "brand": "奈雪的茶"
+      }
+    ]
+  },
+  {
     "date": "2024-06-05",
     "payer": "android-2",
     "income": 45,
