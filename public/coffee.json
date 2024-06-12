@@ -1,8 +1,91 @@
 [
   {
+    "date": "2024-06-12",
+    "payer": "android-3",
+    "income": 0,
+    "expend": 66.36,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "轻咖椰子水",
+        "temperature": 0,
+        "price": 12.72,
+        "original_price": 29
+      },
+      {
+        "drinker": "android-2",
+        "name": "椰青冰萃美式",
+        "temperature": 0,
+        "price": 12.72,
+        "original_price": 29
+      },
+      {
+        "drinker": "android-3",
+        "name": "美式",
+        "temperature": 0,
+        "price": 10.32,
+        "original_price": 23
+      },
+      {
+        "drinker": "ios-2",
+        "name": "万里木兰",
+        "temperature": 1,
+        "price": 17.3,
+        "original_price": 20,
+        "brand": "霸王茶姬"
+      },
+      {
+        "drinker": "fe-1",
+        "name": "伯牙绝弦",
+        "temperature": 1,
+        "price": 13.3,
+        "original_price": 16,
+        "brand": "霸王茶姬"
+      }
+    ]
+  },
+  {
+    "date": "2024-06-11",
+    "payer": "android-2",
+    "income": 0,
+    "expend": 72.5,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "香椰水冷萃",
+        "temperature": 0,
+        "price": 26,
+        "original_price": 29,
+        "brand": "天好咖啡"
+      },
+      {
+        "drinker": "android-2",
+        "name": "大理石美式",
+        "temperature": 0,
+        "price": 11.52,
+        "original_price": 26
+      },
+      {
+        "drinker": "android-3",
+        "name": "美式",
+        "temperature": 0,
+        "price": 9.98,
+        "original_price": 23
+      },
+      {
+        "drinker": "fe-1",
+        "name": "牛油果生椰冷萃",
+        "temperature": 0,
+        "price": 25,
+        "original_price": 31,
+        "brand": "天好咖啡"
+      }
+    ]
+  },
+  {
     "date": "2024-06-07",
     "payer": "android-1",
-    "income": 54.24,
+    "income": 55,
     "expend": 54.24,
     "drinker_list": [
       {
