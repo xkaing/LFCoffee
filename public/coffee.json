@@ -148,7 +148,7 @@
   {
     "date": "2024-06-17",
     "payer": "android-2",
-    "income": 0,
+    "income": 55,
     "expend": 52.48,
     "drinker_list": [
       {
@@ -1050,7 +1050,51 @@
     "week": "周三",
     "payer": "android-2",
     "income": 73.22,
-    "expend": 73.22
+    "expend": 73.22,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "椰子OK瑞纳冰",
+        "temperature": 0,
+        "price": 13.3,
+        "original_price": 35
+      },
+      {
+        "drinker": "android-2",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 12.16,
+        "original_price": 32
+      },
+      {
+        "drinker": "android-3",
+        "name": "柠C美式",
+        "temperature": 0,
+        "price": 12.4,
+        "original_price": 29
+      },
+      {
+        "drinker": "ios-3",
+        "name": "椰子OK瑞纳冰",
+        "temperature": 0,
+        "price": 13.3,
+        "original_price": 35
+      },
+      {
+        "drinker": "ios-4",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 9.9,
+        "original_price": 32
+      },
+      {
+        "drinker": "fe-1",
+        "name": "大话西瓜拿铁",
+        "temperature": 0,
+        "price": 12.16,
+        "original_price": 32
+      }
+    ]
   },
   {
     "date": "2024-05-14",
