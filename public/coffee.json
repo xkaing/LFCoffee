@@ -1,8 +1,73 @@
 [
   {
+    "date": "2024-06-25",
+    "payer": "fe-1",
+    "income": 42.46,
+    "expend": 42.46,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "轻咖柠檬茶",
+        "temperature": 0,
+        "price": 12.72,
+        "original_price": 29
+      },
+      {
+        "drinker": "android-2",
+        "name": "柠C美式",
+        "temperature": 0,
+        "price": 17.02,
+        "original_price": 29
+      },
+      {
+        "drinker": "android-3",
+        "name": "轻咖柠檬茶",
+        "temperature": 0,
+        "price": 12.72,
+        "original_price": 29
+      }
+    ]
+  },
+  {
+    "date": "2024-06-24",
+    "payer": "android-3",
+    "income": 52,
+    "expend": 51.78,
+    "drinker_list": [
+      {
+        "drinker": "android-1",
+        "name": "轻咖椰子水",
+        "temperature": 0,
+        "price": 12.22,
+        "original_price": 29
+      },
+      {
+        "drinker": "android-2",
+        "name": "椰青冰萃美式",
+        "temperature": 0,
+        "price": 15.22,
+        "original_price": 29
+      },
+      {
+        "drinker": "android-3",
+        "name": "橙C冰茶",
+        "temperature": 0,
+        "price": 10.32,
+        "original_price": 26
+      },
+      {
+        "drinker": "fe-1",
+        "name": "黄玫瑰拿铁",
+        "temperature": 0,
+        "price": 14.02,
+        "original_price": 32
+      }
+    ]
+  },
+  {
     "date": "2024-06-21",
     "payer": "android-2",
-    "income": 0,
+    "income": 62,
     "expend": 61.34,
     "drinker_list": [
       {
@@ -40,7 +105,7 @@
   {
     "date": "2024-06-20",
     "payer": "android-1",
-    "income": 0,
+    "income": 53,
     "expend": 52.58,
     "drinker_list": [
       {
@@ -112,7 +177,7 @@
   {
     "date": "2024-06-18",
     "payer": "android-3",
-    "income": 0,
+    "income": 52,
     "expend": 51.18,
     "drinker_list": [
       {
