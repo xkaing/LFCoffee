@@ -1,16 +1,62 @@
 {
     "trophies":[
       {
+        "buy_date": "2024-09-23",
+        "game_name": "Warhammer 40000: Space Marine2",
+        "buy_source": "Physical Disc",
+        "buy_price": 415,
+        "play_platinum_date": "-",
+        "game_trophy": 40,
+        "game_developer": "Relic",
+        "game_publisher": "THQ",
+        "game_release_date": "2024-09-10",
+        "play_time": 15
+       },
+      {
+        "buy_date": "2024-09-03",
+        "game_name": "ASTRO BOT",
+        "buy_source": "Physical Disc",
+        "buy_price": 448,
+        "play_platinum_date": "2024-09-23",
+        "game_trophy": 92,
+        "game_developer": "Sony Interactive Entertainment",
+        "game_publisher": "Sony Interactive Entertainment",
+        "game_release_date": "2024-09-06",
+        "play_time": 23,
+        "game_dlc":[
+          {
+            "buy_date": "2024-10-17",
+            "game_release_date": "2024-10-17",
+            "buy_source": "PS Store",
+            "game_name": "星际高速",
+            "buy_price": 0,
+            "game_trophy": 14
+          }
+        ]
+       },
+      {
+        "buy_date": "2024-08-18",
+        "game_name": "Black Myth: Wu Kong",
+        "buy_source": "PS Store",
+        "buy_price": 368,
+        "play_platinum_date": "2024-09-02",
+        "game_trophy": 100,
+        "game_developer": "Game Science",
+        "game_publisher": "Game Science",
+        "game_release_date": "2024-08-20",
+        "play_time": 73
+       },
+      {
         "buy_date": "2024-04-01",
         "game_name": "Star Wars Jedi: Survivor",
         "buy_source": "Physical Disc",
         "buy_price": 285,
-        "play_platinum_date": "-",
-        "game_trophy": "-",
+        "play_platinum_date": "2024-06-10",
+        "game_trophy": 100,
         "game_developer": "Respawn",
         "game_publisher": "Electronic Arts",
         "game_release_date": "2023-04-28",
-        "play_time": "-",
+        "play_time": 44,
         "game_ing": 0
        },
       {
