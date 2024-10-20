@@ -2,6 +2,7 @@
 import { Tag } from "antd";
 
 const YearColorTag = ({ date }) => {
+  if (!date) return null;
   const firstFourChars = date.slice(0, 4);
   let dateColor = null;
 
@@ -43,9 +44,6 @@ const YearColorTag = ({ date }) => {
   return dateColor ? (
     <Tag
       color={dateColor}
-      style={{
-        fontSize: "14px",
-      }}
     >
       {date}
     </Tag>
