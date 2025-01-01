@@ -120,7 +120,7 @@ const XKTrophies = () => {
     {
       title: "DLC",
       dataIndex: "key",
-      width: 100
+      // width: 100
     },
     {
       title: "Name",
@@ -132,24 +132,24 @@ const XKTrophies = () => {
       title: "Buy Date",
       dataIndex: "buy_date",
       render: (buy_date) => <YearColorTag date={buy_date} />,
-      width: 100
+      // width: 100
     },
     {
       title: "Release Date",
       dataIndex: "game_release_date",
       render: (game_release_date) => <YearColorTag date={game_release_date} />,
-      width: 100
+      // width: 100
     },
     {
       title: "Source",
       dataIndex: "buy_source",
       render: (buy_source) => <SourceColorTag channel={buy_source} />,
-      width: 100
+      // width: 100
     },
     {
       title: "Price",
       dataIndex: "buy_price",
-      width: 50
+      // width: 50
     },
     {
       title: "Trophy",
