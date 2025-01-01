@@ -1,78 +1,86 @@
 {
-    "trophies":[
-      {
-        "buy_date": "2024-09-23",
-        "game_name": "Warhammer 40000: Space Marine2",
-        "buy_source": "Physical Disc",
-        "buy_price": 415,
-        "play_platinum_date": "-",
-        "game_trophy": 40,
-        "game_developer": "Relic",
-        "game_publisher": "THQ",
-        "game_release_date": "2024-09-10",
-        "play_time": 15
-       },
-      {
-        "buy_date": "2024-09-03",
-        "game_name": "ASTRO BOT",
-        "buy_source": "Physical Disc",
-        "buy_price": 448,
-        "play_platinum_date": "2024-09-23",
-        "game_trophy": 92,
-        "game_developer": "Sony Interactive Entertainment",
-        "game_publisher": "Sony Interactive Entertainment",
-        "game_release_date": "2024-09-06",
-        "play_time": 23,
-        "game_dlc":[
-          {
-            "buy_date": "2024-10-17",
-            "game_release_date": "2024-10-17",
-            "buy_source": "PS Store",
-            "game_name": "星际高速",
-            "buy_price": 0,
-            "game_trophy": 14
-          }
-        ]
-       },
-      {
-        "buy_date": "2024-08-18",
-        "game_name": "Black Myth: Wu Kong",
-        "buy_source": "PS Store",
-        "buy_price": 368,
-        "play_platinum_date": "2024-09-02",
-        "game_trophy": 100,
-        "game_developer": "Game Science",
-        "game_publisher": "Game Science",
-        "game_release_date": "2024-08-20",
-        "play_time": 73
-       },
-      {
-        "buy_date": "2024-04-01",
-        "game_name": "Star Wars Jedi: Survivor",
-        "buy_source": "Physical Disc",
-        "buy_price": 285,
-        "play_platinum_date": "2024-06-10",
-        "game_trophy": 100,
-        "game_developer": "Respawn",
-        "game_publisher": "Electronic Arts",
-        "game_release_date": "2023-04-28",
-        "play_time": 44,
-        "game_ing": 0
-       },
-      {
-        "buy_date": "2024-03-01",
-        "game_name": "Dragon's Dogma 2",
-        "buy_source": "Physical Disc",
-        "buy_price": 415,
-        "play_platinum_date": "2024-04-11",
-        "game_trophy": 100,
-        "game_developer": "Capcom",
-        "game_publisher": "Capcom",
-        "game_release_date": "2024-03-22",
-        "play_time": 68,
-        "game_ing": 0
-       },
-     {
+  "trophies": [
+    {
+      "buy_date": "2024-09-23",
+      "game_name": "Warhammer 40000: Space Marine2",
+      "buy_source": "Physical Disc",
+      "buy_price": 415,
+      "play_platinum_date": "2024-12-29",
+      "game_trophy": 100,
+      "game_developer": "Relic",
+      "game_publisher": "THQ",
+      "game_release_date": "2024-09-10",
+      "play_time": 52
+    },
+    {
+      "buy_date": "2024-09-03",
+      "game_name": "ASTRO BOT",
+      "buy_source": "Physical Disc",
+      "buy_price": 448,
+      "play_platinum_date": "2024-09-23",
+      "game_trophy": 100,
+      "game_developer": "Sony Interactive Entertainment",
+      "game_publisher": "Sony Interactive Entertainment",
+      "game_release_date": "2024-09-06",
+      "play_time": 25,
+      "game_dlc": [
+        {
+          "buy_date": "2024-10-17",
+          "game_release_date": "2024-10-17",
+          "buy_source": "PS Store",
+          "game_name": "星际高速",
+          "buy_price": 0,
+          "game_trophy": 100
+        },
+        {
+          "buy_date": "-",
+          "game_release_date": "-",
+          "buy_source": "PS Store",
+          "game_name": "冬日奇迹",
+          "buy_price": 0,
+          "game_trophy": 100
+        }
+      ]
+    },
+    {
+      "buy_date": "2024-08-18",
+      "game_name": "Black Myth: Wu Kong",
+      "buy_source": "PS Store",
+      "buy_price": 368,
+      "play_platinum_date": "2024-09-02",
+      "game_trophy": 100,
+      "game_developer": "Game Science",
+      "game_publisher": "Game Science",
+      "game_release_date": "2024-08-20",
+      "play_time": 73
+    },
+    {
+      "buy_date": "2024-04-01",
+      "game_name": "Star Wars Jedi: Survivor",
+      "buy_source": "Physical Disc",
+      "buy_price": 285,
+      "play_platinum_date": "2024-06-10",
+      "game_trophy": 100,
+      "game_developer": "Respawn",
+      "game_publisher": "Electronic Arts",
+      "game_release_date": "2023-04-28",
+      "play_time": 44,
+      "game_ing": 0
+    },
+    {
+      "buy_date": "2024-03-01",
+      "game_name": "Dragon's Dogma 2",
+      "buy_source": "Physical Disc",
+      "buy_price": 415,
+      "play_platinum_date": "2024-04-11",
+      "game_trophy": 100,
+      "game_developer": "Capcom",
+      "game_publisher": "Capcom",
+      "game_release_date": "2024-03-22",
+      "play_time": 68,
+      "game_ing": 0
+    },
+    {
       "buy_date": "2024-02-01",
       "game_name": "Final Fantasy VII Rebirth",
       "buy_source": "Physical Disc",
@@ -84,8 +92,8 @@
       "game_release_date": "2024-02-29",
       "play_time": 55,
       "game_ing": 0
-     },
-     {
+    },
+    {
       "buy_date": "2024-01-01",
       "game_name": "Assassin's Creed Mirage",
       "buy_source": "Physical Disc",
@@ -97,8 +105,8 @@
       "game_release_date": "2023-10-05",
       "play_time": 35,
       "game_ing": 0
-     },
-     {
+    },
+    {
       "buy_date": "2023-12-25",
       "game_name": "Final Fantasy XVI",
       "buy_source": "Physical Disc",
@@ -110,8 +118,8 @@
       "game_release_date": "2023-06-22",
       "play_time": 92,
       "game_ing": 0
-     },
-     {
+    },
+    {
       "buy_date": "2023-12-09",
       "game_name": "A Plague Tale: Requiem",
       "buy_source": "Physical Disc",
@@ -123,8 +131,8 @@
       "game_release_date": "2022-10-18",
       "play_time": 30,
       "game_ing": 8
-     },
-     {
+    },
+    {
       "buy_date": "2023-10-08",
       "game_name": "Marvel Spiderman 2",
       "buy_source": "Physical Disc",
@@ -136,8 +144,8 @@
       "game_release_date": "2023-10-20",
       "play_time": 29,
       "game_ing": 0
-     },
-     {
+    },
+    {
       "buy_date": "2023-07-03",
       "game_name": "Ending",
       "buy_source": "Monthly games",
@@ -149,8 +157,8 @@
       "game_release_date": "2022-03-11",
       "play_time": 8,
       "game_ing": 0
-     },
-     {
+    },
+    {
       "buy_date": "2023-06-13",
       "game_name": "Diablo IV",
       "buy_source": "Physical Disc",
@@ -162,8 +170,8 @@
       "game_release_date": "2023-06-06",
       "play_time": 344,
       "game_ing": 0
-     },
-     {
+    },
+    {
       "buy_date": "2023-06-07",
       "game_name": "A Plague Tale: Innocence",
       "buy_source": "PS Store",
@@ -175,8 +183,8 @@
       "game_release_date": "2019-05-14",
       "play_time": 19,
       "game_ing": 0
-     },
-     {
+    },
+    {
       "buy_date": "2023-05-16",
       "game_name": "Kena: Bridge of Spirits",
       "buy_source": "Game Catalogue",
@@ -188,8 +196,8 @@
       "game_release_date": "2021-09-21",
       "play_time": 15,
       "game_ing": 0
-     },
-     {
+    },
+    {
       "buy_date": "2023-05-16",
       "game_name": "HUMANITY",
       "buy_source": "Game Catalogue",
@@ -201,8 +209,8 @@
       "game_release_date": "2023-05-16",
       "play_time": 16,
       "game_ing": 0
-     },
-     {
+    },
+    {
       "buy_date": "2023-03-21",
       "game_name": "UNCHARTED: Legacy of Thieves Collection",
       "buy_source": "Game Catalogue",
@@ -214,8 +222,8 @@
       "game_release_date": "2022-01-28",
       "play_time": 14,
       "game_ing": "NR"
-     },
-     {
+    },
+    {
       "buy_date": "2023-03-21",
       "game_name": "Tchia",
       "buy_source": "Game Catalogue",
@@ -227,8 +235,8 @@
       "game_release_date": "2023-03-21",
       "play_time": 42,
       "game_ing": "NR"
-     },
-     {
+    },
+    {
       "buy_date": "2023-03-10",
       "game_name": "RESIDENT EVIL  4",
       "buy_source": "Physical Disc",
@@ -240,8 +248,8 @@
       "game_release_date": "2023-03-24",
       "play_time": 90,
       "game_ing": 10
-     },
-     {
+    },
+    {
       "buy_date": "2023-02-21",
       "game_name": "Atomic Heart",
       "buy_source": "Physical Disc",
@@ -253,8 +261,8 @@
       "game_release_date": "2023-02-21",
       "play_time": 52,
       "game_ing": 8
-     },
-     {
+    },
+    {
       "buy_date": "2023-01-03",
       "game_name": "Star Wars Jedi：Fallen Order",
       "buy_source": "Monthly games",
@@ -266,8 +274,8 @@
       "game_release_date": "2019-11-15",
       "play_time": 27,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2022-12-29",
       "game_name": "Subnautica: Below Zero",
       "buy_source": "Physical Disc",
@@ -279,8 +287,8 @@
       "game_release_date": "2021-05-14",
       "play_time": 27,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2022-12-04",
       "game_name": "Need for Speed: Unbound",
       "buy_source": "Physical Disc",
@@ -292,14 +300,14 @@
       "game_release_date": "2022-12-02",
       "play_time": 35,
       "game_ing": 7
-     },
-     {
+    },
+    {
       "buy_date": "2022-10-22",
       "game_name": "Call of Duty: Modern Warfare 2",
       "buy_source": "Physical Disc",
       "buy_price": 500,
       "play_platinum_date": "2022-12-21",
-      "game_trophy": 80,
+      "game_trophy": 84,
       "game_developer": "Infinity Ward",
       "game_publisher": "Activision",
       "game_release_date": "2022-10-28",
@@ -307,21 +315,30 @@
       "game_ing": 8,
       "game_dlc": [
         {
-            "buy_date": "2023-10-08",
-            "game_name": "Call of Duty: Modern Warfare 3",
-            "buy_source": "Physical Disc",
-            "buy_price": 440,
-            "play_platinum_date": "-",
-            "game_trophy": "-",
-            "game_developer": "Sledgehammer",
-            "game_publisher": "Activision",
-            "game_release_date": "2023-11-10",
-            "play_time": "-",
-            "game_ing": 0
+          "buy_date": "2023-10-08",
+          "game_name": "Call of Duty: Modern Warfare 3",
+          "buy_source": "Physical Disc",
+          "buy_price": 440,
+          "play_platinum_date": "dlc",
+          "game_trophy": "-",
+          "game_developer": "Sledgehammer",
+          "game_publisher": "Activision",
+          "game_release_date": "2023-11-10"
+        },
+        {
+          "buy_date": "2024-10-21",
+          "game_name": "Call of Duty: Black Ops 6",
+          "buy_source": "Physical Disc",
+          "buy_price": 468,
+          "play_platinum_date": "dlc",
+          "game_trophy": "-",
+          "game_developer": "Raven Software",
+          "game_publisher": "Activision",
+          "game_release_date": "2024-10-25"
         }
       ]
-     },
-     {
+    },
+    {
       "buy_date": "2022-10-22",
       "game_name": "God of War: Ragnarok",
       "buy_source": "Physical Disc",
@@ -333,8 +350,8 @@
       "game_release_date": "2022-11-09",
       "play_time": 63,
       "game_ing": 10
-     },
-     {
+    },
+    {
       "buy_date": "2022-08-22",
       "game_name": "The Last of Us™ Part I",
       "buy_source": "Physical Disc",
@@ -346,8 +363,8 @@
       "game_release_date": "2022-09-02",
       "play_time": 31,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2022-07-21",
       "game_name": "Marvels Guardians of the Galaxy",
       "buy_source": "Game Catalogue",
@@ -359,8 +376,8 @@
       "game_release_date": "2021-10-26",
       "play_time": 26,
       "game_ing": 8
-     },
-     {
+    },
+    {
       "buy_date": "2022-07-20",
       "game_name": "Stray",
       "buy_source": "Game Catalogue",
@@ -372,8 +389,8 @@
       "game_release_date": "2022-07-19",
       "play_time": 15,
       "game_ing": 8
-     },
-     {
+    },
+    {
       "buy_date": "2022-02-14",
       "game_name": "Deathloop",
       "buy_source": "Physical Disc",
@@ -385,8 +402,8 @@
       "game_release_date": "2021-09-14",
       "play_time": 38,
       "game_ing": 10
-     },
-     {
+    },
+    {
       "buy_date": "2022-02-10",
       "game_name": "Horizon Forbidden West",
       "buy_source": "Physical Disc",
@@ -398,8 +415,8 @@
       "game_release_date": "2022-02-18",
       "play_time": 50,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2022-02-10",
       "game_name": "Elden Ring",
       "buy_source": "Physical Disc",
@@ -411,8 +428,8 @@
       "game_release_date": "2022-02-25",
       "play_time": 71,
       "game_ing": 10
-     },
-     {
+    },
+    {
       "buy_date": "2022-01-14",
       "game_name": "Persona 5 Scramble: The Phantom Strikers",
       "buy_source": "Monthly games",
@@ -424,8 +441,8 @@
       "game_release_date": "2020-06-18",
       "play_time": 4,
       "game_ing": 8
-     },
-     {
+    },
+    {
       "buy_date": "2022-01-13",
       "game_name": "Ratchet & Clank:Rift Apart",
       "buy_source": "Physical Disc",
@@ -437,8 +454,8 @@
       "game_release_date": "2021-06-11",
       "play_time": 19,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2022-01-13",
       "game_name": "It takes Two",
       "buy_source": "Physical Disc",
@@ -450,8 +467,8 @@
       "game_release_date": "2021-03-25",
       "play_time": 19,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2021-11-04",
       "game_name": "Call Of Duty: Vanguard",
       "buy_source": "Physical Disc",
@@ -463,8 +480,8 @@
       "game_release_date": "2021-11-05",
       "play_time": 64,
       "game_ing": 7
-     },
-     {
+    },
+    {
       "buy_date": "2021-09-28",
       "game_name": "Demon's Souls Remake",
       "buy_source": "Physical Disc",
@@ -476,8 +493,8 @@
       "game_release_date": "2020-11-12",
       "play_time": 38,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2021-09-28",
       "game_name": "Astro's Playroom",
       "buy_source": "PS Store",
@@ -489,8 +506,8 @@
       "game_release_date": "2020-11-12",
       "play_time": 9,
       "game_ing": 8
-     },
-     {
+    },
+    {
       "buy_date": "2021-09-28",
       "game_name": "Marvels Spider Man: Miles Morales",
       "buy_source": "Physical Disc",
@@ -502,8 +519,8 @@
       "game_release_date": "2020-11-12",
       "play_time": 17,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2021-05-07",
       "game_name": "Biomutant",
       "buy_source": "Physical Disc",
@@ -515,8 +532,8 @@
       "game_release_date": "2021-05-25",
       "play_time": 36,
       "game_ing": 6
-     },
-     {
+    },
+    {
       "buy_date": "2021-03-26",
       "game_name": "Subnautica",
       "buy_source": "Monthly games",
@@ -528,8 +545,8 @@
       "game_release_date": "2018-12-05",
       "play_time": 26,
       "game_ing": 9.1
-     },
-     {
+    },
+    {
       "buy_date": "2020-11-29",
       "game_name": "Cyberpunk 2077 ",
       "buy_source": "Physical Disc",
@@ -541,8 +558,8 @@
       "game_release_date": "2020-12-10",
       "play_time": 111,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2020-11-29",
       "game_name": "Gris",
       "buy_source": "PS Store",
@@ -554,8 +571,8 @@
       "game_release_date": "2019-11-26",
       "play_time": 9,
       "game_ing": 6.5
-     },
-     {
+    },
+    {
       "buy_date": "2020-11-20",
       "game_name": "RESIDENT EVIL 3 ",
       "buy_source": "Physical Disc",
@@ -567,8 +584,8 @@
       "game_release_date": "2020-04-03",
       "play_time": 14,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2020-11-20",
       "game_name": "FINAL FANTASY VII REMAKE ",
       "buy_source": "Physical Disc",
@@ -580,8 +597,8 @@
       "game_release_date": "2020-04-10",
       "play_time": 44,
       "game_ing": 8
-     },
-     {
+    },
+    {
       "buy_date": "2020-11-20",
       "game_name": "Sakuna: Of Rice and Ruin",
       "buy_source": "Physical Disc",
@@ -593,8 +610,8 @@
       "game_release_date": "2020-11-11",
       "play_time": 52,
       "game_ing": "NR"
-     },
-     {
+    },
+    {
       "buy_date": "2020-10-20",
       "game_name": "Control - Ultimate Edition",
       "buy_source": "Physical Disc",
@@ -606,8 +623,8 @@
       "game_release_date": "2019-08-27",
       "play_time": 38,
       "game_ing": 8.8
-     },
-     {
+    },
+    {
       "buy_date": "2020-06-16",
       "game_name": "Ghost of Tsushima ",
       "buy_source": "Physical Disc",
@@ -619,8 +636,8 @@
       "game_release_date": "2020-07-17",
       "play_time": 142,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2020-05-19",
       "game_name": "The Last of Us™ Part II ",
       "buy_source": "Physical Disc",
@@ -632,8 +649,8 @@
       "game_release_date": "2020-06-19",
       "play_time": 79,
       "game_ing": 10
-     },
-     {
+    },
+    {
       "buy_date": "2020-04-24",
       "game_name": "Horizon Zero Dawn",
       "buy_source": "PS Store",
@@ -645,8 +662,8 @@
       "game_release_date": "2017-02-28",
       "play_time": 69,
       "game_ing": 9.3
-     },
-     {
+    },
+    {
       "buy_date": "2020-04-23",
       "game_name": "Persona 5: The Royal",
       "buy_source": "Physical Disc",
@@ -658,8 +675,8 @@
       "game_release_date": "2020-02-20",
       "play_time": 98,
       "game_ing": 10
-     },
-     {
+    },
+    {
       "buy_date": "2020-03-11",
       "game_name": "DARK SOULS III",
       "buy_source": "Physical Disc",
@@ -671,8 +688,8 @@
       "game_release_date": "2016-04-12",
       "play_time": 113,
       "game_ing": 9.5
-     },
-     {
+    },
+    {
       "buy_date": "2020-03-05",
       "game_name": "The Witcher 3: Wild Hunt",
       "buy_source": "Physical Disc",
@@ -684,8 +701,8 @@
       "game_release_date": "2015-05-19",
       "play_time": 130,
       "game_ing": 9.3
-     },
-     {
+    },
+    {
       "buy_date": "2020-02-03",
       "game_name": "Bloodborne",
       "buy_source": "Physical Disc",
@@ -697,8 +714,8 @@
       "game_release_date": "2015-03-24",
       "play_time": 96,
       "game_ing": 9.1
-     },
-     {
+    },
+    {
       "buy_date": "2019-12-08",
       "game_name": "RESIDENT EVIL 2 ",
       "buy_source": "Physical Disc",
@@ -710,8 +727,8 @@
       "game_release_date": "2019-01-25",
       "play_time": 44,
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2019-11-26",
       "game_name": "Need for Speed: Heat ",
       "buy_source": "Physical Disc",
@@ -723,8 +740,8 @@
       "game_release_date": "2019-11-08",
       "play_time": 64,
       "game_ing": 8
-     },
-     {
+    },
+    {
       "buy_date": "2019-10-08",
       "game_name": "DEATH STRANDING ",
       "buy_source": "Physical Disc",
@@ -736,8 +753,8 @@
       "game_release_date": "2019-11-08",
       "play_time": 110,
       "game_ing": 6.800000000000001
-     },
-     {
+    },
+    {
       "buy_date": "2019-08-22",
       "game_name": "Monster Hunter World: Iceborne ",
       "buy_source": "PS Store",
@@ -749,8 +766,8 @@
       "game_release_date": "2019-09-06",
       "play_time": "-",
       "game_ing": 9
-     },
-     {
+    },
+    {
       "buy_date": "2019-07-03",
       "game_name": "Detroit: Become Human",
       "buy_source": "Monthly games",
@@ -762,8 +779,8 @@
       "game_release_date": "2018-05-25",
       "play_time": 36,
       "game_ing": 8
-     },
-     {
+    },
+    {
       "buy_date": "2019-06-12",
       "game_name": "Monster Hunter: World ",
       "buy_source": "Physical Disc",
@@ -775,8 +792,8 @@
       "game_release_date": "2018-01-26",
       "play_time": 774,
       "game_ing": 9.5
-     },
-     {
+    },
+    {
       "buy_date": "2019-06-12",
       "game_name": "God of War ",
       "buy_source": "Physical Disc",
@@ -788,8 +805,8 @@
       "game_release_date": "2018-04-20",
       "play_time": 53,
       "game_ing": 10
-     },
-     {
+    },
+    {
       "buy_date": "2019-04-30",
       "game_name": "Marvel's Spider-Man ",
       "buy_source": "Physical Disc",
@@ -801,8 +818,8 @@
       "game_release_date": "2018-09-07",
       "play_time": 68,
       "game_ing": 8.700000000000001
-     },
-     {
+    },
+    {
       "buy_date": "2019-03-30",
       "game_name": "God of War III Remastered ",
       "buy_source": "PS Store",
@@ -814,8 +831,8 @@
       "game_release_date": "2015-07-14",
       "play_time": 20,
       "game_ing": 8.8
-     },
-     {
+    },
+    {
       "buy_date": "2019-03-07",
       "game_name": "SEKIRO: SHADOWS DIE TWICE ",
       "buy_source": "Physical Disc",
@@ -827,8 +844,8 @@
       "game_release_date": "2019-03-22",
       "play_time": 104,
       "game_ing": 9.5
-     },
-     {
+    },
+    {
       "buy_date": "2019-02-25",
       "game_name": "Devil May Cry 5 ",
       "buy_source": "Physical Disc",
@@ -840,8 +857,8 @@
       "game_release_date": "2019-03-08",
       "play_time": 33,
       "game_ing": 9.5
-     },
-     {
+    },
+    {
       "buy_date": "2019-01-03",
       "game_name": "Red Dead Redemption 2 ",
       "buy_source": "Physical Disc",
@@ -853,6 +870,6 @@
       "game_release_date": "2018-10-26",
       "play_time": 141,
       "game_ing": 10
-     }
-    ]
+    }
+  ]
 }

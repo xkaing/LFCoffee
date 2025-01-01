@@ -118,21 +118,15 @@ const XKTrophies = () => {
 
   const dlcColumns = [
     {
-      title: "",
+      title: "DLC",
       dataIndex: "key",
       width: 100
     },
     {
       title: "Name",
       dataIndex: "game_name",
-      width: 100,
+      // width: 100,
       ellipsis: true,
-    },
-    {
-      title: "Release Date",
-      dataIndex: "game_release_date",
-      render: (game_release_date) => <YearColorTag date={game_release_date} />,
-      width: 100
     },
     {
       title: "Buy Date",
@@ -140,7 +134,12 @@ const XKTrophies = () => {
       render: (buy_date) => <YearColorTag date={buy_date} />,
       width: 100
     },
-
+    {
+      title: "Release Date",
+      dataIndex: "game_release_date",
+      render: (game_release_date) => <YearColorTag date={game_release_date} />,
+      width: 100
+    },
     {
       title: "Source",
       dataIndex: "buy_source",
@@ -161,7 +160,7 @@ const XKTrophies = () => {
 
   const dlcTable = (record) => {
     const dlcArrData = record.game_dlc.map((item, index) => {
-      return { ...item, key: `dlc ${index + 1}` };
+      return { ...item, key: index + 1 };
     });
     return (<Table columns={dlcColumns} dataSource={dlcArrData} pagination={false} style={{
       marginLeft: 155,
@@ -177,7 +176,7 @@ const XKTrophies = () => {
         pageSize: 100,
       }}
       scroll={{
-        y: 55 * 15,
+        // y: 55 * 15,
       }}
       expandable={{
         expandedRowRender: (record) => dlcTable(record),
